@@ -1,3 +1,3 @@
-# Capstone Project Template Repo 
+# Capstone Project 
 
 - Write a production README.md 
