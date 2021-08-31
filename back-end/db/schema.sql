@@ -29,3 +29,4 @@ CREATE TABLE ratings (
     rating NUMERIC NOT NULL CHECK (rating >=0 AND rating <= 5), 
     booking_id INT REFERENCES bookings (id) NOT NULL
 );
+
