@@ -16,17 +16,17 @@ const fetchUser = async (id) => {
 	}
 };
 
-const createUser = (user) => {
+const createUser = async (user) => {
 	// if user is a chef {do this} else {do that -- regular user}
 	// chef? chef specs: user specs
-	const { email, name, is_chef, cuisine, zip_code, image } = user;
+	const { email, name, is_chef, cuisine, zip_code } = user;
 	try {
 		const newUser = await db.one(
-			`INSERT INTO users 
-            (email, name, is_chef, cuisine, zip_code, image)
+			`INSERT INTO users
+            (email, name, is_chef, cuisine, zip_code)
             VALUES($1, $2, $3, $4, $5)
             RETURNING *`,
-			[email, name, is_chef, cuisine, zip_code, image]
+			[email, name, is_chef, cuisine, zip_code]
 		);
 		return newUser;
 	} catch (err) {
