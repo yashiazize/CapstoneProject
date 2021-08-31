@@ -10,7 +10,7 @@ const {
 } = require("../queries/users");
 
 // CHEFS
-users.get("/chefs", async (req, res) => {
+users.get("/chefs", async (_, res) => {
 	const allChefs = await fetchAllChefs();
 	res.json({ success: true, payload: allChefs });
 });

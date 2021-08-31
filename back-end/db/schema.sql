@@ -16,8 +16,8 @@ CREATE TABLE users (
 
 CREATE TABLE bookings (
     id SERIAL PRIMARY KEY, 
-    chef_id INT REFERENCES users (id) NOT NULL, 
-    user_id INT REFERENCES users (id) NOT NULL, 
+    chef_id INT REFERENCES users (id), 
+    user_id INT REFERENCES users (id), 
     status TEXT NOT NULL, 
     cuisine TEXT NOT NULL, 
     event_date DATE NOT NULL, 
