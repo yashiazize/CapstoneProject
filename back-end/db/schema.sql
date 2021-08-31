@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS chef_app_dev;
+CREATE DATABASE chef_app_dev;
+\c chef_app_dev;
+
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
@@ -6,9 +10,8 @@ CREATE TABLE users (
     pw_hash TEXT NOT NULL, 
     name VARCHAR(100) NOT NULL, 
     is_chef BOOLEAN NOT NULL DEFAULT FALSE, 
-    cuisine TEXT NOT NULL, 
-    zip_code VARCHAR(5) NOT NULL, 
-    image INT NOT NULL
+    cuisine TEXT, 
+    zip_code VARCHAR(5)
 );
 
 CREATE TABLE bookings (
@@ -20,9 +23,9 @@ CREATE TABLE bookings (
     event_date DATE NOT NULL, 
     start_time TIME NOT NULL, 
     end_time TIME NOT NULL
-)
+);
 
 CREATE TABLE ratings (
     rating NUMERIC NOT NULL CHECK (rating >=0 AND rating <= 5), 
-    booking_id INT f_key: ref (bookings.id)
-)
+    booking_id INT REFERENCES bookings (id) NOT NULL
+);
