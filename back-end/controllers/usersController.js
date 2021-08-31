@@ -9,6 +9,12 @@ const {
 	fetchAllChefs,
 } = require("../queries/users");
 
+// CHEFS
+users.get("/chefs", async (req, res) => {
+	const allChefs = await fetchAllChefs();
+	res.json({ success: true, payload: allChefs });
+});
+
 users.get("/", async (_, res) => {
 	const allUsers = await fetchAllUsers();
 	res.json({ success: true, payload: allUsers });
@@ -29,12 +35,6 @@ users.put("/:id", async (req, res) => {
 	const { id } = req.params;
 	const updatedUser = await updateUser(id, req.body);
 	res.json({ success: true, payload: updatedUser });
-});
-
-// CHEFS
-users.get("/chefs", async (_, res) => {
-	const allChefs = await fetchAllChefs();
-	res.json({ success: true, payload: allChefs });
 });
 
 module.exports = users;
