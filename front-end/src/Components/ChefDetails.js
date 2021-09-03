@@ -47,7 +47,9 @@ const ChefDetails = ({ chefs }) => {
 					<button type="button">Back</button>
 				</Link>
 			</div>
-			{/* <button>Book</button> */}
+			<Link to={`/bookings/new`}>
+				<button>Book</button>
+			</Link>
 		</div>
 	);
 };

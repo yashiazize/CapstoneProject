@@ -9,6 +9,8 @@ import Index from "./Pages/Index.js";
 import Show from "./Pages/Show.js";
 import ShowBookings from "./Pages/ShowBookings.js";
 import IndexBookings from "./Pages/IndexBookings.js";
+import NewUser from "./Pages/NewUser.js";
+import NewBooking from "./Pages/NewBooking.js";
 
 const API = apiURL();
 
@@ -35,16 +37,26 @@ function App() {
 					<Route exact path="/">
 						<Home />
 					</Route>
-					{/* list of chefs */}
+
+					{/* /users */}
+					<Route exact path="/users/new">
+						<NewUser />
+					</Route>
+
+					{/* /users/chefs */}
 					<Route exact path="/users/chefs">
 						<Index chefs={chefs} />
 					</Route>
-					{/* single chef */}
 					<Route exact path="/users/chefs/:id">
 						<Show chefs={chefs} />
 					</Route>
+
+					{/* /bookings */}
 					<Route exact path="/bookings">
 						<IndexBookings />
+					</Route>
+					<Route exact path="/bookings/new">
+						<NewBooking />
 					</Route>
 					<Route exact path="/bookings/:id">
 						<ShowBookings />
