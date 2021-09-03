@@ -1,4 +1,3 @@
-import React from "react";
 import NewBookingForm from "../Components/NewBookingForm";
 
 const NewBooking = () => {
