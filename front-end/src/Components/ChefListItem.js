@@ -11,10 +11,6 @@ const ChefListItem = ({ chef }) => {
 			<div>
 				<h3>{chef.name}</h3>
 				<p>Cuisine(s): {chef.cuisine}</p>
-				<p>
-					Chef bio: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Blanditiis sequi odio suscipit ea similique nobis.
-				</p>
 			</div>
 		</div>
 	);
