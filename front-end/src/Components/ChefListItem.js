@@ -9,24 +9,15 @@ const ChefListItem = ({ chef }) => {
 				</Link>
 			</div>
 			<div>
-				<h5>{chef.name}</h5>
-				<p>Chef bio here</p>
-				<p>{chef.cuisine}</p>
+				<h3>{chef.name}</h3>
+				<p>Cuisine(s): {chef.cuisine}</p>
+				<p>
+					Chef bio: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Blanditiis sequi odio suscipit ea similique nobis.
+				</p>
 			</div>
 		</div>
 	);
 };
 
 export default ChefListItem;
-
-{
-	/* <li key={chef.id}>
-	<Link to={`/users/chefs/${chef.id}`}>
-		{chef.name}
-		<br />
-		{chef.email}
-		<br />
-		{chef.cuisine}
-	</Link>
-</li>; */
-}

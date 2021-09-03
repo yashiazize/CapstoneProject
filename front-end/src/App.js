@@ -19,7 +19,6 @@ function App() {
 		const fetchAllChefs = async () => {
 			try {
 				let res = await axios.get(`${API}/users/chefs`);
-				console.log(res.data.payload);
 				setChefs(res.data.payload);
 			} catch (err) {
 				return err;
