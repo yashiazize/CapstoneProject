@@ -1,7 +1,11 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Switch, Route } from "react-router-dom";
 import { apiURL } from "./util/apiURL.js";
+import "./App.css";
+
+// COMPONENTS
+import NavBar from "./Components/NavBar";
 
 // PAGES
 import Home from "./Pages/Home";
@@ -32,37 +36,37 @@ function App() {
 
 	return (
 		<div>
-			<Router>
-				<Switch>
-					<Route exact path="/">
-						<Home />
-					</Route>
+			<NavBar />
 
-					{/* /users */}
-					<Route exact path="/users/new">
-						<NewUser />
-					</Route>
+			<Switch>
+				<Route exact path="/">
+					<Home />
+				</Route>
 
-					{/* /users/chefs */}
-					<Route exact path="/users/chefs">
-						<Index chefs={chefs} />
-					</Route>
-					<Route exact path="/users/chefs/:id">
-						<Show chefs={chefs} />
-					</Route>
+				{/* /users */}
+				<Route exact path="/users/new">
+					<NewUser />
+				</Route>
 
-					{/* /bookings */}
-					<Route exact path="/bookings">
-						<IndexBookings />
-					</Route>
-					<Route exact path="/bookings/new">
-						<NewBooking />
-					</Route>
-					<Route exact path="/bookings/:id">
-						<ShowBookings />
-					</Route>
-				</Switch>
-			</Router>
+				{/* /users/chefs */}
+				<Route exact path="/users/chefs">
+					<Index chefs={chefs} />
+				</Route>
+				<Route exact path="/users/chefs/:id">
+					<Show chefs={chefs} />
+				</Route>
+
+				{/* /bookings */}
+				<Route exact path="/bookings">
+					<IndexBookings />
+				</Route>
+				<Route exact path="/bookings/new">
+					<NewBooking />
+				</Route>
+				<Route exact path="/bookings/:id">
+					<ShowBookings />
+				</Route>
+			</Switch>
 		</div>
 	);
 }
