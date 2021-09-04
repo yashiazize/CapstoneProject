@@ -15,7 +15,8 @@
 	--lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
 	--darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
 }
-/* globals */
+
+/* GLABAL STYLES */
 body {
 	padding-top: 66px;
 	color: var(--mainBlack);
@@ -87,7 +88,8 @@ h6 {
 	letter-spacing: var(--mainSpacing);
 }
 /* end of globals */
-/* Navbar */
+
+/* N A V B A R */
 .navbar {
 	position: fixed;
 	top: 0;
@@ -156,3 +158,19 @@ h6 {
 	}
 }
 /* end of navbar */
+
+/* H E R O */
+.defaultHero,
+.chefsHero {
+	min-height: calc(100vh - 66px);
+	background: url("./Images/salmon-casey-lee-unsplash.jpg") center/cover
+		no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.chefsHero {
+	background-image: url("./Images/beach-albert-unsplash.jpg");
+	min-height: 60vh;
+}
+/* End of Hero */
