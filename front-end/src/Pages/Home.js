@@ -7,9 +7,13 @@ const Home = () => {
 		<>
 			<Hero>
 				<Banner
-					title="Chef Finder App Testing"
-					subtitle="testing what the subitile looks like"
-				/>
+					title="Chef Finder App "
+					subtitle="testing what the subtitle looks like"
+				>
+					<Link to={"/users/chefs"} className="btn-primary">
+						our chefs
+					</Link>
+				</Banner>
 			</Hero>
 		</>
 	);
