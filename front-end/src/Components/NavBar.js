@@ -30,6 +30,9 @@ const NavBar = () => {
 					<li>
 						<NavLink to={"/users/chefs"}>Chefs</NavLink>
 					</li>
+					<li>
+						<NavLink to={"/users/new"}>New User</NavLink>
+					</li>
 				</ul>
 			</div>
 		</nav>
