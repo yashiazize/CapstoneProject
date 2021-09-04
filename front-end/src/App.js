@@ -1,7 +1,11 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { apiURL } from "./util/apiURL.js";
+import "./App.css";
+
+// COMPONENTS
+import NavBar from "./Components/NavBar";
 
 // PAGES
 import Home from "./Pages/Home";
@@ -32,6 +36,7 @@ function App() {
 
 	return (
 		<div>
+			<NavBar />
 			<Router>
 				<Switch>
 					<Route exact path="/">
