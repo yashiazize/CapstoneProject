@@ -6,7 +6,6 @@ import "./App.css";
 
 // COMPONENTS
 import NavBar from "./Components/NavBar";
-// import Hero from "./Components/Hero.js";
 
 // PAGES
 import Home from "./Pages/Home";
@@ -16,6 +15,7 @@ import ShowBookings from "./Pages/ShowBookings.js";
 import IndexBookings from "./Pages/IndexBookings.js";
 import NewUser from "./Pages/NewUser.js";
 import NewBooking from "./Pages/NewBooking.js";
+import FourOFour from "./Pages/FourOFour";
 
 const API = apiURL();
 
@@ -66,6 +66,11 @@ function App() {
 				</Route>
 				<Route exact path="/bookings/:id">
 					<ShowBookings />
+				</Route>
+
+				{/* 404 */}
+				<Route path="*">
+					<FourOFour />
 				</Route>
 			</Switch>
 		</div>
