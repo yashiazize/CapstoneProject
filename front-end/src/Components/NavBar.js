@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 // import logo from "../images/logo.svg";
-import { FaAlignRight } from "react-icons/fa";
+import { FaAlignRight, FaHome } from "react-icons/fa";
 
 const NavBar = () => {
 	// toggle the navbar
@@ -15,7 +15,10 @@ const NavBar = () => {
 		<nav className="navbar">
 			<div className="nav-center">
 				<div className="nav-header">
-					<NavLink to={"/"}>Home</NavLink>
+					{/* replace this home icon with the Logo Image  */}
+					<NavLink to={"/"}>
+						<FaHome className="nav-icon" />
+					</NavLink>
 					<button type="button" className="nav-btn" onClick={handleToggle}>
 						<FaAlignRight className="nav-icon" />
 					</button>
