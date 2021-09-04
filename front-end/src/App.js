@@ -6,6 +6,7 @@ import "./App.css";
 
 // COMPONENTS
 import NavBar from "./Components/NavBar";
+// import Hero from "./Components/Hero.js";
 
 // PAGES
 import Home from "./Pages/Home";
