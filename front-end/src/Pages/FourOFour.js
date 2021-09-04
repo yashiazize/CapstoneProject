@@ -7,7 +7,7 @@ const FourOFour = () => {
 		<Hero>
 			<Banner title="404" subtitle="page not found">
 				<Link to={"/"} className="btn-primary">
-					home page
+					return home
 				</Link>
 			</Banner>
 		</Hero>
