@@ -16,7 +16,18 @@ const NavBar = () => {
 			<div className="nav-center">
 				<div className="nav-header">
 					<NavLink to={"/"}>Home</NavLink>
+					<button type="button" className="nav-btn" onClick={handleToggle}>
+						<FaAlignRight className="nav-icon" />
+					</button>
 				</div>
+				<ul className={toggleMenu ? "nav-links show-nav" : "nav-links"}>
+					<li>
+						<NavLink to={"/"}>Home</NavLink>
+					</li>
+					<li>
+						<NavLink to={"/users/chefs"}>Chefs</NavLink>
+					</li>
+				</ul>
 			</div>
 		</nav>
 	);
