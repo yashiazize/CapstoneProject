@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import Calendar from "./Calendar";
 
 const ChefDetails = ({ chefs }) => {
 	const [chef, setChef] = useState({});
@@ -40,7 +41,7 @@ const ChefDetails = ({ chefs }) => {
 				</div>
 			</div>
 			<div>
-				<h1>CALENDAR FEATURE HERE</h1>
+				<Calendar/>
 			</div>
 			<div>
 				<Link to={`/users/chefs`}>
