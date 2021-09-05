@@ -6,7 +6,7 @@ import "./App.css";
 
 // COMPONENTS
 import NavBar from "./Components/NavBar";
-
+import SignUpForm from "./Components/SignUpForm"
 // PAGES
 import Home from "./Pages/Home";
 import Index from "./Pages/Index.js";
@@ -16,6 +16,8 @@ import IndexBookings from "./Pages/IndexBookings.js";
 import NewUser from "./Pages/NewUser.js";
 import NewBooking from "./Pages/NewBooking.js";
 import FourOFour from "./Pages/FourOFour";
+import LoginForm from "./Components/LoginForm.js";
+
 
 const API = apiURL();
 
@@ -44,8 +46,12 @@ function App() {
 				</Route>
 
 				{/* /users */}
+				<Route exact path="/users/login">
+				<LoginForm />
+				</Route>
+
 				<Route exact path="/users/new">
-					<NewUser />
+				<NewUser />
 				</Route>
 
 				{/* /users/chefs */}
