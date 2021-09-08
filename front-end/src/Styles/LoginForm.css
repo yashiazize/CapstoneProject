@@ -10,11 +10,10 @@ section {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: rgb(92, 92, 92);
 }
 
 .container {
-    background: rgb(15, 15, 15);
+    background: rgba(8, 41, 26, 0.975);
     width: 350px;
     height: 450px;
     border-radius: 20px;
@@ -35,7 +34,7 @@ section {
 }
 
 .container .box p{
-    color: rgba(255, 255, 255, 0.781)
+    color: white;
 }
 
 .container .box div{
@@ -49,8 +48,8 @@ section {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgb(19, 19, 19);
-    color: white;
+    background: #f7f7f7;
+    color: black;
     border: none;
     outline: none;
     padding-left: 0.8em;
@@ -59,7 +58,7 @@ section {
 }
 
 .container .box input:focus::placeholder{
-    color: white;
+    color: black;
 }
 
 .container .box div::before {
@@ -71,7 +70,7 @@ section {
     width: 102%;
     height: 105%;
     border-radius: 10px;
-    background: linear-gradient(to right, #ff416c, #ff4b4b);
+    background: linear-gradient(to right, #126482, #09f1f5);
 }
 
 .loginBtn {
@@ -83,22 +82,22 @@ section {
     transform: translate(-1%);
     cursor: pointer;
     color: white;
-    background: linear-gradient(to right, #ff416c, #ff4b4b);
+    background: linear-gradient(to right, #126482, #09f1f5);
     transition: all .4s;
 }
 
 .loginBtn:hover {
     transform: translate(-1%, 5%);
-    box-shadow: 0 0 10px #ff416d65;
+    box-shadow: 0 0 10px #50ccf2;
 }
 
 .text {
     font-size: 0.8em;
     margin-top: 0.5em;
     text-align: center;
-    color: rgba(255, 255, 255, 0.623)
+    color: white;
 }
 
 .text a {
-    color: rgba(255, 255, 255, 0.911);
+    color: white;
 }

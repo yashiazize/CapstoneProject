@@ -10,34 +10,34 @@ const SignUpForm = () => {
   };
 
   return (
-    <section>
-      <div className="container">
-        <p className="heading"> Sign Up </p>
-        <div className="box">
+    <section className="sign-up">
+      <div className="signup-container">
+        <p className="sign-heading"> Sign Up </p>
+        <div className="signup-box">
           <p>First Name</p>
           <div>
             <input type="firstName" name="" id="" placeholder="First Name" />
           </div>
         </div>
-        <div className="box">
+        <div className="signup-box">
           <p>Last Name</p>
           <div>
             <input type="lastName" name="" id="" placeholder="Last Name" />
           </div>
         </div>
-        <div className="box">
+        <div className="signup-box">
           <p>Email</p>
           <div>
             <input type="email" name="" id="" placeholder="Enter your E-mail" />
           </div>
         </div>
-        <div className="box">
+        <div className="signup-box">
           <p>Zip Code</p>
           <div>
             <input type="zipCode" name="" id="" placeholder="Enter ZipCode" />
           </div>
         </div>
-        <div className="box">
+        <div className="signup-box">
           <p> Create Password</p>
           <div>
             <input
@@ -57,7 +57,7 @@ const SignUpForm = () => {
             value="Chef"
             name="is_chef"
           />
-          {checked ? <div> </div> : null}
+          {checked ? <div> chicken </div> : null}
         </div>
         <button className="loginBtn">Sign Up</button>
       </div>

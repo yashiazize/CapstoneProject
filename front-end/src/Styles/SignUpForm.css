@@ -2,7 +2,7 @@
 
 
 
-section {
+.sign-up {
     display: flex;
     margin:0;
     padding:0;
@@ -11,13 +11,12 @@ section {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: rgb(255, 19, 19);
 } 
 
-.container {
-    background: rgb(15, 15, 15);
+.signup-container {
+    background: #af9a7d;
     width: 350px;
-    height: 100vh;
+    height: 90vh;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -26,27 +25,27 @@ section {
     padding: 2em;
 }
 
-.heading {
+.sign-heading{
     font-size: 2em;
     margin-bottom: 0.5em;
 }
 
-.box {
+.signup-box {
     margin: 0.2em 0;
 }
 
-.container .box p{
+.signup-container .signup-box p{
     color: rgba(255, 255, 255, 0.781)
 }
 
-.container .box div{
+.signup-container .signup-box div{
     position: relative;
     width: 100%;
     height: 40px;
     margin: 0.5em 0;
 }
 
-.container .box input{
+.signup-container .signup-box input{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -59,11 +58,11 @@ section {
     transition: all .4s;
 }
 
-.container .box input:focus::placeholder{
+.signup-container .signup-box input:focus::placeholder{
     color: white;
 }
 
-.container .box div::before {
+.signup-container .signup-box div::before {
     content: '';
     position: absolute;
     top: 50%;
