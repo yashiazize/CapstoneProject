@@ -13,7 +13,7 @@ section {
 }
 
 .container {
-    background: rgba(8, 41, 26, 0.975);
+    background: #d2940e;
     width: 350px;
     height: 450px;
     border-radius: 20px;
@@ -70,7 +70,7 @@ section {
     width: 102%;
     height: 105%;
     border-radius: 10px;
-    background: linear-gradient(to right, #126482, #09f1f5);
+    background: linear-gradient(to right,#f2820a, #f5ed07);
 }
 
 .loginBtn {
@@ -82,7 +82,7 @@ section {
     transform: translate(-1%);
     cursor: pointer;
     color: white;
-    background: linear-gradient(to right, #126482, #09f1f5);
+    background: linear-gradient(to right,#f2820a, #f5ed07 );
     transition: all .4s;
 }
 

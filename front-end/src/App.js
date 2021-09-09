@@ -6,7 +6,7 @@ import "./App.css";
 
 // COMPONENTS
 import NavBar from "./Components/NavBar";
-import SignUpForm from "./Components/SignUpForm"
+
 // PAGES
 import Home from "./Pages/Home";
 import Index from "./Pages/Index.js";
@@ -17,69 +17,70 @@ import NewUser from "./Pages/NewUser.js";
 import NewBooking from "./Pages/NewBooking.js";
 import FourOFour from "./Pages/FourOFour";
 import LoginForm from "./Components/LoginForm.js";
-
+import UserProvider from "./Providers/UserProvider.js";
 
 const API = apiURL();
 
 function App() {
-	const [chefs, setChefs] = useState([]);
+  const [chefs, setChefs] = useState([]);
 
-	useEffect(() => {
-		const fetchAllChefs = async () => {
-			try {
-				let res = await axios.get(`${API}/users/chefs`);
-				setChefs(res.data.payload);
-			} catch (err) {
-				return err;
-			}
-		};
-		fetchAllChefs();
-	}, []);
+  useEffect(() => {
+    const fetchAllChefs = async () => {
+      try {
+        let res = await axios.get(`${API}/users/chefs`);
+        setChefs(res.data.payload);
+      } catch (err) {
+        return err;
+      }
+    };
+    fetchAllChefs();
+  }, []);
 
-	return (
-		<div>
-			<NavBar />
+  return (
+    <div>
+      <UserProvider>
+        <NavBar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
 
-			<Switch>
-				<Route exact path="/">
-					<Home />
-				</Route>
+          {/* /users */}
+          <Route exact path="/users/login">
+            <LoginForm />
+          </Route>
 
-				{/* /users */}
-				<Route exact path="/users/login">
-				<LoginForm />
-				</Route>
+          <Route exact path="/users/new">
+            <NewUser />
+          </Route>
 
-				<Route exact path="/users/new">
-				<NewUser />
-				</Route>
+          {/* /users/chefs */}
+          <Route exact path="/users/chefs">
+            <Index chefs={chefs} />
+          </Route>
+          <Route exact path="/users/chefs/:id">
+            <Show chefs={chefs} />
+          </Route>
 
-				{/* /users/chefs */}
-				<Route exact path="/users/chefs">
-					<Index chefs={chefs} />
-				</Route>
-				<Route exact path="/users/chefs/:id">
-					<Show chefs={chefs} />
-				</Route>
+          {/* /bookings */}
+          <Route exact path="/bookings">
+            <IndexBookings />
+          </Route>
+          <Route exact path="/bookings/new">
+            <NewBooking />
+          </Route>
+          <Route exact path="/bookings/:id">
+            <ShowBookings />
+          </Route>
 
-				{/* /bookings */}
-				<Route exact path="/bookings">
-					<IndexBookings />
-				</Route>
-				<Route exact path="/bookings/new">
-					<NewBooking />
-				</Route>
-				<Route exact path="/bookings/:id">
-					<ShowBookings />
-				</Route>
-
-				{/* 404 */}
-				<Route path="*">
-					<FourOFour />
-				</Route>
-			</Switch>
-		</div>
-	);
+          {/* 404 */}
+          <Route path="*">
+            <FourOFour />
+          </Route>
+        </Switch>
+      </UserProvider>
+    </div>
+  );
 }
 
 export default App;
