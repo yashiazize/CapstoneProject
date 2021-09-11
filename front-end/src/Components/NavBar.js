@@ -25,13 +25,13 @@ const NavBar = () => {
 				</div>
 				<ul className={toggleMenu ? "nav-links show-nav" : "nav-links"}>
 					<li>
-						<NavLink to={"/"}>Home</NavLink>
-					</li>
-					<li>
 						<NavLink to={"/users/chefs"}>Chefs</NavLink>
 					</li>
 					<li>
 						<NavLink to={"/users/login"}>Login</NavLink>
+					</li>
+					<li>
+						<NavLink to={"/"}>Requests</NavLink>
 					</li>
 				</ul>
 			</div>
