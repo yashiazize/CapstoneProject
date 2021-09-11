@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react"
 import { useAuth } from "../Providers/AuthProvider"
 import { Link, useHistory } from "react-router-dom"
 import { signInWithGoogle } from "../Services/Firebase";
-
+import "../Styles/SignUpForm.css";
 
 export default function Login() {
   const emailRef = useRef()
@@ -28,25 +28,29 @@ export default function Login() {
   }
 
   return (
-    <section>
-      <div className="container">
-        <p className="heading"> Login </p>
+    <section className="sign-up">
+      <div className="signup-container">
           <h2>Log In</h2>
+          <div>
+
               <p>Email</p>
               <input type="email" ref={emailRef} required />
 
+          </div>
+          <div >
+
               <p>Password</p>
               <input type="password" ref={passwordRef} required />
-              <button className="loginBtn" onClick={handleSubmit}>Log In</button>
-          <div className="w-100 text-center mt-3">
+              <button onClick={handleSubmit}>Log In</button>
+          </div>
+          <div>
             <Link to="/forgot-password">Forgot Password?</Link>
           </div>
-      <div className="w-100 text-center mt-2">
+      <div >
         Need an account? <Link to="/users/new">Sign Up</Link>
       </div>
-        <button className="loginBtn" onClick={signInWithGoogle}>Sign in With google</button>
+        <button  onClick={signInWithGoogle}>Sign in With google</button>
         <p className="text">
-          {" "}
           Dont have an account? <Link to="/users/new">Sign up</Link>
         </p>
       </div>
