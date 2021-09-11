@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import Calendar from "./Calendar";
+import ChefCalendar from "./ChefCalendar";
 
 const ChefDetails = ({ chefs }) => {
 	const [chef, setChef] = useState({});
@@ -40,17 +40,25 @@ const ChefDetails = ({ chefs }) => {
 					</div>
 				</div>
 			</div>
+			<br />
 			<div>
-				<Calendar/>
+				<h3>Chef's Calendar</h3>
+				<ChefCalendar />
 			</div>
+			<br />
 			<div>
 				<Link to={`/users/chefs`}>
-					<button type="button">Back</button>
+					<button className="btn-primary" type="button">
+						Back
+					</button>
 				</Link>
 			</div>
-			<Link to={`/bookings/new`}>
-				<button>Book</button>
-			</Link>
+			<br />
+			<div>
+				<Link to={`/bookings/new`}>
+					<button className="btn-primary">Book</button>
+				</Link>
+			</div>
 		</div>
 	);
 };
