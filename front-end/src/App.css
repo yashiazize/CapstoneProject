@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 * {
 	margin: 0;
@@ -282,3 +282,13 @@ h6 {
 	background: var(--primaryColor);
 }
 /* End of Title */
+
+/* REACT CALENDAR */
+.react-calendar__month-view__weekdays {
+	color: gray;
+}
+
+.react-calendar__navigation button {
+	font-size: 1em;
+}
+/* End React Calendar */
