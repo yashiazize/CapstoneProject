@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, BrowserRouter } from "react-router-dom";
 import { apiURL } from "./util/apiURL.js";
 import "./App.css";
 
@@ -38,6 +38,7 @@ function App() {
 
   return (
     <div>
+      <Router>
       <AuthProvider>
         <NavBar />
         <Switch>
@@ -79,6 +80,7 @@ function App() {
           </Route>
         </Switch>
       </AuthProvider>
+      </Router>
     </div>
   );
 }
