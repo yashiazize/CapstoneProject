@@ -1,9 +1,9 @@
 import { withRouter } from "react-router-dom";
 import BookingCal from "./BookingCal";
 
-// user can select dates here
+// user can select chef from a dropdown menu, and select dates here
 // OR
-// dates are passed in from the ChefDatails Calendar
+// chef and dates are passed in from the ChefDatails Calendar.
 
 const NewBookingForm = () => {
 	return (
