@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 
 * {
 	margin: 0;
@@ -6,12 +7,12 @@
 	box-sizing: border-box;
 }
 :root {
-	--primaryColor: #af9a7d;
+	--primaryColor: #ff7700;
 	--mainWhite: #fff;
 	--offWhite: #f7f7f7;
-	--mainBlack: #222;
+	--mainBlack: rgb(0, 0, 0);
 	--mainGrey: #ececec;
-	--darkGrey: #cfcfcf;
+	--darkGrey: #f5ecce;
 	--mainTransition: all 0.3s linear;
 	--mainSpacing: 3px;
 	--lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
@@ -20,10 +21,7 @@
 
 /* GLOBAL STYLES */
 body {
-	padding-top: 66px;
 	color: var(--mainBlack);
-	background: var(--mainWhite);
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	line-height: 1.4;
 }
 h1 {
@@ -93,11 +91,9 @@ h6 {
 
 /* N A V B A R */
 .navbar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	padding: 0.75rem 2rem;
+	width: 100vw;
+	padding-top: 4vh;
+	padding-bottom: 1vh;
 	background: var(--offWhite);
 	z-index: 1;
 }
@@ -113,6 +109,7 @@ h6 {
 }
 .nav-icon {
 	font-size: 1.5rem;
+	display: flex;
 	color: var(--primaryColor);
 }
 .nav-links {
@@ -129,6 +126,7 @@ h6 {
 	padding: 1rem 0;
 	color: var(--mainBlack);
 	transition: var(--mainTransition);
+	font-family: 'Ropa Sans', sans-serif;
 	text-align: center;
 	font-size: 1rem;
 	font-weight: 600;
@@ -166,7 +164,7 @@ h6 {
 /* H E R O */
 .defaultHero,
 .chefsHero {
-	min-height: calc(100vh - 66px);
+	min-height: calc(85vh - 66px);
 	background: url("./Images/salmon-casey-lee-unsplash.jpg") center/cover
 		no-repeat;
 	display: flex;
@@ -182,7 +180,7 @@ h6 {
 /* B A N N E R */
 .banner {
 	display: inline-block;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(3, 6, 8, 0.5);
 	color: var(--mainWhite);
 	padding: 2rem 1rem;
 	text-align: center;
@@ -191,6 +189,7 @@ h6 {
 }
 .banner h1 {
 	font-size: 2.5rem;
+	font-family: 'Rock Salt', cursive;
 }
 .banner div {
 	width: 10rem;
@@ -221,12 +220,12 @@ h6 {
 /* End of Banner */
 
 /* S E R V I C E S */
+
 .services {
-	padding: 5rem 0;
-}
-.services {
+	padding-bottom: 40vh;
 	background: var(--darkGrey);
 	text-align: center;
+	flex-direction: column;
 }
 .services-center {
 	width: 90vw;
@@ -273,7 +272,7 @@ h6 {
 	font-size: 2rem;
 	letter-spacing: var(--mainSpacing);
 	text-transform: capitalize;
-	margin-bottom: 1rem;
+	margin-bottom: 1vh;
 }
 .section-title div {
 	width: 5rem;
