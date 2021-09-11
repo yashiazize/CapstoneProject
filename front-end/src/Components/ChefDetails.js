@@ -42,7 +42,7 @@ const ChefDetails = ({ chefs }) => {
 			</div>
 			<br />
 			<div>
-				<h3>Chef's Calendar</h3>
+				<h3>Chef's Availability Calendar</h3>
 				<ChefCalendar />
 			</div>
 			<br />
