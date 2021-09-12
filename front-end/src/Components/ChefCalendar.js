@@ -1,42 +1,78 @@
-import { DateRangePicker } from "react-date-range";
+import { useState } from "react";
+// import Calendar from "react-calendar";
+// import DatePicker from "react-datepicker";
+// import { DateRangePicker } from "react-date-range";
+// import { addDays } from "date-fns";
+import "react-calendar/dist/Calendar.css";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 
-// needs to take in the dates from when a bookins ia pproved
-// --  then block those [dates and/or time slots]
+// material-ui
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
 
-// if a user selects dates HERE the dates will be passed into the
-//  -- bookings calendar/page
+const useStyles = makeStyles((theme) => ({
+	container: {
+		display: "flex",
+		flexWrap: "wrap",
+	},
+	textField: {
+		marginLeft: theme.spacing(1),
+		marginRight: theme.spacing(1),
+		width: 250,
+	},
+}));
 
 const ChefCalendar = () => {
-	const handleSelectedDate = (ranges) => {
-		console.log({ ranges });
-	};
+	const classes = useStyles();
 
-	const selectionRange = {
+	const [eventDate, setEventDate] = useState({
 		startDate: new Date(),
 		endDate: new Date(),
-		key: "selection",
+	});
+
+	const handleSelectedDate = (e) => {
+		setEventDate({ ...eventDate, [e.target.id]: e.target.value });
+
+		console.log(eventDate);
 	};
 
 	return (
-		<DateRangePicker
-			ranges={[selectionRange]}
-			onChange={handleSelectedDate}
-			showSelectionPreview={true}
-			moveRangeOnFirstSelection={false}
-		/>
+		<>
+			<h3>Select date and time for booking</h3>
+			<form className={classes.container} noValidate>
+				<TextField
+					id="startDate"
+					label="Event Start Date and Time"
+					type="datetime-local"
+					onChange={handleSelectedDate}
+					value={eventDate.startDate}
+					name="startDate"
+					// defaultValue="2017-05-24T10:30"
+					className={classes.textField}
+					InputLabelProps={{
+						shrink: true,
+					}}
+				/>
+				<TextField
+					id="endDate"
+					label="Event End Date and Time"
+					type="datetime-local"
+					// defaultValue={new Date()}
+					onChange={handleSelectedDate}
+					// name="endDate"
+					value={eventDate.endDate}
+					className={classes.textField}
+					InputLabelProps={{
+						shrink: true,
+					}}
+				/>
+			</form>
+		</>
 	);
 };
 
 export default ChefCalendar;
-
-// import { useState } from "react";
-// import Calendar from "react-calendar";
-// import DatePicker from "react-datepicker";
-// import { addDays } from "date-fns";
-// import "react-calendar/dist/Calendar.css";
-/* <Calendar onChange={handleDate} value={startDate} /> */
 // const [eventDate, setEventDate] = useState([
 // 	{
 // 		startDate: new Date(),
@@ -44,3 +80,12 @@ export default ChefCalendar;
 // 		key: "selection",
 // 	},
 // ]);
+
+/* <Calendar onChange={handleDate} value={startDate} /> */
+
+/* <DateRangePicker
+				ranges={eventDate}
+				onChange={handleSelectedDate}
+				showSelectionPreview={true}
+				moveRangeOnFirstSelection={false}
+			/> */
