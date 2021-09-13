@@ -27,19 +27,20 @@ const NavBar = () => {
 				</div>
 				<ul className={toggleMenu ? "nav-links show-nav" : "nav-links"}>
 					<li>
-						<NavLink to={"/"}>Home</NavLink>
-					</li>
-					<li>
 						<NavLink to={"/users/chefs"}>Chefs</NavLink>
 					</li>
 					<li>
 						<NavLink to={"/users/login"}>Login</NavLink>
 					</li>
 					<li>
+<<<<<<< HEAD
 						<NavLink to={"/"} onClick={signOut} >Logout</NavLink>
 					</li>
 					<li>
 					Logged in:  {currentUser && currentUser.email}
+=======
+						<NavLink to={"/"}>Requests</NavLink>
+>>>>>>> 78d766e3036cafb31a49d9454bd937a41f25a94c
 					</li>
 				</ul>
 			</div>

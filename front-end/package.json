@@ -3,13 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "@material-ui/core": "^4.12.3",
+    "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-5.9.0.tgz",
+>>>>>>> 78d766e3036cafb31a49d9454bd937a41f25a94c
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
+    "date-fns": "^2.23.0",
     "dotenv": "^8.2.0",
     "firebase": "^9.0.1",
     "react": "^17.0.2",
+    "react-calendar": "^3.4.0",
+    "react-date-range": "^1.4.0",
+    "react-datepicker": "^4.2.1",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.1",
