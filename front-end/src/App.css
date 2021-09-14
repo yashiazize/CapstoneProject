@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
 
 * {
 	margin: 0;
@@ -92,6 +92,8 @@ h6 {
 
 /* N A V B A R */
 .navbar {
+	position: sticky;
+	top: 0;
 	width: 100vw;
 	padding-top: 4vh;
 	padding-bottom: 1vh;
@@ -101,6 +103,7 @@ h6 {
 .nav-header {
 	display: flex;
 	justify-content: space-between;
+	margin: 0 1rem;
 }
 .nav-btn {
 	background: transparent;
@@ -110,9 +113,10 @@ h6 {
 }
 .nav-icon {
 	font-size: 1.5rem;
-	display: flex;
+	/* display: flex; */
 	color: var(--primaryColor);
 }
+
 .nav-links {
 	height: 0;
 	overflow: hidden;
@@ -127,7 +131,7 @@ h6 {
 	padding: 1rem 0;
 	color: var(--mainBlack);
 	transition: var(--mainTransition);
-	font-family: 'Ropa Sans', sans-serif;
+	font-family: "Ropa Sans", sans-serif;
 	text-align: center;
 	font-size: 1rem;
 	font-weight: 600;
@@ -190,7 +194,7 @@ h6 {
 }
 .banner h1 {
 	font-size: 2.5rem;
-	font-family: 'Rock Salt', cursive;
+	font-family: "Rock Salt", cursive;
 }
 
 .banner div {
@@ -284,12 +288,110 @@ h6 {
 }
 /* End of Title */
 
-/* REACT CALENDAR */
-.react-calendar__month-view__weekdays {
-	color: gray;
+/*  LIST OF CHEFS */
+.chefs-list-container {
+	margin: 1rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-column-gap: 2rem;
+	grid-row-gap: 1rem;
+}
+.chefs-list-card {
+	box-shadow: var(--lightShadow);
+	transition: var(--mainTransition);
 }
 
-.react-calendar__navigation button {
-	font-size: 1em;
+.chefs-list-card:hover {
+	box-shadow: var(--darkShadow);
 }
-/* End React Calendar */
+.img-container {
+	position: relative;
+}
+.img-container img {
+	width: 100%;
+	display: block;
+	transition: var(--mainTransition);
+}
+
+.img-container:hover {
+	background: rgba(0, 0, 0, 0.8);
+}
+.img-container:hover img {
+	opacity: 0.3;
+}
+
+/* End List of Chefs */
+
+/*  SINGLE C H E F  */
+.single-chef {
+	padding: 5rem 0 0 0;
+}
+
+.single-chef:hover {
+	box-shadow: var(--darkShadow);
+}
+.single-chef-images {
+	width: 80vw;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-row-gap: 2rem;
+	grid-column-gap: 50px;
+}
+
+.single-chef-images img {
+	width: 100%;
+	display: block;
+}
+
+.single-chef-info {
+	width: 80vw;
+	display: grid;
+	grid-template-columns: 1fr;
+	margin: 2rem auto;
+}
+.description,
+.info {
+	margin: 1rem 0;
+}
+
+.description h3 {
+	text-transform: capitalize;
+	letter-spacing: var(--mainSpacing);
+}
+.description p {
+	line-height: 1.5;
+}
+
+.info h3,
+.info h6 {
+	text-transform: capitalize;
+	letter-spacing: var(--mainSpacing);
+}
+
+.info h6 {
+	font-weight: 300;
+}
+
+@media screen and (min-width: 992px) {
+	.single-chef-images,
+	.single-chef-info {
+		width: 95vw;
+		max-width: 1170px;
+	}
+	.single-chef-info {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 2rem;
+	}
+	.info {
+		padding-left: 3rem;
+	}
+}
+/* End Single Chef */
+
+/* Chef Availibility Calendar */
+.rdrDateRangePickerWrapper {
+	width: 100px;
+}
+/* End Chef Availibility Calendar */
