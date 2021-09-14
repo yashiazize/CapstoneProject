@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { withRouter } from "react-router-dom";
-import "../Styles/SignUpForm.css";
+// import "../Styles/SignUpForm.css";
 import { useAuth } from '../Providers/AuthProvider'
 
 

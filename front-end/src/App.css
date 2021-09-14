@@ -394,4 +394,22 @@ h6 {
 .rdrDateRangePickerWrapper {
 	width: 100px;
 }
+
+/* End React Calendar */
+
+
+/* Booking Form */
+
+.BookingFormContainer {
+	text-align: left;
+	background-color: rgb(125, 164, 10);
+	border: 4px solid #f7edcc;
+	margin-left: 100px;
+	margin-top: 40px;
+	padding: 30px;
+	width: 550px;
+	margin-bottom: 30px;
+}
+
 /* End Chef Availibility Calendar */
+
