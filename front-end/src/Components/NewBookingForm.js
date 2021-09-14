@@ -1,5 +1,6 @@
 import { withRouter } from "react-router-dom";
 import BookingCal from "./BookingCal";
+import { Link } from "react-router-dom";
 
 // user can select dates here
 // OR
@@ -15,6 +16,16 @@ const NewBookingForm = () => {
 					Submit
 				</button>
 			</form>
+			<br />
+			<div>
+				{/* have to link to individual chef id */}
+				<Link to={`/users/chefs/`}>
+					<button className="btn-primary" type="button">
+						Back
+					</button>
+				</Link>
+			</div>
+			<br />
 		</section>
 	);
 };
