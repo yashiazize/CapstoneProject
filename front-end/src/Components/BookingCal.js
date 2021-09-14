@@ -4,31 +4,32 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    display: "flex",
-    flexWrap: "wrap",
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: 250,
-  },
+	container: {
+		display: "flex",
+		flexWrap: "wrap",
+	},
+	textField: {
+		marginLeft: theme.spacing(1),
+		marginRight: theme.spacing(1),
+		width: 250,
+		marginBottom: 15,
+	},
 }));
 
 const BookingCal = () => {
-  const classes = useStyles();
+	const classes = useStyles();
 
-  const [eventDate, setEventDate] = useState({
-    startDate: new Date(),
-    endDate: new Date(),
-  });
+	const [eventDate, setEventDate] = useState({
+		startDate: new Date(),
+		endDate: new Date(),
+	});
 
-  const handleSelectedDate = (e) => {
-    setEventDate({ ...eventDate, [e.target.id]: e.target.value });
+	const handleSelectedDate = (e) => {
+		setEventDate({ ...eventDate, [e.target.id]: e.target.value });
 
-    console.log(eventDate);
-  };
-
+		console.log(eventDate);
+	};
+  
   return (
     <div>
       <form className={classes.container} noValidate>
@@ -62,6 +63,7 @@ const BookingCal = () => {
       </form>
     </div>
   );
+
 };
 
 export default BookingCal;

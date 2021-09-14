@@ -7,7 +7,7 @@ const Index = ({ chefs }) => {
 	return (
 		<>
 			<Hero hero="chefsHero">
-				<Banner title="our chefs ">
+				<Banner title="our chefs">
 					<Link to={"/bookings/new"} className="btn-primary">
 						book a chef
 					</Link>
