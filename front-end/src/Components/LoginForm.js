@@ -1,45 +1,56 @@
-import { Link } from "react-router-dom";
-import "../Styles/LoginForm.css";
-import { UserContext } from "../Providers/UserProvider";
-import { useEffect, useContext } from "react";
+import React, { useRef, useState } from "react"
+import { useAuth } from "../Providers/AuthProvider"
+import { Link, useHistory } from "react-router-dom"
 import { signInWithGoogle } from "../Services/Firebase";
-import { useHistory } from "react-router-dom";
+import "../Styles/SignUpForm.css";
 
-const LoginForm = () => {
+export default function Login() {
+  const emailRef = useRef()
+  const passwordRef = useRef()
+  const { login } = useAuth()
+  const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false)
+  const history = useHistory()
 
-  const user = useContext(UserContext);
-  const history = useHistory();
-  useEffect(() => {
-    if (user) {
-      history.push("/");
+  async function handleSubmit(e) {
+    e.preventDefault()
+
+    try {
+      setError("")
+      setLoading(true)
+      await login(emailRef.current.value, passwordRef.current.value)
+      history.push("/")
+    } catch {
+      setError("Failed to log in")
     }
-  }, [user, history]);
 
+    setLoading(false)
+  }
 
   return (
-    <section>
-      <div className="container">
-        <p className="heading"> Login </p>
-        {/* <div className="box">
-          <p>Email</p>
+    <section className="sign-up">
+      <div className="signup-container">
+          <h2>Log In</h2>
           <div>
-            <input type="email" name="" id="" placeholder="Enter your E-mail" />
+
+              <p>Email</p>
+              <input type="email" ref={emailRef} required />
+
           </div>
-        </div>
-        <div className="box">
-          <p>Password</p>
+          <div >
+
+              <p>Password</p>
+              <input type="password" ref={passwordRef} required />
+              <button onClick={handleSubmit}>Log In</button>
+          </div>
           <div>
-            <input
-              type="password"
-              name=""
-              id=""
-              placeholder="Enter your Password"
-            />
+            <Link to="/forgot-password">Forgot Password?</Link>
           </div>
-        </div> */}
-        <button className="loginBtn" onClick={signInWithGoogle}>Sign in With google</button>
+      <div >
+        Need an account? <Link to="/users/new">Sign Up</Link>
+      </div>
+        <button  onClick={signInWithGoogle}>Sign in With google</button>
         <p className="text">
-          {" "}
           Dont have an account? <Link to="/users/new">Sign up</Link>
         </p>
       </div>
@@ -47,4 +58,3 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;

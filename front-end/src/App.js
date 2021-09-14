@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, BrowserRouter } from "react-router-dom";
 import { apiURL } from "./util/apiURL.js";
 import "./App.css";
 
@@ -17,7 +17,7 @@ import NewUser from "./Pages/NewUser.js";
 import NewBooking from "./Pages/NewBooking.js";
 import FourOFour from "./Pages/FourOFour";
 import LoginForm from "./Components/LoginForm.js";
-import UserProvider from "./Providers/UserProvider.js";
+import AuthProvider from "./Providers/AuthProvider.js";
 
 const API = apiURL();
 
@@ -38,7 +38,8 @@ function App() {
 
   return (
     <div>
-      <UserProvider>
+      <Router>
+      <AuthProvider>
         <NavBar />
         <Switch>
           <Route exact path="/">
@@ -78,7 +79,8 @@ function App() {
             <FourOFour />
           </Route>
         </Switch>
-      </UserProvider>
+      </AuthProvider>
+      </Router>
     </div>
   );
 }
