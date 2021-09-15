@@ -104,6 +104,7 @@ const BookingCal = () => {
 			</form>
 		</div>
 	);
+
 };
 
 export default BookingCal;

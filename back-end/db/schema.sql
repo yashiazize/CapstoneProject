@@ -11,7 +11,8 @@ CREATE TABLE users (
     name VARCHAR(100) NOT NULL, 
     is_chef BOOLEAN NOT NULL DEFAULT FALSE, 
     cuisine TEXT, 
-    zip_code VARCHAR(5)
+    zip_code VARCHAR(5),
+    availability TEXT 
 );
 
 CREATE TABLE bookings (
