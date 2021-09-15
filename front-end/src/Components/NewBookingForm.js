@@ -80,7 +80,6 @@ const NewBookingForm = () => {
       </form>
     </section>
   );
-
 };
 
 export default withRouter(NewBookingForm);
