@@ -30,3 +30,10 @@ CREATE TABLE ratings (
     booking_id INT REFERENCES bookings (id) NOT NULL
 );
 
+CREATE TABLE availability (
+    chef_id INT REFERENCES users (id) NOT NULL,
+    day TEXT,
+    time TIME NOT NULL,
+    is_booked BOOLEAN DEFAULT NULL,
+    booked_by INT REFERENCES users (id)
+);
