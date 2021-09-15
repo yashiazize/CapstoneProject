@@ -5,10 +5,10 @@ INSERT INTO users (
 VALUES 
     ('chef_boyardee@gmail.com', 'flower24', 'Chef Boyardee', true, 'Italian', 10001, 'Monday, Tuesday'),
     ('juliaChild23@yahoo.com', 'biscuits001', 'Julia Child', true, 'French', 23403, 'Wednesday, Thursday'),
-    ('lesliemann@gmail.com', 'foodIsYummy1', 'Leslie Mann', false, NULL , NULL,NUll), 
+    ('lesliemann@gmail.com', 'foodIsYummy1', 'Leslie Mann', false, NULL , NULL, NUll), 
     ('morimoto4545@gmail.com', 'sushi11', 'Masaharu Morimoto', true, 'Japanese', 13042, 'Saturday, Sunday'),
     ('butter@gmail.com', 'deepFried1', 'Paula Dean', true, 'Southern', 30144, 'Saturday, Sunday'),
-    ('vicCruz89@yahoo.com', 'football88', 'Victor Cruz', false, NULL, NULL,NULL);
+    ('vicCruz89@yahoo.com', 'football88', 'Victor Cruz', false, NULL, NULL, NULL);
 
 
 INSERT INTO bookings (
