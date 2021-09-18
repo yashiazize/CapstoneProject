@@ -8,4 +8,16 @@ const fetchAllAvailability = async () => {
 	}
 };
 
-module.exports = { fetchAllAvailability };
+// pass in chef_id
+const fetchAvailability = async (id) => {
+	try {
+		return await db.oneOrNone(
+			"SELECT * FROM availability WHERE chef_id = $1",
+			id
+		);
+	} catch (err) {
+		return err;
+	}
+};
+
+module.exports = { fetchAllAvailability, fetchAvailability };

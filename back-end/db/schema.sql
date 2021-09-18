@@ -46,6 +46,7 @@ CREATE TABLE availability (
     thursday TEXT DEFAULT NULL,
     friday TEXT DEFAULT NULL,
     saturday TEXT DEFAULT NULL,
+    -- might need to move is_booked and booked_by to the bookings table
     time TIME DEFAULT NULL,
     is_booked BOOLEAN DEFAULT NULL,
     booked_by INT REFERENCES users (id)
