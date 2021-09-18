@@ -16,7 +16,6 @@ users.get("/chefs", async (_, res) => {
 });
 
 users.get("/", async (_, res) => {
-	console.log("chicken")
 	const allUsers = await fetchAllUsers();
 	res.json({ success: true, payload: allUsers });
 });

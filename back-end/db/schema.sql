@@ -50,3 +50,16 @@ CREATE TABLE availability (
     is_booked BOOLEAN DEFAULT NULL,
     booked_by INT REFERENCES users (id)
 );
+
+-- STACKOVERFLOW 
+-- https://stackoverflow.com/questions/4521020/calculate-open-timeslots-given-availability-and-existing-appointments-by-day
+-- Create table Availability (person_id int, interval_id int);
+-- Create table Appointment (person_id int, interval_id int, appointment_desc text);
+
+-- Create table Interval(interval_id int primary key, interval_start datetime, interval_end datetime)
+
+-- QUERY FOR AN OPENING
+-- Select person_id, interval_id from Availability av
+-- left join Appointment ap
+-- on av.person_id = ap.person_id and av.interval_id = ap.interval_id
+-- where ap.interval_id is null
