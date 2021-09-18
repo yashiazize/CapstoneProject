@@ -33,8 +33,14 @@ CREATE TABLE ratings (
 
 CREATE TABLE availability (
     chef_id INT REFERENCES users (id) NOT NULL,
-    day TEXT,
-    time TIME NOT NULL,
+    sunday TEXT DEFAULT NULL,
+    monday TEXT DEFAULT NULL,
+    tuesday TEXT DEFAULT NULL,
+    wednesday TEXT DEFAULT NULL,
+    thursday TEXT DEFAULT NULL,
+    friday TEXT DEFAULT NULL,
+    saturday TEXT DEFAULT NULL,
+    time TIME DEFAULT NULL,
     is_booked BOOLEAN DEFAULT NULL,
     booked_by INT REFERENCES users (id)
 );
