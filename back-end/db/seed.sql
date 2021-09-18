@@ -32,6 +32,6 @@ INSERT INTO availability (
 VALUES 
 (1, NULL,'10am - 3pm','10am - 3pm', NULL, NULL, NULL, NULL, NULL, false, 2),
 (2, NULL, NULL,'10am - 3pm','10am - 3pm',NULL, NULL, NULL, NULL, false, 4),
-(4, '10am - 3pm', NULL, NULL, NULL, NULL, NULL, '10am - 3pm', NULL, NULL, true, 3),
-(5, '10am - 3pm', NULL, NULL, NULL, NULL, NULL, NULL, '10am - 3pm', NULL, false, 3);
+(4, '10am - 3pm', NULL, NULL, NULL, NULL, '10am - 3pm', NULL, NULL, true, 3),
+(5, '10am - 3pm', NULL, NULL, NULL, NULL, NULL,'10am - 3pm',  NULL,false, 3);
 

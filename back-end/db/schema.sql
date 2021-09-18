@@ -15,6 +15,8 @@ CREATE TABLE users (
     availability TEXT 
 );
 
+DROP TABLE IF EXISTS bookings;
+
 CREATE TABLE bookings (
     id SERIAL PRIMARY KEY, 
     chef_id INT REFERENCES users (id) NOT NULL, 
@@ -26,10 +28,14 @@ CREATE TABLE bookings (
     end_time TIME NOT NULL
 );
 
+DROP TABLE IF EXISTS ratings;
+
 CREATE TABLE ratings (
     rating NUMERIC NOT NULL CHECK (rating >=0 AND rating <= 5), 
     booking_id INT REFERENCES bookings (id) NOT NULL
 );
+
+DROP TABLE IF EXISTS availability;
 
 CREATE TABLE availability (
     chef_id INT REFERENCES users (id) NOT NULL,
