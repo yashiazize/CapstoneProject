@@ -12,7 +12,8 @@ CREATE TABLE users (
     is_chef BOOLEAN NOT NULL DEFAULT FALSE, 
     cuisine TEXT, 
     zip_code VARCHAR(5),
-    availability TEXT 
+    availability TEXT,
+    -- availability_id INT REFERENCES availability (id) NOT NULL,  
 );
 
 DROP TABLE IF EXISTS bookings;
@@ -38,6 +39,7 @@ CREATE TABLE ratings (
 DROP TABLE IF EXISTS availability;
 
 CREATE TABLE availability (
+    id SERIAL PRIMARY KEY,
     chef_id INT REFERENCES users (id) NOT NULL,
     sunday TEXT DEFAULT NULL,
     monday TEXT DEFAULT NULL,
