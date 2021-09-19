@@ -9,7 +9,7 @@ CREATE TABLE users (
     email VARCHAR(100) unique, 
     pw_hash TEXT NOT NULL, 
     name VARCHAR(100) NOT NULL, 
-    is_chef BOOLEAN NOT NULL DEFAULT FALSE, 
+    is_chef BOOLEAN DEFAULT FALSE, 
     cuisine TEXT, 
     zip_code VARCHAR(5),
     availability TEXT,

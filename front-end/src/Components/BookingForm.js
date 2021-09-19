@@ -102,7 +102,6 @@ const BookingForm = () => {
         <div>
           <BookingCal />
           <input className="loginBtn3" type="submit"/>
-            
         </div>
       </form>
     </section>

@@ -8,6 +8,7 @@ const NavBar = () => {
 	const [toggleMenu, setToggleMenu] = useState(false);
 	const { currentUser } = useAuth();
 	console.log( currentUser)
+
 	const handleToggle = () => {
 		setToggleMenu((isOpen) => !isOpen);
 	};
@@ -15,8 +16,8 @@ const NavBar = () => {
 	return (
 		<nav className="navBar">
 			{/* <p> Hello, {currentUser && currentUser.email}</p> */}
-			<div className="navBar-center">
-				<div className="navBar-header">
+			<div className="nav-center">
+				<div className="nav-header">
 					{/* replace this home icon with the Logo Image  */}
 					<NavLink to={"/"}>
 						<FaHome className="navBar-icon" />
