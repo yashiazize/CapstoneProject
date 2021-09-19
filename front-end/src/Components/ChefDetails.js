@@ -17,7 +17,7 @@ const ChefDetails = ({ chefs }) => {
 			}
 		};
 		fetchSingleChef();
-	}, [id]);
+	}, [id, chefs]);
 
 	return (
 		<section className="single-chef">
