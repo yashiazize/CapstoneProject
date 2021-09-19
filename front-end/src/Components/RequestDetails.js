@@ -11,11 +11,6 @@ const RequestDetails = () => {
 
   return (
     <section className="detailsContainer">
-      <div className="detailsButtons">
-        <Link to={"/travelpackages"}>
-          <button>Go Back</button>
-        </Link>
-      </div>
       <h4>Requests</h4>
       <div className="card mb-3">
         <div className="row g-0">
@@ -34,9 +29,9 @@ const RequestDetails = () => {
               <p className="card-text"></p>
               <div className="detailsButtons">
                 <Link >
-                  <button>Edit</button>
+                  <button className="loginBtn">Edit</button>
                 </Link>
-                <button >Delete</button>
+                <button className="btn-primary">Delete</button>
               </div>
             </div>
           </div>

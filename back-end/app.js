@@ -3,6 +3,7 @@ const express = require("express");
 const usersController = require("./controllers/usersController");
 const bookingsController = require("./controllers/bookingsController");
 const availabilityController = require("./controllers/availabilityController");
+const ratings = require("./controllers/chefsRatings")
 
 const app = express();
 
@@ -15,6 +16,8 @@ app.use("/users", usersController);
 app.use("/bookings", bookingsController);
 // AVAILABILITY Route
 app.use("/availability", availabilityController);
+//ratings
+app.use("/ratings",ratings);
 
 // INDEX
 app.get("/", (_, res) => {

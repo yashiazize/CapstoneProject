@@ -12,7 +12,7 @@ CREATE TABLE users (
     is_chef BOOLEAN NOT NULL DEFAULT FALSE, 
     cuisine TEXT, 
     zip_code VARCHAR(5),
-    availability TEXT,
+    availability TEXT
     -- availability_id INT REFERENCES availability (id) NOT NULL,  
 );
 
@@ -33,8 +33,9 @@ DROP TABLE IF EXISTS ratings;
 
 CREATE TABLE ratings (
     chef_id INT REFERENCES users (id) NOT NULL,
-    rating NUMERIC NOT NULL CHECK (rating >=0 AND rating <= 5), 
-    -- booking_id INT REFERENCES bookings (id) NOT NULL
+    booking_id INT REFERENCES bookings (id) NOT NULL,
+    user_id INT REFERENCES users (id) NOT NULL, 
+    rating NUMERIC NOT NULL CHECK (rating >=0 AND rating <= 5) 
 );
 
 DROP TABLE IF EXISTS availability;
