@@ -13,19 +13,19 @@ const NavBar = () => {
 	};
 	
 	return (
-		<nav className="navbar">
+		<nav className="navBar">
 			{/* <p> Hello, {currentUser && currentUser.email}</p> */}
-			<div className="nav-center">
-				<div className="nav-header">
+			<div className="navBar-center">
+				<div className="navBar-header">
 					{/* replace this home icon with the Logo Image  */}
 					<NavLink to={"/"}>
-						<FaHome className="nav-icon" />
+						<FaHome className="navBar-icon" />
 					</NavLink>
-					<button type="button" className="nav-btn" onClick={handleToggle}>
-						<FaAlignRight className="nav-icon" />
+					<button type="button" className="navBar-btn" onClick={handleToggle}>
+						<FaAlignRight className="navBar-icon" />
 					</button>
 				</div>
-				<ul className={toggleMenu ? "nav-links show-nav" : "nav-links"}>
+				<ul className={toggleMenu ? "navBar-links show-navBar" : "navBar-links"}>
 					<li>
 						<NavLink to={"/users/chefs"}>Chefs</NavLink>
 					</li>

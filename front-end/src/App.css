@@ -91,7 +91,7 @@ h6 {
 /* End of Global Styles */
 
 /* N A V B A R */
-.navbar {
+.navBar {
   position: sticky;
   top: 0;
   width: 100vw;
@@ -100,24 +100,24 @@ h6 {
   background: var(--offWhite);
   z-index: 1;
 }
-/* .nav-header {
+.navBar-header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 0 1rem;
-} */
-.nav-btn {
+}
+.navBar-btn {
   background: transparent;
   border: none;
   cursor: pointer;
   outline: none;
 }
-.nav-icon {
+.navBar-icon {
   font-size: 1.5rem;
   /* display: flex; */
   color: var(--primaryColor);
 }
 
-.nav-links {
+.navBar-links {
   height: 0;
   overflow: hidden;
   transition: var(--mainTransition);
@@ -125,7 +125,7 @@ h6 {
   display: flex;
   justify-content: space-between;
 }
-.nav-links a {
+.navBar-links a {
   display: block;
   text-decoration: none;
   padding: 1rem 0;
@@ -137,29 +137,29 @@ h6 {
   font-weight: 600;
   letter-spacing: var(--mainSpacing);
 }
-.nav-links a:hover {
+.navBar-links a:hover {
   color: var(--primaryColor);
 }
 
-.show-nav {
+.show-navBar {
   height: 100px;
 }
 
 @media screen and (min-width: 768px) {
-  .nav-btn {
+  .navBar-btn {
     display: none;
   }
-  .nav-center {
+  .navBar-center {
     max-width: 1170px;
     margin: 0 auto;
     display: flex;
   }
-  .nav-links {
+  .navBar-links {
     height: auto;
     display: flex;
     margin-left: 4rem;
   }
-  .nav-links a {
+  .navBar-links a {
     margin: 0 1rem;
     padding: 0.5rem 0;
   }
