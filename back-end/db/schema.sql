@@ -12,7 +12,7 @@ CREATE TABLE users (
     is_chef BOOLEAN DEFAULT FALSE, 
     cuisine TEXT, 
     zip_code VARCHAR(5),
-    availability TEXT,
+    availability TEXT
     -- availability_id INT REFERENCES availability (id) NOT NULL,  
 );
 
