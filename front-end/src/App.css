@@ -425,7 +425,7 @@ h6 {
 	padding: 2em;
 }
 
- .booking-heading {
+.booking-heading {
 	font-size: 2em;
 	font-weight: bold;
 	color: var(--primaryColor);
@@ -445,7 +445,6 @@ h6 {
 	background: linear-gradient(to right, rgb(255, 185, 33), var(--primaryColor));
 	transition: all 0.4s;
 }
-
 
 /* End Chef Availibility Calendar */
 
@@ -575,17 +574,17 @@ h6 {
 }
 
 .loginBtn2:hover {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
 }
-  
-  .loginBtn2:hover {
+
+.loginBtn2:hover {
 	transform: translate(-1%, 5%);
 	box-shadow: 0 0 10px rgba(0, 255, 238, 0.954);
 }
@@ -689,4 +688,3 @@ h6 {
 	transform: translate(-1%, 5%);
 	box-shadow: 0 0 10px rgba(0, 255, 238, 0.982);
 }
-

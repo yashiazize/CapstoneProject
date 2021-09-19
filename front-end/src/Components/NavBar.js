@@ -7,26 +7,25 @@ import { useAuth } from "../Providers/AuthProvider";
 const NavBar = () => {
 	const [toggleMenu, setToggleMenu] = useState(false);
 	const { currentUser } = useAuth();
-	console.log( currentUser)
+	console.log(currentUser);
 
 	const handleToggle = () => {
 		setToggleMenu((isOpen) => !isOpen);
 	};
-	
+
 	return (
 		<nav className="navBar">
-			{/* <p> Hello, {currentUser && currentUser.email}</p> */}
 			<div className="nav-center">
 				<div className="nav-header">
 					{/* replace this home icon with the Logo Image  */}
 					<NavLink to={"/"}>
-						<FaHome className="navBar-icon" />
+						<FaHome className="nav-icon" />
 					</NavLink>
-					<button type="button" className="navBar-btn" onClick={handleToggle}>
-						<FaAlignRight className="navBar-icon" />
+					<button type="button" className="nav-btn" onClick={handleToggle}>
+						<FaAlignRight className="nav-icon" />
 					</button>
 				</div>
-				<ul className={toggleMenu ? "navBar-links show-navBar" : "navBar-links"}>
+				<ul className={toggleMenu ? "nav-links show-nav" : "nav-links"}>
 					<li>
 						<NavLink to={"/users/chefs"}>Chefs</NavLink>
 					</li>
