@@ -14,7 +14,7 @@ const NavBar = () => {
 	};
 
 	return (
-		<nav className="navbar">
+		<nav className="navBar">
 			<div className="nav-center">
 				<div className="nav-header">
 					{/* replace this home icon with the Logo Image  */}

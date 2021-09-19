@@ -91,7 +91,7 @@ h6 {
 /* End of Global Styles */
 
 /* N A V B A R */
-.navbar {
+.navBar {
 	position: sticky;
 	top: 0;
 	width: 100vw;
@@ -349,7 +349,6 @@ h6 {
 	display: grid;
 	grid-template-columns: 1fr;
 	margin: 2rem auto;
-
 }
 .description,
 .info {
@@ -398,7 +397,6 @@ h6 {
 
 /* End React Calendar */
 
-
 /* Booking Form */
 
 .BookingFormContainer {
@@ -413,5 +411,3 @@ h6 {
 }
 
 /* End Chef Availibility Calendar */
-
-
