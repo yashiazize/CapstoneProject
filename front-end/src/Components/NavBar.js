@@ -3,11 +3,12 @@ import { NavLink } from "react-router-dom";
 import { FaAlignRight, FaHome } from "react-icons/fa";
 import { signOut } from "../Services/Firebase";
 import { useAuth } from "../Providers/AuthProvider";
+import LoginForm from "./LoginForm";
 
 const NavBar = () => {
 	const [toggleMenu, setToggleMenu] = useState(false);
+	const [modalOpen, setModalOpen] = useState(false);
 	const { currentUser } = useAuth();
-	console.log(currentUser);
 
 	const handleToggle = () => {
 		setToggleMenu((isOpen) => !isOpen);
@@ -30,7 +31,8 @@ const NavBar = () => {
 						<NavLink to={"/users/chefs"}>Chefs</NavLink>
 					</li>
 					<li>
-						<NavLink to={"/users/login"}>Login</NavLink>
+						{/* <NavLink to={"/users/login"}>Login</NavLink> */}
+						<button onClick={() => setModalOpen(!modalOpen)}>Login</button>
 					</li>
 					<li>
 						<NavLink to={"/"} onClick={signOut}>
@@ -42,6 +44,7 @@ const NavBar = () => {
 					</li>
 				</ul>
 			</div>
+			{modalOpen ? <LoginForm setModalOpen={setModalOpen}/> : null}
 		</nav>
 	);
 };

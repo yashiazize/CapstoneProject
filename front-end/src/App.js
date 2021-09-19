@@ -47,9 +47,9 @@ function App() {
           </Route>
 
           {/* /users */}
-          <Route exact path="/users/login">
+          {/* <Route exact path="/users/login">
             <LoginForm />
-          </Route>
+          </Route> */}
 
           <Route exact path="/users/new">
             <NewUser />

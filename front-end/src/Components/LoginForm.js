@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import { signInWithGoogle } from "../Services/Firebase";
 import googleIcon from "../Images/googleicon.png"
 
-const LoginForm = () => {
+const LoginForm = ({setModalOpen}) => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const { login } = useAuth();
@@ -29,7 +29,8 @@ const LoginForm = () => {
   }
 
   return (
-    <section className="login">
+    <div onClick={() => setModalOpen(false)} id="login-modal">
+    <section onClick={(e) => e.stopPropagation()} className="login">
       <div className="login-container">
         <h2 className="login-heading">Log In</h2>
         <div className="login-box">
@@ -50,14 +51,16 @@ const LoginForm = () => {
         <div className="textOne">
           <Link to="/forgot-password">Forgot Password?</Link>
         </div>
-        <button className="loginBtn2" onClick={signInWithGoogle}><img alt="googleImg"className="googleImg" src={googleIcon}/>
+        {/* <button className="loginBtn2" onClick={signInWithGoogle}><img alt="googleImg"className="googleImg" src={googleIcon}/>
           Sign in with Google
-        </button>
+        </button> */}
         <p className="textTwo">
           Dont have an account? <Link to="/users/new">Sign up</Link>
         </p>
       </div>
     </section>
+
+    </div>
   );
 };
 

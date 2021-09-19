@@ -22,17 +22,16 @@ CREATE TABLE bookings (
     id SERIAL PRIMARY KEY, 
     chef_id INT REFERENCES users (id) NOT NULL, 
     user_id INT REFERENCES users (id) NOT NULL, 
-    status TEXT NOT NULL, 
+    -- status TEXT NOT NULL, 
     cuisine TEXT NOT NULL, 
-    party_size INT NOT NULL, 
+    party_size TEXT NOT NULL, 
     address TEXT NOT NULL, 
     address2 TEXT, 
     city TEXT NOT NULL, 
     state TEXT NOT NULL, 
     zip_code VARCHAR(5),
-    event_date DATE NOT NULL, 
-    start_time TIME NOT NULL, 
-    end_time TIME NOT NULL
+    start_event TIMESTAMP,
+    end_event TIMESTAMP
 );
 
 DROP TABLE IF EXISTS ratings;
@@ -42,23 +41,23 @@ CREATE TABLE ratings (
     booking_id INT REFERENCES bookings (id) NOT NULL
 );
 
-DROP TABLE IF EXISTS availability;
+-- DROP TABLE IF EXISTS availability;
 
-CREATE TABLE availability (
-    id SERIAL PRIMARY KEY,
-    chef_id INT REFERENCES users (id) NOT NULL,
-    sunday TEXT DEFAULT NULL,
-    monday TEXT DEFAULT NULL,
-    tuesday TEXT DEFAULT NULL,
-    wednesday TEXT DEFAULT NULL,
-    thursday TEXT DEFAULT NULL,
-    friday TEXT DEFAULT NULL,
-    saturday TEXT DEFAULT NULL,
-    -- might need to move is_booked and booked_by to the bookings table
-    time TIME DEFAULT NULL,
-    is_booked BOOLEAN DEFAULT NULL,
-    booked_by INT REFERENCES users (id)
-);
+-- CREATE TABLE availability (
+--     id SERIAL PRIMARY KEY,
+--     chef_id INT REFERENCES users (id) NOT NULL,
+--     sunday TEXT DEFAULT NULL,
+--     monday TEXT DEFAULT NULL,
+--     tuesday TEXT DEFAULT NULL,
+--     wednesday TEXT DEFAULT NULL,
+--     thursday TEXT DEFAULT NULL,
+--     friday TEXT DEFAULT NULL,
+--     saturday TEXT DEFAULT NULL,
+--     -- might need to move is_booked and booked_by to the bookings table
+--     time TIME DEFAULT NULL,
+--     is_booked BOOLEAN DEFAULT NULL,
+--     booked_by INT REFERENCES users (id)
+-- );
 
 -- STACKOVERFLOW 
 -- https://stackoverflow.com/questions/4521020/calculate-open-timeslots-given-availability-and-existing-appointments-by-day
