@@ -27,8 +27,9 @@ CREATE TABLE bookings (
 );
 
 CREATE TABLE ratings (
+    chef_id INT REFERENCES users (id) NOT NULL,
     rating NUMERIC NOT NULL CHECK (rating >=0 AND rating <= 5), 
-    booking_id INT REFERENCES bookings (id) NOT NULL
+    -- booking_id INT REFERENCES bookings (id) NOT NULL
 );
 
 CREATE TABLE availability (

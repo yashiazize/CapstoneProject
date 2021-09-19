@@ -34,3 +34,9 @@ VALUES
 (4, 'Saturday', NULL, true, 3),
 (5, 'Monday', NULL, false, 3);
 
+INSERT INTO ratings (chef_id,rating)
+VALUES
+(1,5),
+(2,1),
+(4,0);
+
