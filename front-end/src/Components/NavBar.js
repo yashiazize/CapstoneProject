@@ -8,12 +8,13 @@ const NavBar = () => {
 	const [toggleMenu, setToggleMenu] = useState(false);
 	const { currentUser } = useAuth();
 	console.log( currentUser)
+
 	const handleToggle = () => {
 		setToggleMenu((isOpen) => !isOpen);
 	};
 	
 	return (
-		<nav className="navbar">
+		<nav className="navBar">
 			{/* <p> Hello, {currentUser && currentUser.email}</p> */}
 			<div className="nav-center">
 				<div className="nav-header">
