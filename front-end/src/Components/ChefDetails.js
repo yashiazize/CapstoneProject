@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import ChefCalendar from "./ChefCalendar";
 import imageChef from "../Images/bkgnd-lukas-blazek-unsplash.jpg";
+import StarRating from "./StarRating";
 
 const ChefDetails = ({ chefs }) => {
 	const [chef, setChef] = useState({});
@@ -28,7 +29,7 @@ const ChefDetails = ({ chefs }) => {
 			<article className="single-chef-info">
 				<h2>{chef.name}</h2>
 				<h6>Cuisine(s): {chef.cuisine}</h6>
-				<p>Rating: ...star system</p>
+				<StarRating />
 			</article>
 			<div className="single-chef-info">
 				<article className="info">

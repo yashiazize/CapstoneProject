@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import imageChef from "../Images/bkgnd-lukas-blazek-unsplash.jpg";
 
-const ChefListItem = ({ chef }) => {
+const ChefListItem = ({ chef, rating }) => {
 	return (
 		<div className="card mb-3 chefs-list-card">
 			<div className="row g-0">
