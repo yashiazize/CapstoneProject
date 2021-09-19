@@ -1,16 +1,44 @@
 import { withRouter } from "react-router-dom";
 import { useState } from "react";
 import BookingCal from "./BookingCal";
+import axios from "axios";
+import { apiURL } from "../util/apiURL";
+import { useHistory } from "react-router";
+
+const API = apiURL();
 
 const BookingForm = () => {
   const [request, setRequest] = useState({
-    
-  })
+    cuisine: "",
+    party_size: "",
+    address: "",
+    address2: "",
+    city: "",
+    state: "",
+    zip_code: "",
+    event_date: "",
+    start_time: "",
+    end_time: "",
+  });
+  let history = useHistory();
 
+  const addNewRequest = async (newRequest) => {
+    try {
+      await axios.post(`${API}/bookings`, newRequest);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await addNewRequest(request);
+    history.pushState("/bookings/:id")
+  };
 
   return (
     <section className="booking">
-      <form className="booking-container">
+      <form onSubmit={handleSubmit} className="booking-container">
         <h1 className="booking-heading"> Book Chef</h1>
         <div>
           <label>Select Cuisine:</label>
@@ -73,14 +101,11 @@ const BookingForm = () => {
         </div>
         <div>
           <BookingCal />
-          <button className="loginBtn3" type="submit">
-            Submit
-          </button>
+          <input className="loginBtn3" type="submit"/>
         </div>
       </form>
     </section>
   );
-
 };
 
 export default withRouter(BookingForm);
