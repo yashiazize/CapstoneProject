@@ -32,12 +32,12 @@ const RequestDetails = () => {
               </p>
               <p>Address:</p>
               <p className="card-text"></p>
-              <div className="detailsButtons">
+              {/* <div className="detailsButtons">
                 <Link >
                   <button>Edit</button>
                 </Link>
                 <button >Delete</button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@ import "react-date-range/dist/theme/default.css";
 //  -- bookings calendar/page
 
 const ChefCalendar = () => {
+
 	const handleSelectedDate = (ranges) => {
 		console.log({ ranges });
 	};

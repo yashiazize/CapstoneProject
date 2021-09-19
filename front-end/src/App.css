@@ -155,7 +155,6 @@ h6 {
     display: none;
   }
   .nav-center {
-    max-width: 1170px;
     margin: 0 auto;
     display: flex;
   }
@@ -414,13 +413,13 @@ h6 {
 	font-family: "Poppins", sans-serif;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: 120vh;
   }
   
   .booking-container {
 	background: #f7f0da;
-	width: 35vw;
-	height: 100vh;
+	width: 40vw;
+	height: 120vh;
 	border-radius: 20px;
 	display: flex;
 	justify-content: center;
@@ -458,6 +457,10 @@ h6 {
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 .login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 	display: flex;
 	margin: 0;
 	padding: 0;
@@ -681,3 +684,16 @@ h6 {
     box-shadow: 0 0 10px rgba(0, 255, 238, 0.982);
 }
 
+
+/* modal */
+
+#login-modal {
+   display: block;
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   background: rgba(0, 0, 0, 0.55);
+   z-index: 10;
+}

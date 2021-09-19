@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const BookingCal = () => {
+const BookingCal = ({setRequest, request}) => {
 	const classes = useStyles();
 
 	const [eventDate, setEventDate] = useState({
@@ -26,7 +26,8 @@ const BookingCal = () => {
 
 	const handleSelectedDate = (e) => {
 		setEventDate({ ...eventDate, [e.target.id]: e.target.value });
-
+    setRequest({...request, ...{start_event: eventDate.startDate, end_event: eventDate.endDate}})
+    console.log(request)
 		console.log(eventDate);
 	};
   
