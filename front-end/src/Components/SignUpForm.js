@@ -75,7 +75,7 @@ function handleSubmit(e) {
           />
           {checked ? <div> chicken </div> : null}
         </div>
-        <button className="loginBtn" onClick={handleSubmit}>Sign Up</button>
+        <button className="signLoginBtn" onClick={handleSubmit}>Sign Up</button>
       </div>
     </section>
   );

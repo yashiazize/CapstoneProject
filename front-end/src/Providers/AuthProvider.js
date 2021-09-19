@@ -1,59 +1,40 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { auth } from "../Services/Firebase";
 
-
-const AuthContext = React.createContext()
-
+const AuthContext = React.createContext();
 
 export function useAuth() {
-    return useContext(AuthContext)
+  return useContext(AuthContext);
 }
-
-
 
 export function AuthProvider({ children }) {
-    const [currentUser, setCurrentUser ] = useState()
-    
-    
-    function signup(email, password) {
-       return  auth.createUserWithEmailAndPassword(email, password)
-    }
-    function login(email, password) {
-       return  auth.signInWithEmailAndPassword(email, password)
-    }
-    useEffect(() => {
+  const [currentUser, setCurrentUser] = useState();
 
-        const unsubscribe = auth.onAuthStateChanged(user => {
-            setCurrentUser(user)
-        })
+  function signup(email, password, displayName) {
+    return auth.createUserWithEmailAndPassword(email, password, displayName);
+  }
+  function login(email, password, displayName) {
+    return auth.signInWithEmailAndPassword(email, password, displayName);
+  }
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+    });
 
-        return unsubscribe
-    }, [])
+    return unsubscribe;
+  }, []);
 
-
-    const value = {
-        currentUser,
-        login,
-        signup
-    }
-    return (
-        <AuthContext.Provider value={value}>
-            {children}
-        </AuthContext.Provider>
-    )
+  const value = {
+    currentUser,
+    login,
+    signup,
+  };
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
-
-
-export default AuthProvider
-
-
+export default AuthProvider;
 
 // export const UserContext = React.createContext()
-
-
-
-
 
 // export default (props) => {
 //     const [user, setUser] = useState(null);
@@ -63,20 +44,20 @@ export default AuthProvider
 //                 console.log(user)
 //                 const {email, displayName, photoURL} = user
 //                 setUser({
-//                     email, 
-//                     displayName, 
+//                     email,
+//                     displayName,
 //                     photoURL
 //                 })
 //             } else {
 //                 setUser(null)
 //             }
 //         })
-//     }, []) 
+//     }, [])
 //     return (
-//       <div> 
+//       <div>
 //           <UserContext.Provider value={user}>
 //             <div>{props.children}</div>
 //           </UserContext.Provider>
 //       </div>
-//     ) 
+//     )
 // }

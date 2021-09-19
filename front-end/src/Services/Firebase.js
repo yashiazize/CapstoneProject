@@ -24,6 +24,8 @@ const firebaseConfig = {
     measurementId: "G-T9RMFFGKNN"
   };
 
+// const history = useHistory();
+
 const app = firebase.initializeApp(firebaseConfig);
 export const auth = app.auth();
 const googleProvider = new firebase.auth.GoogleAuthProvider();
@@ -31,6 +33,7 @@ const googleProvider = new firebase.auth.GoogleAuthProvider();
 export const signInWithGoogle = async () => {
   try {
     await auth.signInWithPopup(googleProvider);
+
   } catch (error) {
     console.log(error);
   }
