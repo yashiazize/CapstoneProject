@@ -1,9 +1,9 @@
 import axios from "axios";
-import ChefCalendar from "./ChefCalendar";
 import { apiURL } from "../util/apiURL.js";
 import { useState, useEffect } from "react";
 import ChefAvailability from "./ChefAvailability";
 import { Link, useParams } from "react-router-dom";
+import ChefCalendar from "./ChefCalendar";
 import imageChef from "../Images/bkgnd-lukas-blazek-unsplash.jpg";
 
 const API = apiURL();

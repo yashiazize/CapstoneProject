@@ -1,17 +1,45 @@
 import { withRouter } from "react-router-dom";
+import { useState } from "react";
 import BookingCal from "./BookingCal";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { apiURL } from "../util/apiURL";
+import { useHistory } from "react-router";
 
-// user can select dates here
-// OR
-// dates are passed in from the ChefDatails Calendar
+const API = apiURL();
 
-const NewBookingForm = () => {
+const BookingForm = () => {
+  const [request, setRequest] = useState({
+    cuisine: "",
+    party_size: "",
+    address: "",
+    address2: "",
+    city: "",
+    state: "",
+    zip_code: "",
+    event_date: "",
+    start_time: "",
+    end_time: "",
+  });
+  let history = useHistory();
+
+  const addNewRequest = async (newRequest) => {
+    try {
+      await axios.post(`${API}/bookings`, newRequest);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await addNewRequest(request);
+    history.pushState("/bookings/:id")
+  };
 
   return (
-    <section className="BookingFormContainer">
-      <form className="row g-3">
-        <h1> Book Chef</h1>
+    <section className="booking">
+      <form onSubmit={handleSubmit} className="booking-container">
+        <h1 className="booking-heading"> Book Chef</h1>
         <div>
           <label>Select Cuisine:</label>
           <select className="form-select" aria-label="Default select example">
@@ -54,32 +82,30 @@ const NewBookingForm = () => {
           <label for="kosher">Kosher</label>
           <input className="form-check-input" type="checkbox" name="kosher" />
         </div>
-        <h3>Event Location</h3>
+        <h3 className="booking-heading">Event Location</h3>
         <div className="form-floating mb-3">
-          <input type="text" class="form-control" required />
+          <input type="text" className="form-control" required />
           <label for="floatingInput">Address</label>
         </div>
         <div className="form-floating mb-3">
-          <input type="text" class="form-control" />
+          <input type="text" className="form-control" />
           <label for="floatingInput">Apt</label>
         </div>
         <div className="form-floating mb-3 col-md-6">
-          <input type="text" class="form-control" required />
+          <input type="text" className="form-control" required />
           <label for="floatingInput">City</label>
         </div>
         <div className="form-floating mb-3 col-md-4">
-          <input type="text" class="form-control" required />
+          <input type="text" className="form-control" required />
           <label for="floatingInput">State</label>
         </div>
         <div>
           <BookingCal />
-          <button className="btn-primary" type="submit">
-            Submit
-          </button>
+          <input className="loginBtn3" type="submit"/>
         </div>
       </form>
     </section>
   );
 };
 
-export default withRouter(NewBookingForm);
+export default withRouter(BookingForm);

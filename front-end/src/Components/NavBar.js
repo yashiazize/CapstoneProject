@@ -3,12 +3,12 @@ import { NavLink } from "react-router-dom";
 import { FaAlignRight, FaHome } from "react-icons/fa";
 import { signOut } from "../Services/Firebase";
 import { useAuth } from "../Providers/AuthProvider";
-// import { checkPropTypes } from "prop-types";
 
 const NavBar = () => {
-	// toggle the navbar
 	const [toggleMenu, setToggleMenu] = useState(false);
 	const { currentUser } = useAuth();
+	console.log(currentUser);
+
 	const handleToggle = () => {
 		setToggleMenu((isOpen) => !isOpen);
 	};
@@ -19,13 +19,15 @@ const NavBar = () => {
 				<div className="nav-header">
 					{/* replace this home icon with the Logo Image  */}
 					<NavLink to={"/"}>
-						<FaHome className="nav-icon" />
+						<FaHome className="navBar-icon" />
 					</NavLink>
-					<button type="button" className="nav-btn" onClick={handleToggle}>
-						<FaAlignRight className="nav-icon" />
+					<button type="button" className="navBar-btn" onClick={handleToggle}>
+						<FaAlignRight className="navBar-icon" />
 					</button>
 				</div>
-				<ul className={toggleMenu ? "nav-links show-nav" : "nav-links"}>
+				<ul
+					className={toggleMenu ? "navBar-links show-navBar" : "navBar-links"}
+				>
 					<li>
 						<NavLink to={"/users/chefs"}>Chefs</NavLink>
 					</li>
@@ -38,8 +40,7 @@ const NavBar = () => {
 						</NavLink>
 					</li>
 					<li>
-						Logged in: {currentUser && currentUser.email}
-						<NavLink to={"/"}>Requests</NavLink>
+						<NavLink to={"/bookings/:id"}>Requests</NavLink>
 					</li>
 				</ul>
 			</div>
