@@ -2,6 +2,7 @@ const cors = require("cors");
 const express = require("express");
 const usersController = require("./controllers/usersController");
 const bookingsController = require("./controllers/bookingsController");
+const availabilityController = require("./controllers/availabilityController");
 
 const app = express();
 
@@ -12,6 +13,8 @@ app.use(express.json());
 app.use("/users", usersController);
 // BOOKINGS Route
 app.use("/bookings", bookingsController);
+// AVAILABILITY Route
+app.use("/availability", availabilityController);
 
 // INDEX
 app.get("/", (_, res) => {

@@ -1,17 +1,17 @@
 import { withRouter } from "react-router-dom";
+import { useState } from "react";
 import BookingCal from "./BookingCal";
-import { Link } from "react-router-dom";
 
-// user can select dates here
-// OR
-// dates are passed in from the ChefDatails Calendar
+const BookingForm = () => {
+  const [request, setRequest] = useState({
+    
+  })
 
-const NewBookingForm = () => {
 
   return (
-    <section className="BookingFormContainer">
-      <form className="row g-3">
-        <h1> Book Chef</h1>
+    <section className="booking">
+      <form className="booking-container">
+        <h1 className="booking-heading"> Book Chef</h1>
         <div>
           <label>Select Cuisine:</label>
           <select className="form-select" aria-label="Default select example">
@@ -54,32 +54,33 @@ const NewBookingForm = () => {
           <label for="kosher">Kosher</label>
           <input className="form-check-input" type="checkbox" name="kosher" />
         </div>
-        <h3>Event Location</h3>
+        <h3 className="booking-heading">Event Location</h3>
         <div className="form-floating mb-3">
-          <input type="text" class="form-control" required />
+          <input type="text" className="form-control" required />
           <label for="floatingInput">Address</label>
         </div>
         <div className="form-floating mb-3">
-          <input type="text" class="form-control" />
+          <input type="text" className="form-control" />
           <label for="floatingInput">Apt</label>
         </div>
         <div className="form-floating mb-3 col-md-6">
-          <input type="text" class="form-control" required />
+          <input type="text" className="form-control" required />
           <label for="floatingInput">City</label>
         </div>
         <div className="form-floating mb-3 col-md-4">
-          <input type="text" class="form-control" required />
+          <input type="text" className="form-control" required />
           <label for="floatingInput">State</label>
         </div>
         <div>
           <BookingCal />
-          <button className="btn-primary" type="submit">
+          <button className="loginBtn3" type="submit">
             Submit
           </button>
         </div>
       </form>
     </section>
   );
+
 };
 
-export default withRouter(NewBookingForm);
+export default withRouter(BookingForm);
