@@ -5,10 +5,10 @@ INSERT INTO users (
 VALUES 
     ('chef_boyardee@gmail.com', 'flower24', 'Chef Boyardee', true, 'Italian', 10001, 'Monday, Tuesday'),
     ('juliaChild23@yahoo.com', 'biscuits001', 'Julia Child', true, 'French', 23403, 'Wednesday, Thursday'),
-    ('lesliemann@gmail.com', 'foodIsYummy1', 'Leslie Mann', false, NULL , NULL,NUll), 
-    ('morimoto4545@gmail.com', 'sushi11', 'Masaharu Morimoto', true, 'Japanese', 13042, 'Saturday, Sunday'),
+    ('lesliemann@gmail.com', 'foodIsYummy1', 'Leslie Mann', false, NULL , NULL, NUll), 
+    ('morimoto4545@gmail.com', 'sushi11', 'Masaharu Morimoto', true, 'Japanese', 13042, 'Friday, Sunday'),
     ('butter@gmail.com', 'deepFried1', 'Paula Dean', true, 'Southern', 30144, 'Saturday, Sunday'),
-    ('vicCruz89@yahoo.com', 'football88', 'Victor Cruz', false, NULL, NULL,NULL);
+    ('vicCruz89@yahoo.com', 'football88', 'Victor Cruz', false, NULL, NULL, NULL);
 
 
 INSERT INTO bookings (
@@ -25,12 +25,14 @@ VALUES
         (4, 3, 'rejected', 'Asian', 'March 8 , 2021', '18:00:00', '22:00:00' ),
         (4, 5, 'pending', 'Soul food', 'Nov 25, 2021', '11:00:00', '17:00:00');
 
+
 INSERT INTO availability (
-    chef_id, day, time, is_booked, booked_by
+    chef_id, sunday, monday, tuesday, wednesday, thursday, friday, saturday, time, is_booked, booked_by
 )        
 VALUES 
-(1, 'Saturday', NULL, false, 2),
-(2, 'Saturday', NULL, false, 4),
-(4, 'Saturday', NULL, true, 3),
-(5, 'Monday', NULL, false, 3);
+(1, NULL,'10am - 3pm','10am - 3pm', NULL, NULL, NULL, NULL, NULL, false, 2),
+(2, NULL, NULL,'10am - 3pm','10am - 3pm',NULL, NULL, NULL, NULL, false, 4),
+(4, '10am - 3pm', NULL, NULL, NULL, NULL, '10am - 3pm', NULL, NULL, true, 3),
+(5, '10am - 3pm', NULL, NULL, NULL, NULL, NULL,'10am - 3pm',  NULL, false, 3);
 
+-- Populate the Interval table with every interval you're going to have in your calendar. 

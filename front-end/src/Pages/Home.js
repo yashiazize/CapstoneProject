@@ -8,7 +8,7 @@ const Home = () => {
 		<>
 			<Hero>
 				<Banner
-					title="Chef Finder App "
+					title="Savor"
 					subtitle="testing what the subtitle looks like"
 				>
 					<Link to={"/users/chefs"} className="btn-primary">

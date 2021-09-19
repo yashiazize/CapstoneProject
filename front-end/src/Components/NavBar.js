@@ -3,12 +3,12 @@ import { NavLink } from "react-router-dom";
 import { FaAlignRight, FaHome } from "react-icons/fa";
 import { signOut } from "../Services/Firebase";
 import { useAuth } from "../Providers/AuthProvider";
-// import { checkPropTypes } from "prop-types";
 
 const NavBar = () => {
-	// toggle the navbar
 	const [toggleMenu, setToggleMenu] = useState(false);
 	const { currentUser } = useAuth();
+	console.log(currentUser);
+
 	const handleToggle = () => {
 		setToggleMenu((isOpen) => !isOpen);
 	};
@@ -38,8 +38,7 @@ const NavBar = () => {
 						</NavLink>
 					</li>
 					<li>
-						Logged in: {currentUser && currentUser.email}
-						<NavLink to={"/"}>Requests</NavLink>
+						<NavLink to={"/bookings/:id"}>Requests</NavLink>
 					</li>
 				</ul>
 			</div>

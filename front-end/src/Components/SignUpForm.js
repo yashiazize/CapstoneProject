@@ -25,7 +25,6 @@ function handleSubmit(e) {
 
   return (
     <section className="sign-up">
-      {currentUser && currentUser.email}
       <div className="signup-container">
         <p className="sign-heading"> Sign Up </p>
         <div className="signup-box">
@@ -75,7 +74,7 @@ function handleSubmit(e) {
           />
           {checked ? <div> chicken </div> : null}
         </div>
-        <button className="loginBtn" onClick={handleSubmit}>Sign Up</button>
+        <button className="signLoginBtn" onClick={handleSubmit}>Sign Up</button>
       </div>
     </section>
   );
