@@ -1,17 +1,25 @@
+import axios from "axios";
+import { apiURL } from "../util/apiURL.js";
 import { useState, useEffect } from "react";
+import ChefAvailability from "./ChefAvailability";
 import { Link, useParams } from "react-router-dom";
 import ChefCalendar from "./ChefCalendar";
 import imageChef from "../Images/bkgnd-lukas-blazek-unsplash.jpg";
 
+const API = apiURL();
+
 const ChefDetails = ({ chefs }) => {
 	const [chef, setChef] = useState({});
+	const [chefAvail, setChefAvail] = useState({});
 	let { id } = useParams();
 
 	useEffect(() => {
 		const fetchSingleChef = async () => {
 			try {
 				const res = chefs.filter((chef) => chef.id === Number(id));
+				const resAvail = await axios.get(`${API}/availability/${id}`);
 				setChef(res[0]);
+				setChefAvail(resAvail.data.payload);
 			} catch (err) {
 				return err;
 			}
@@ -44,6 +52,7 @@ const ChefDetails = ({ chefs }) => {
 				<article className="info">
 					<h3>Chef's Availability Calendar</h3>
 					<h6>Availability: {chef.availability}</h6>
+					<ChefAvailability chefAvail={chefAvail} />
 					<ChefCalendar className="chef-cal" />
 				</article>
 			</div>

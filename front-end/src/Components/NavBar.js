@@ -10,14 +10,12 @@ const NavBar = () => {
 	const [modalOpen, setModalOpen] = useState(false);
 	const { currentUser } = useAuth();
 
-
 	const handleToggle = () => {
 		setToggleMenu((isOpen) => !isOpen);
 	};
-	
+
 	return (
 		<nav className="navBar">
-			{/* <p> Hello, {currentUser && currentUser.email}</p> */}
 			<div className="nav-center">
 				<div className="nav-header">
 					{/* replace this home icon with the Logo Image  */}
