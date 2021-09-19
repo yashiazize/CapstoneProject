@@ -1,6 +1,4 @@
 import Title from "./Title";
-import { useState } from "react";
-
 import { FaGlassCheers, FaHamburger, FaCocktail, FaJava } from "react-icons/fa";
 
 const Services = () => {

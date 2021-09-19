@@ -1,5 +1,8 @@
+import Requests from "../Components/RequestDetails";
 const ShowBookings = () => {
-	return <div>A single Booking</div>;
+	return (
+		<Requests/>
+	);
 };
 
 export default ShowBookings;
