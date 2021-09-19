@@ -9,7 +9,7 @@ CREATE TABLE users (
     email VARCHAR(100) unique, 
     pw_hash TEXT NOT NULL, 
     name VARCHAR(100) NOT NULL, 
-    is_chef BOOLEAN NOT NULL DEFAULT FALSE, 
+    is_chef BOOLEAN DEFAULT FALSE, 
     cuisine TEXT, 
     zip_code VARCHAR(5),
     availability TEXT
@@ -24,6 +24,12 @@ CREATE TABLE bookings (
     user_id INT REFERENCES users (id) NOT NULL, 
     status TEXT NOT NULL, 
     cuisine TEXT NOT NULL, 
+    party_size INT NOT NULL, 
+    address TEXT NOT NULL, 
+    address2 TEXT, 
+    city TEXT NOT NULL, 
+    state TEXT NOT NULL, 
+    zip_code VARCHAR(5),
     event_date DATE NOT NULL, 
     start_time TIME NOT NULL, 
     end_time TIME NOT NULL

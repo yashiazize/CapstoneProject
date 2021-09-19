@@ -25,7 +25,6 @@ function handleSubmit(e) {
 
   return (
     <section className="sign-up">
-      {currentUser && currentUser.email}
       <div className="signup-container">
         <p className="sign-heading"> Sign Up </p>
         <div className="signup-box">

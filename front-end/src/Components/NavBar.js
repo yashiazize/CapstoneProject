@@ -7,14 +7,14 @@ import { useAuth } from "../Providers/AuthProvider";
 const NavBar = () => {
 	const [toggleMenu, setToggleMenu] = useState(false);
 	const { currentUser } = useAuth();
-	console.log( currentUser)
+	console.log(currentUser);
+
 	const handleToggle = () => {
 		setToggleMenu((isOpen) => !isOpen);
 	};
-	
+
 	return (
-		<nav className="navbar">
-			{/* <p> Hello, {currentUser && currentUser.email}</p> */}
+		<nav className="navBar">
 			<div className="nav-center">
 				<div className="nav-header">
 					{/* replace this home icon with the Logo Image  */}
