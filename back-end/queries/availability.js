@@ -20,4 +20,19 @@ const fetchAvailability = async (id) => {
 	}
 };
 
+const createAvailability = async (newAvailability) => {
+	const {
+
+	}
+try { 
+const res = await db.one(
+	`INSERT INTO availability
+		()
+		VALUES ()
+		RETURNING *`, []
+);
+return res;
+} catch (err) { return err;}
+}
+
 module.exports = { fetchAllAvailability, fetchAvailability };

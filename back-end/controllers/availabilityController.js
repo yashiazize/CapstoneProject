@@ -4,6 +4,7 @@ const availability = express.Router();
 const {
 	fetchAllAvailability,
 	fetchAvailability,
+	createAvailability,
 } = require("../queries/availability");
 
 // AVAILABILITY -- ALL

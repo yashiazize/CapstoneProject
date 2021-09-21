@@ -31,10 +31,6 @@ const NavBar = () => {
 						<NavLink to={"/users/chefs"}>Chefs</NavLink>
 					</li>
 					<li>
-						{/* <NavLink to={"/users/login"}>Login</NavLink> */}
-						<button onClick={() => setModalOpen(!modalOpen)}>Login</button>
-					</li>
-					<li>
 						<NavLink to={"/"} onClick={signOut}>
 							Logout
 						</NavLink>
@@ -42,9 +38,13 @@ const NavBar = () => {
 					<li>
 						<NavLink to={"/bookings/:id"}>Requests</NavLink>
 					</li>
+					<li>{/* <NavLink to={"/users/login"}>Login</NavLink> */}</li>
+					<button className="nav-btn" onClick={() => setModalOpen(!modalOpen)}>
+						Login
+					</button>
 				</ul>
 			</div>
-			{modalOpen ? <LoginForm setModalOpen={setModalOpen}/> : null}
+			{modalOpen ? <LoginForm setModalOpen={setModalOpen} /> : null}
 		</nav>
 	);
 };

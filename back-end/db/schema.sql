@@ -5,7 +5,7 @@ CREATE DATABASE chef_app_dev;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
-    id SERIAL PRIMARY KEY, 
+    id PRIMARY KEY, 
     email VARCHAR(100) unique, 
     pw_hash TEXT NOT NULL, 
     name VARCHAR(100) NOT NULL, 
@@ -44,19 +44,19 @@ CREATE TABLE ratings (
 -- DROP TABLE IF EXISTS availability;
 
 -- CREATE TABLE availability (
---     id SERIAL PRIMARY KEY,
---     chef_id INT REFERENCES users (id) NOT NULL,
---     sunday TEXT DEFAULT NULL,
---     monday TEXT DEFAULT NULL,
---     tuesday TEXT DEFAULT NULL,
---     wednesday TEXT DEFAULT NULL,
---     thursday TEXT DEFAULT NULL,
---     friday TEXT DEFAULT NULL,
---     saturday TEXT DEFAULT NULL,
---     -- might need to move is_booked and booked_by to the bookings table
---     time TIME DEFAULT NULL,
---     is_booked BOOLEAN DEFAULT NULL,
---     booked_by INT REFERENCES users (id)
+    id SERIAL PRIMARY KEY,
+    chef_id INT REFERENCES users (id) NOT NULL,
+    sunday TEXT DEFAULT NULL,
+    monday TEXT DEFAULT NULL,
+    tuesday TEXT DEFAULT NULL,
+    wednesday TEXT DEFAULT NULL,
+    thursday TEXT DEFAULT NULL,
+    friday TEXT DEFAULT NULL,
+    saturday TEXT DEFAULT NULL,
+    -- might need to move is_booked and booked_by to the bookings table
+    time TIME DEFAULT NULL,
+    is_booked BOOLEAN DEFAULT NULL,
+    booked_by INT REFERENCES users (id)
 -- );
 
 -- STACKOVERFLOW 
