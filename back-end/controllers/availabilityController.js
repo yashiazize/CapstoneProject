@@ -5,6 +5,7 @@ const {
 	fetchAllAvailability,
 	fetchAvailability,
 	createAvailability,
+	// updateAvailability,
 } = require("../queries/availability");
 
 // AVAILABILITY -- ALL
