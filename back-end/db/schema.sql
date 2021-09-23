@@ -5,7 +5,7 @@ CREATE DATABASE chef_app_dev;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
-    id SERIAL PRIMARY KEY, 
+    id PRIMARY KEY,
     email VARCHAR(100) unique, 
     pw_hash TEXT NOT NULL, 
     name VARCHAR(100) NOT NULL, 

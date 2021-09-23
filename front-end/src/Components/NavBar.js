@@ -8,8 +8,9 @@ import LoginForm from "./LoginForm";
 const NavBar = () => {
 	const [toggleMenu, setToggleMenu] = useState(false);
 	const [modalOpen, setModalOpen] = useState(false);
+	console.log("fromNavbar")
 	const { currentUser } = useAuth();
-
+	// console.log(currentUser)
 	const handleToggle = () => {
 		setToggleMenu((isOpen) => !isOpen);
 	};
@@ -31,6 +32,7 @@ const NavBar = () => {
 						<NavLink to={"/users/chefs"}>Chefs</NavLink>
 					</li>
 					<li>
+					{currentUser && currentUser.uid}
 						{/* <NavLink to={"/users/login"}>Login</NavLink> */}
 						<button onClick={() => setModalOpen(!modalOpen)}>Login</button>
 					</li>

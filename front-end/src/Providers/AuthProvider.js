@@ -10,18 +10,20 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
 
-  function signup(email, password, displayName) {
-    return auth.createUserWithEmailAndPassword(email, password, displayName);
+  console.log("auth", currentUser)
+  function signup(email, password) {
+    console.log("signing up")
+    return auth.createUserWithEmailAndPassword(email, password);
   }
-  function login(email, password, displayName) {
-    return auth.signInWithEmailAndPassword(email, password, displayName);
+  function login(email, password) {
+    return auth.signInWithEmailAndPassword(email, password);
   }
+
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    auth.onAuthStateChanged((user) => {
+      console.log("hello", user)
       setCurrentUser(user);
     });
-
-    return unsubscribe;
   }, []);
 
   const value = {
