@@ -9,7 +9,7 @@ const Home = () => {
 			<Hero>
 				<Banner
 					title="Savor"
-					subtitle="testing what the subtitle looks like"
+					subtitle='"Cooking is the ultimate giving."- Jamie Oliver'
 				>
 					<Link to={"/users/chefs"} className="btn-primary">
 						our chefs

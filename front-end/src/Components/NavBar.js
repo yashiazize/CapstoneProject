@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaAlignRight, FaHome } from "react-icons/fa";
+// BiLogInCircle;
 import { signOut } from "../Services/Firebase";
 import { useAuth } from "../Providers/AuthProvider";
 import LoginForm from "./LoginForm";
@@ -22,6 +23,7 @@ const NavBar = () => {
 					<NavLink to={"/"}>
 						<FaHome className="nav-icon" />
 					</NavLink>
+
 					<button type="button" className="nav-btn" onClick={handleToggle}>
 						<FaAlignRight className="nav-icon" />
 					</button>
@@ -31,17 +33,23 @@ const NavBar = () => {
 						<NavLink to={"/users/chefs"}>Chefs</NavLink>
 					</li>
 					<li>
+						<NavLink to={"/bookings/:id"}>Requests</NavLink>
+					</li>
+					<li>
 						<NavLink to={"/"} onClick={signOut}>
 							Logout
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to={"/bookings/:id"}>Requests</NavLink>
+						<button
+							className="btn-primary sign-up-btn"
+							onClick={() => setModalOpen(!modalOpen)}
+						>
+							Login
+						</button>
 					</li>
-					<li>{/* <NavLink to={"/users/login"}>Login</NavLink> */}</li>
-					<button className="nav-btn" onClick={() => setModalOpen(!modalOpen)}>
-						Login
-					</button>
+
+					{/* <NavLink to={"/users/login"}>Login</NavLink> */}
 				</ul>
 			</div>
 			{modalOpen ? <LoginForm setModalOpen={setModalOpen} /> : null}
