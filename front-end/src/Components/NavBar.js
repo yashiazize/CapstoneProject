@@ -9,7 +9,6 @@ const NavBar = () => {
 	const [toggleMenu, setToggleMenu] = useState(false);
 	const [modalOpen, setModalOpen] = useState(false);
 	const { currentUser } = useAuth();
-
 	const handleToggle = () => {
 		setToggleMenu((isOpen) => !isOpen);
 	};
@@ -31,8 +30,9 @@ const NavBar = () => {
 						<NavLink to={"/users/chefs"}>Chefs</NavLink>
 					</li>
 					<li>
+					{currentUser && currentUser.uid}
 						{/* <NavLink to={"/users/login"}>Login</NavLink> */}
-						<button onClick={() => setModalOpen(!modalOpen)}>Login</button>
+						<button className="lgnBtn" onClick={() => setModalOpen(!modalOpen)}>Login</button>
 					</li>
 					<li>
 						<NavLink to={"/"} onClick={signOut}>

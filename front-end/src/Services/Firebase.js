@@ -1,8 +1,8 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
-import user from "../Providers/AuthProvider";
+// import user from "../Providers/AuthProvider";
 require('dotenv').config()
-console.log(process.env)
+
 
 // const firebaseConfig = {
 //   apiKey: process.env.REACT_APP_API_KEY,
@@ -42,7 +42,6 @@ export const signInWithGoogle = async () => {
 export const signOut = async () => {
   try {
     await auth.signOut();
-    console.log(user)
   } catch (error) {
     console.log(error);
   }

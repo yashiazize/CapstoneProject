@@ -27,10 +27,9 @@ const BookingForm = () => {
 
   const addNewRequest = async (newRequest) => {
     try {
-      console.log(newRequest)
-      await axios.post(`${API}/bookings`, newRequest);
+      await axios.post(`${API}/bookings`,  newRequest);
+      history.push("/bookings/:id")
     } catch (error) {
-      console.log(error);
     }
   };
 
@@ -96,7 +95,7 @@ const BookingForm = () => {
             onChange={handleChange("address")}
             required
           />
-          <label for="floatingInput">Address</label>
+          <label htmlFor="floatingInput">Address</label>
         </div>
         <div className="form-floating mb-3">
           <input
@@ -106,7 +105,7 @@ const BookingForm = () => {
             onChange={handleChange("address2")}
             className="form-control"
           />
-          <label for="floatingInput">Address2</label>
+          <label htmlFor="floatingInput">Address2</label>
         </div>
         <div className="form-floating mb-3 col-md-6">
           <input
@@ -117,7 +116,7 @@ const BookingForm = () => {
             onChange={handleChange("city")}
             required
           />
-          <label for="floatingInput">City</label>
+          <label htmlFor="floatingInput">City</label>
         </div>
         <div className="form-floating mb-3 col-md-4">
           <input
@@ -128,7 +127,7 @@ const BookingForm = () => {
             onChange={handleChange("state")}
             required
           />
-          <label for="floatingInput">State</label>
+          <label htmlFor="floatingInput">State</label>
         </div>
         <div className="form-floating mb-3 col-md-4">
           <input
@@ -139,7 +138,7 @@ const BookingForm = () => {
             onChange={handleChange("zip_code")}
             required
           />
-          <label for="floatingInput">Zip Code</label>
+          <label htmlFor="floatingInput">Zip Code</label>
         </div>
         <div>
           <BookingCal setRequest={setRequest} request={request} />

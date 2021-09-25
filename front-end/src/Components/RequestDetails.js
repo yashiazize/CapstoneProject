@@ -1,10 +1,10 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router";
+// import axios from "axios";
+// import { useState, useEffect } from "react";
+// import { useParams, useHistory } from "react-router";
 import { Link } from "react-router-dom";
-import { apiURL } from "../util/apiURL";
+// import { apiURL } from "../util/apiURL";
 
-const API = apiURL();
+// const API = apiURL();
 
 const RequestDetails = () => {
 
