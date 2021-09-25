@@ -5,10 +5,11 @@ CREATE DATABASE chef_app_dev;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
-    id PRIMARY KEY, 
+    id TEXT PRIMARY KEY unique, 
     email VARCHAR(100) unique, 
     pw_hash TEXT NOT NULL, 
-    name VARCHAR(100) NOT NULL, 
+    first_name VARCHAR(100) NOT NULL, 
+    last_name VARCHAR(100) NOT NULL, 
     is_chef BOOLEAN DEFAULT FALSE, 
     cuisine TEXT, 
     zip_code VARCHAR(5),
@@ -16,13 +17,14 @@ CREATE TABLE users (
     -- availability_id INT REFERENCES availability (id) NOT NULL,  
 );
 
+-- CREATE UNIQUE INDEX unique_index ON users (id);
+
 DROP TABLE IF EXISTS bookings;
 
 CREATE TABLE bookings (
     id SERIAL PRIMARY KEY, 
     chef_id INT REFERENCES users (id) NOT NULL, 
     user_id INT REFERENCES users (id) NOT NULL, 
-    -- status TEXT NOT NULL, 
     cuisine TEXT NOT NULL, 
     party_size TEXT NOT NULL, 
     address TEXT NOT NULL, 

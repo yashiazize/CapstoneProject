@@ -19,14 +19,14 @@ const fetchUser = async (id) => {
 const createUser = async (user) => {
 	// if user is a chef {do this} else {do that -- regular user}
 	// chef? chef specs: user specs
-	const { email, name, is_chef, cuisine, zip_code } = user;
+	const { id, email, name, is_chef, cuisine, zip_code } = user;
 	try {
 		const newUser = await db.one(
 			`INSERT INTO users
-            (email, name, is_chef, cuisine, zip_code)
+            ( email, name, is_chef, cuisine, zip_code)
             VALUES($1, $2, $3, $4, $5)
             RETURNING *`,
-			[email, name, is_chef, cuisine, zip_code]
+			[id, email, name, is_chef, cuisine, zip_code]
 		);
 		return newUser;
 	} catch (err) {
@@ -63,10 +63,19 @@ const fetchAllChefs = async () => {
 	}
 };
 
+const fetchChefBookings = async () => {
+	try {
+		return await bd.oneOrNone("SELECT * FROM users WHERE id = $1");
+	} catch (error) {
+		return err;
+	}
+};
+
 module.exports = {
 	fetchAllUsers,
 	fetchUser,
 	createUser,
 	updateUser,
 	fetchAllChefs,
+	fetchChefBookings,
 };
