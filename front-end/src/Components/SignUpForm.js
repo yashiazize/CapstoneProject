@@ -1,8 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
-import { withRouter } from "react-router-dom";
+import React, { useState } from "react";
+import { withRouter, useHistory } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../Providers/AuthProvider";
 import { apiURL } from "../util/apiURL";
+import ChefInfo from "./ChefInfo"
+
 
 let currentU;
 const API = apiURL();
@@ -10,11 +12,11 @@ const API = apiURL();
 const SignUpForm = () => {
   const [checked, setChecked] = useState(false);
   const { signup, currentUser } = useAuth();
-  const [authUser, setAuthUser] = useState(currentUser);
+ 
   currentU = currentUser;
+  let history = useHistory();
   const [user, setUser] = useState({
     email: "",
-    pw_hash: "",
     first_name: "",
     last_name: "",
     is_chef: false,
@@ -23,14 +25,14 @@ const SignUpForm = () => {
     availability: "",
   });
 
-  console.log("signup top", currentUser);
+ 
 
   const addNewUser = async (newUserId) => {
     try {
       await axios.post(`${API}/users`, { id: newUserId, ...user });
       debugger;
     } catch (error) {
-      console.log(error);
+      return error;
     }
   };
 
@@ -41,10 +43,6 @@ const SignUpForm = () => {
   const handleCheckBox = () => {
     setChecked((prevChecked) => !prevChecked);
   };
-
-  // useEffect(() => {
-  //   setAuthUser(currentUser)
-  // }, [currentUser])
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -57,6 +55,7 @@ const SignUpForm = () => {
     );
     debugger;
     await addNewUser(currentU.uid);
+    history.push("/")
   }
 
   return (
@@ -127,7 +126,7 @@ const SignUpForm = () => {
             value={"isChef"}
             name="is_chef"
           />
-          {checked ? <div> chicken </div> : null}
+          {checked ? <div> <ChefInfo handleChange={handleChange}/> </div> : null}
         </div>
         <button className="signLoginBtn" onClick={handleSubmit}>
           Sign Up

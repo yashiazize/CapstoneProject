@@ -1,6 +1,6 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
-import user from "../Providers/AuthProvider";
+// import user from "../Providers/AuthProvider";
 require('dotenv').config()
 
 

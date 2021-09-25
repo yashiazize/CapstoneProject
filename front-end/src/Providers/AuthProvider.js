@@ -10,18 +10,16 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
 
-  console.log("auth", currentUser)
-  function signup(email, password) {
-    console.log("signing up")
-    return auth.createUserWithEmailAndPassword(email, password);
+  
+  function signup(email, password, uid) {
+    return auth.createUserWithEmailAndPassword(email, password, uid);
   }
-  function login(email, password) {
-    return auth.signInWithEmailAndPassword(email, password);
+  function login(email, password, uid) {
+    return auth.signInWithEmailAndPassword(email, password, uid);
   }
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      console.log("hello", user)
       setCurrentUser(user);
     });
   }, []);

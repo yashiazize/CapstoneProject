@@ -27,11 +27,9 @@ const BookingForm = () => {
 
   const addNewRequest = async (newRequest) => {
     try {
-      console.log(newRequest)
-      await axios.post(`${API}/bookings`, newRequest);
+      await axios.post(`${API}/bookings`,  newRequest);
       history.push("/bookings/:id")
     } catch (error) {
-      console.log(error);
     }
   };
 

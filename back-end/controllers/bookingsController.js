@@ -1,5 +1,7 @@
 const express = require("express");
-const bookings = express.Router();
+const bookings = express.Router({
+	mergeParams: true
+});
 
 const {
 	fetchAllBookings,
@@ -20,7 +22,9 @@ bookings.get("/:id", async (req, res) => {
 });
 
 bookings.post("/", async (req, res) => {
-	const newBooking = await createBooking(req.body);
+	const {chefId, userId} = req.params;
+	console.log(chefId, userId)
+	const newBooking = await createBooking(chefId, userId, req.body);
 	res.json({ success: true, payload: newBooking });
 });
 

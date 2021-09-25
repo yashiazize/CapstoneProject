@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
+
 
 * {
 	margin: 0;
@@ -8,7 +9,7 @@
 	box-sizing: border-box;
 }
 :root {
-	--primaryColor: #ff7700;
+	--primaryColor: #ee7c19;
 	--mainWhite: #fff;
 	--offWhite: #f7f7f7;
 	--mainBlack: rgb(0, 0, 0);
@@ -59,12 +60,14 @@ h6 {
 	display: inline-block;
 	text-decoration: none;
 	letter-spacing: var(--mainSpacing);
-	color: var(--mainBlack);
+	font-family: 'Dosis', sans-serif;
+	font-weight:bold;
+	color: rgb(19, 18, 18);
 	background: var(--primaryColor);
 	padding: 0.4rem 0.9rem;
 	border: 3px solid var(--primaryColor);
+	border-radius: 3px;
 	transition: var(--mainTransition);
-	text-transform: uppercase;
 	cursor: pointer;
 }
 .btn-primary:hover {
@@ -136,7 +139,7 @@ h6 {
 	transition: var(--mainTransition);
 	font-family: "Ropa Sans", sans-serif;
 	text-align: center;
-	font-size: 1rem;
+	font-size: 16px;
 	font-weight: 600;
 	letter-spacing: var(--mainSpacing);
 }
@@ -147,6 +150,15 @@ h6 {
 
 .show-nav {
 	height: 100px;
+}
+
+.lgnBtn {
+	border: none;
+	background-color: #f7f7f7;
+	font-family: "Ropa Sans", sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	padding-top: 8px;
 }
 
 @media screen and (min-width: 768px) {
@@ -191,11 +203,10 @@ h6 {
 /* B A N N E R */
 .banner {
 	display: inline-block;
-	background: rgba(3, 6, 8, 0.5);
+	background: rgba(1, 12, 29, 0.475);
 	color: var(--mainWhite);
 	padding: 2rem 1rem;
 	text-align: center;
-	text-transform: capitalize;
 	letter-spacing: var(--mainSpacing);
 }
 .banner h1 {
@@ -615,8 +626,8 @@ h6 {
 
 .signup-container {
 	background: #004aa2;
-	width: 40vw;
-	height: 90vh;
+	width: 60vw;
+	height: 110vh;
 	border-radius: 20px;
 	display: flex;
 	justify-content: center;
@@ -708,3 +719,4 @@ h6 {
    background: rgba(0, 0, 0, 0.55);
    z-index: 10;
 }
+

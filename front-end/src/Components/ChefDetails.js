@@ -12,11 +12,11 @@ const ChefDetails = ({ chefs }) => {
 	const [chef, setChef] = useState({});
 	const [chefAvail, setChefAvail] = useState({});
 	let { id } = useParams();
-
+	
 	useEffect(() => {
 		const fetchSingleChef = async () => {
 			try {
-				const res = chefs.filter((chef) => chef.id === Number(id));
+				const res = chefs.filter((chef) => chef.id === id);
 				const resAvail = await axios.get(`${API}/availability/${id}`);
 				setChef(res[0]);
 				setChefAvail(resAvail.data.payload);
@@ -34,7 +34,7 @@ const ChefDetails = ({ chefs }) => {
 				<img src={imageChef} class="img-fluid rounded-start" alt={chef.name} />
 			</div>
 			<article className="single-chef-info">
-				<h2>{chef.name}</h2>
+				<h2>{chef.first_name} {chef.last_name}</h2>
 				<h6>Cuisine(s): {chef.cuisine}</h6>
 				<p>Rating: ...star system</p>
 			</article>
