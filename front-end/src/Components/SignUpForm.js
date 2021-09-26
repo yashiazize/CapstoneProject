@@ -30,7 +30,6 @@ const SignUpForm = () => {
   const addNewUser = async (newUserId) => {
     try {
       await axios.post(`${API}/users`, { id: newUserId, ...user });
-      debugger;
     } catch (error) {
       return error;
     }
@@ -53,7 +52,6 @@ const SignUpForm = () => {
       user.last_name,
       user.zip_code
     );
-    debugger;
     await addNewUser(currentU.uid);
     history.push("/")
   }

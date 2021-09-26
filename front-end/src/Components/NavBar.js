@@ -30,8 +30,6 @@ const NavBar = () => {
 						<NavLink to={"/users/chefs"}>Chefs</NavLink>
 					</li>
 					<li>
-					{currentUser && currentUser.uid}
-						{/* <NavLink to={"/users/login"}>Login</NavLink> */}
 						<button className="lgnBtn" onClick={() => setModalOpen(!modalOpen)}>Login</button>
 					</li>
 					<li>

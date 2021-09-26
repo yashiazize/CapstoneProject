@@ -15,7 +15,7 @@ INSERT INTO bookings (
     		chef_id,
             user_id,
 		-- status,
-		cuisine,
+		event_type,
         party_size,
         address, 
         address2, 
@@ -25,7 +25,7 @@ INSERT INTO bookings (
 		start_event,
         end_event) 
 VALUES
-        ('ahdjw82iks','chgwq72ijd' , 'Italian', '1-2', '511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00');
+        ('ahdjw82iks','chgwq72ijd' , 'Birthday Party', '1-2', '511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00');
         -- (2, 5, 'French', 'Sept 1, 2021', '19:00:00', '21:00:00'),
         -- (4, 3, 'Asian', 'March 8 , 2021', '18:00:00', '22:00:00' );
         -- YYYY-MM-DD hh:mm:ss[.nnn]

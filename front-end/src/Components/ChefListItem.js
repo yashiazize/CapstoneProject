@@ -10,13 +10,15 @@ const ChefListItem = ({ chef }) => {
 					<img
 						src={imageChef}
 						className="img-fluid rounded-start "
-						alt={chef.name}
+						alt={chef.first_name}
 					/>
 				</div>
 				<div className="col-md-8">
 					<div className="card-body">
 						<h5 className="card-title">
-							<Link to={`/users/chefs/${chef.id}`}>{chef.first_name} {chef.last_name}</Link>
+							<Link to={`/users/chefs/${chef.id}`}>
+								{chef.first_name} {chef.last_name}
+							</Link>
 						</h5>
 						<p className="card-text">
 							This is a wider card with supporting text below as a natural
