@@ -26,12 +26,16 @@ const ChefDetails = ({ chefs }) => {
 		};
 		fetchSingleChef();
 	}, [id, chefs]);
+	
+	if(!chef) {
+		return null
+	}
 
 	return (
 		<section className="single-chef">
 			<div className="single-chef-images">
 				{/* have multiple images for this chef -- map an array? */}
-				<img src={imageChef} class="img-fluid rounded-start" alt={chef.name} />
+				<img src={imageChef} className="img-fluid rounded-start" alt={chef.first_name} />
 			</div>
 			<article className="single-chef-info">
 				<h2>{chef.first_name} {chef.last_name}</h2>
@@ -64,12 +68,12 @@ const ChefDetails = ({ chefs }) => {
 					</button>
 				</Link>
 
-				<Link to={`/bookings/new`}>
+				<Link to={`/chefs/${chef.id}/bookings/new`}>
 					<button className="btn-primary">Book</button>
 				</Link>
 			</div>
 		</section>
 	);
-};
+}
 
 export default ChefDetails;

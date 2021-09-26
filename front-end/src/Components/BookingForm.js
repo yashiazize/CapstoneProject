@@ -3,13 +3,16 @@ import { useState } from "react";
 import BookingCal from "./BookingCal";
 import axios from "axios";
 import { apiURL } from "../util/apiURL";
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
+import { useAuth } from "../Providers/AuthProvider";
 
 const API = apiURL();
 
 const BookingForm = () => {
+  const { chef_id } = useParams();
+  const { currentUser } = useAuth();
   const [request, setRequest] = useState({
-    cuisine: "",
+    event_type: "",
     party_size: "",
     address: "",
     address2: "",
@@ -27,7 +30,8 @@ const BookingForm = () => {
 
   const addNewRequest = async (newRequest) => {
     try {
-      await axios.post(`${API}/bookings`,  newRequest);
+      const chefRequest = {chef_id: chef_id, user_id: currentUser.uid, ...newRequest}
+      await axios.post(`${API}/bookings`, chefRequest);
       history.push("/bookings/:id")
     } catch (error) {
     }
@@ -44,14 +48,12 @@ const BookingForm = () => {
       <form onSubmit={handleSubmit} className="booking-container">
         <h1 className="booking-heading"> Book Chef</h1>
         <div>
-          <label>Select Cuisine:</label>
-          <select onChange={handleChange("cuisine")} className="form-select" aria-label="Default select example">
-            <option type="text" value={"american"}>American</option>
-            <option type="text" value={"asian"}>Asian</option>
-            <option type="text" value={"carribean"}>Carribean</option>
-            <option type="text"value={"italian"}>Italian</option>
-            <option type="text" value={"french"}>French</option>
-            <option type="text" value={"mediterranean"}>Mediterranean</option>
+          <label>Select Event Type:</label>
+          <select onChange={handleChange("event_type")} className="form-select" aria-label="Default select example">
+            <option type="text" value={"Birthday Party"}>Birthday Party</option>
+            <option type="text" value={"Corporate Function"}>Corporate Function</option>
+            <option type="text" value={"Dinner Party"}>Dinner Party</option>
+            <option type="text" value={"Other"}>Other</option>
           </select>
         </div>
         <div>
