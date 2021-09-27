@@ -139,7 +139,7 @@ const BookingForm = () => {
 					/>
 					<label htmlFor="floatingInput">Address2</label>
 				</div>
-				<div className="form-floating mb-3 col-md-6">
+				<div className="form-floating mb-3 ">
 					<input
 						value={request.city}
 						type="text"
@@ -150,27 +150,30 @@ const BookingForm = () => {
 					/>
 					<label htmlFor="floatingInput">City</label>
 				</div>
-				<div className="form-floating mb-3 col-md-4">
-					<input
-						value={request.state}
-						type="text"
-						name="state"
-						className="form-control"
-						onChange={handleChange("state")}
-						required
-					/>
-					<label htmlFor="floatingInput">State</label>
-				</div>
-				<div className="form-floating mb-3 col-md-4">
-					<input
-						value={request.zip_code}
-						type="text"
-						name="zip_code"
-						className="form-control"
-						onChange={handleChange("zip_code")}
-						required
-					/>
-					<label htmlFor="floatingInput">Zip Code</label>
+				{/* state and zip */}
+				<div className="flex">
+					<div className="form-floating mb-3 col-md-6">
+						<input
+							value={request.state}
+							type="text"
+							name="state"
+							className="form-control"
+							onChange={handleChange("state")}
+							required
+						/>
+						<label htmlFor="floatingInput">State</label>
+					</div>
+					<div className="form-floating mb-3 col-md-6">
+						<input
+							value={request.zip_code}
+							type="text"
+							name="zip_code"
+							className="form-control"
+							onChange={handleChange("zip_code")}
+							required
+						/>
+						<label htmlFor="floatingInput">Zip Code</label>
+					</div>
 				</div>
 				<div>
 					<BookingCal setRequest={setRequest} request={request} />
