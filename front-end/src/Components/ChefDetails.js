@@ -5,7 +5,7 @@ import ChefAvailability from "./ChefAvailability";
 import { Link, useParams } from "react-router-dom";
 import ChefCalendar from "./ChefCalendar";
 import imageChef from "../Images/bkgnd-lukas-blazek-unsplash.jpg";
-import StarRating from "./StarRating";
+
 
 const API = apiURL();
 
@@ -37,7 +37,6 @@ const ChefDetails = ({ chefs }) => {
 			<article className="single-chef-info">
 				<h2>{chef.name}</h2>
 				<h6>Cuisine(s): {chef.cuisine}</h6>
-				<StarRating />
 			</article>
 			<div className="single-chef-info">
 				<article className="info">

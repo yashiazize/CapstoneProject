@@ -1,45 +1,41 @@
 const db = require("../db/dbConfig");
 
-const collectiveChefsRatings = async (chefId) => {
+const allChefRatings = async () => {
     try{
-        const allRatings = await db.any(
-            `SELECT * FROM reviews WHERE chef_id = $1`, chefId
-        );
-        return allRatings;
-    } catch (error) {
-        return error;
+return await db.any(`SELECT * FROM ratings`);
+    } catch (err) {
+        return err;
     }
 };
 
-const aRatingForChef = async (bookingId) => {
+//no need to fetch a single rating
+const aRating = async (id) => {
     try{
-        const singleRatingForChef = await db.one(
-            `SELECT * FROM reviews WHERE booking_id =$1`, bookingId
-        );
-        return singleRatingForChef; 
-    } catch (error){
-        return error;
+        return await db.one(`SELECT * FROM ratings WHERE id = $1`, id);
+    } catch (err){
+        return err;
     }
 };
 
-const newRatingForChef= async ( starRating, chefId) => {
-    const { user_id, rating} = starRating;
+const newRatingForChef = async ( starRating) => {
+    const { rating, chef_id, user_id} = starRating;
     try {
         const newRating = await db.one(
-            `INSERT INTO ratings (user_id, rating)
-            VALUES ($1, $2)
+            `
+            INSERT INTO ratings (rating, chef_id, user_id)
+            VALUES ($1, $2, $3)
             RETURNING *
             `,
-[user_id, rating, chefId]
+[rating, chef_id, user_id]
         );        
 return newRating;
-    } catch (error) {
-        return error;
+    } catch (err) {
+        return err;
     }
 };
 
 module.exports = {
-    collectiveChefsRatings,
-    aRatingForChef,
+    allChefRatings,
+    aRating,
     newRatingForChef,
 };

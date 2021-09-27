@@ -1,22 +1,23 @@
 const express = require("express");
-const chefRating = express.Router();
+const chefsRating = express.Router({
+    mergeParams: true,
+  });
 
 const {
-    collectiveChefsRatings,
+    allChefRatings,
     aRatingForChef,
     newRatingForChef,
 } = require("../queries/ratings");
 
-chefRating.get("/", async (req, res) => {
-    const { chef_id } = req.params;
-    const chefRatings = await collectiveChefsRatings(chef_id);
-    res.json({success: true, payload: chefRatings})
+chefsRating.get("/", async (req, res) => {
+    const AllChefWithRatings = await allChefRatings();
+    res.json({success: true, payload: AllChefWithRatings})
 });
 
-chefRating.get("/:booking_id", async (req, res) => {
+chefsRating.get("/:id", async (req, res) => {
     try {
-        const { booking_id } = req.params;
-        const singleStarRating = await aRatingForChef(booking_id);
+        const { chef_id } = req.params;
+        const singleStarRating = await aRatingForChef(chef_id);
         if(singleStarRating["booking_id"]){
             res.json({success: true, payload: singleStarRating})
         }else{
@@ -27,18 +28,9 @@ chefRating.get("/:booking_id", async (req, res) => {
     }
 });
 
-chefRating.post("/", async (req, res) => {
-    try {
-        const { chef_id } = req.params;
-        const create = await newRatingForChef(req.body, chef_id);
-        if(create["chef_id"]){
-        res.json({success: true, payload: create})
-        }else{
-            throw create
-        }
-    } catch (error) {
-        res.status(404).json({success: false, payload: "Rating not found", error: error});
-    }
-});
+chefsRating.post("/", async (req, res) => {
+   const create = await newRatingForChef(req.body);
+   res.json({success: true, payload: create})
+    });
 
-module.exports = chefRating;
+module.exports = chefsRating;

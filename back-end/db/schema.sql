@@ -37,10 +37,11 @@ CREATE TABLE bookings (
 DROP TABLE IF EXISTS ratings;
 
 CREATE TABLE ratings (
-    chef_id INT REFERENCES users (id) NOT NULL,
-    booking_id INT REFERENCES bookings (id) NOT NULL,
-    user_id INT REFERENCES users (id) NOT NULL, 
-    rating NUMERIC NOT NULL CHECK (rating >=0 AND rating <= 5) 
+    id SERIAL PRIMARY KEY, 
+    rating NUMERIC NOT NULL, CHECK (rating >=0 AND rating <= 5), 
+    chef_id INT REFERENCES users(id),
+    user_id INT REFERENCES users(id)
+    -- booking_id INT REFERENCES bookings(id)
 );
 
 -- DROP TABLE IF EXISTS availability;
