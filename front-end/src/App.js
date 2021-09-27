@@ -32,7 +32,9 @@ function App() {
         return err;
       }
     };
+
     fetchAllChefs();
+
   }, []);
 
   return (
