@@ -5,10 +5,10 @@ CREATE DATABASE chef_app_dev;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
-    id SERIAL PRIMARY KEY, 
-    email VARCHAR(100) unique, 
-    pw_hash TEXT NOT NULL, 
-    name VARCHAR(100) NOT NULL, 
+    id TEXT PRIMARY KEY UNIQUE,
+    email VARCHAR(100) UNIQUE, 
+    first_name VARCHAR(100) NOT NULL, 
+    last_name VARCHAR(100) NOT NULL, 
     is_chef BOOLEAN DEFAULT FALSE, 
     cuisine TEXT, 
     zip_code VARCHAR(5),
@@ -20,10 +20,9 @@ DROP TABLE IF EXISTS bookings;
 
 CREATE TABLE bookings (
     id SERIAL PRIMARY KEY, 
-    chef_id INT REFERENCES users (id) NOT NULL, 
-    user_id INT REFERENCES users (id) NOT NULL, 
-    -- status TEXT NOT NULL, 
-    cuisine TEXT NOT NULL, 
+    chef_id TEXT REFERENCES users (id) NOT NULL, 
+    user_id TEXT REFERENCES users (id) NOT NULL, 
+    event_type TEXT NOT NULL, 
     party_size TEXT NOT NULL, 
     address TEXT NOT NULL, 
     address2 TEXT, 
@@ -57,7 +56,7 @@ CREATE TABLE ratings (
 --     friday TEXT DEFAULT NULL,
 --     saturday TEXT DEFAULT NULL,
 --     -- might need to move is_booked and booked_by to the bookings table
---     time TIME DEFAULT NULL,
+--     -- time TIME DEFAULT NULL,
 --     is_booked BOOLEAN DEFAULT NULL,
 --     booked_by INT REFERENCES users (id)
 -- );

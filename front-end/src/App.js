@@ -16,7 +16,6 @@ import IndexBookings from "./Pages/IndexBookings.js";
 import NewUser from "./Pages/NewUser.js";
 import NewBooking from "./Pages/NewBooking.js";
 import FourOFour from "./Pages/FourOFour";
-import LoginForm from "./Components/LoginForm.js";
 import AuthProvider from "./Providers/AuthProvider.js";
 
 const API = apiURL();
@@ -46,11 +45,6 @@ function App() {
             <Home />
           </Route>
 
-          {/* /users */}
-          {/* <Route exact path="/users/login">
-            <LoginForm />
-          </Route> */}
-
           <Route exact path="/users/new">
             <NewUser />
           </Route>
@@ -67,7 +61,7 @@ function App() {
           <Route exact path="/bookings">
             <IndexBookings />
           </Route>
-          <Route exact path="/bookings/new">
+          <Route exact path="/chefs/:chef_id/bookings/new">
             <NewBooking />
           </Route>
           <Route exact path="/bookings/:id">

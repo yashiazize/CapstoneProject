@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
+
 
 * {
 	margin: 0;
@@ -8,12 +9,12 @@
 	box-sizing: border-box;
 }
 :root {
-	--primaryColor: #ff7700;
+	--primaryColor: #ee7c19;
 	--mainWhite: #fff;
 	--offWhite: #f7f7f7;
 	--mainBlack: rgb(0, 0, 0);
 	--mainGrey: #ececec;
-	--darkGrey: #f5ecce;
+	--medTan: #e3ebf3;
 	--mainTransition: all 0.3s linear;
 	--mainSpacing: 3px;
 	--lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
@@ -59,12 +60,14 @@ h6 {
 	display: inline-block;
 	text-decoration: none;
 	letter-spacing: var(--mainSpacing);
-	color: var(--mainBlack);
+	font-family: 'Dosis', sans-serif;
+	font-weight:bold;
+	color: rgb(19, 18, 18);
 	background: var(--primaryColor);
 	padding: 0.4rem 0.9rem;
 	border: 3px solid var(--primaryColor);
+	border-radius: 3px;
 	transition: var(--mainTransition);
-	text-transform: uppercase;
 	cursor: pointer;
 }
 .btn-primary:hover {
@@ -136,7 +139,7 @@ h6 {
 	transition: var(--mainTransition);
 	font-family: "Ropa Sans", sans-serif;
 	text-align: center;
-	font-size: 1rem;
+	font-size: 16px;
 	font-weight: 600;
 	letter-spacing: var(--mainSpacing);
 }
@@ -147,6 +150,15 @@ h6 {
 
 .show-nav {
 	height: 100px;
+}
+
+.lgnBtn {
+	border: none;
+	background-color: #f7f7f7;
+	font-family: "Ropa Sans", sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	padding-top: 8px;
 }
 
 @media screen and (min-width: 768px) {
@@ -183,19 +195,18 @@ h6 {
 	justify-content: center;
 }
 .chefsHero {
-	background-image: url("./Images/beach-albert-unsplash.jpg");
-	min-height: 60vh;
+	background-image: url("./Images/table-centerFlowers.jpg");
+	min-height: 25vh;
 }
 /* End of Hero */
 
 /* B A N N E R */
 .banner {
 	display: inline-block;
-	background: rgba(3, 6, 8, 0.5);
+	background: rgba(1, 12, 29, 0.475);
 	color: var(--mainWhite);
 	padding: 2rem 1rem;
 	text-align: center;
-	text-transform: capitalize;
 	letter-spacing: var(--mainSpacing);
 }
 .banner h1 {
@@ -234,8 +245,8 @@ h6 {
 /* S E R V I C E S */
 
 .services {
-	padding-bottom: 40vh;
-	background: var(--darkGrey);
+	padding-bottom: 30vh;
+	background: var(--medTan);
 	text-align: center;
 	flex-direction: column;
 }
@@ -261,6 +272,11 @@ h6 {
 	width: 80%;
 	margin: 0 auto;
 }
+
+.services h4 {
+	padding-top: 3vh;
+}
+
 @media screen and (min-width: 992px) {
 	.services-center {
 		width: 95vw;
@@ -278,7 +294,7 @@ h6 {
 /* T I T L E */
 .section-title {
 	text-align: center;
-	margin-bottom: 4rem;
+	margin-bottom: 3rem;
 }
 .section-title h4 {
 	font-size: 2rem;
@@ -615,8 +631,8 @@ h6 {
 
 .signup-container {
 	background: #004aa2;
-	width: 40vw;
-	height: 90vh;
+	width: 60vw;
+	height: 110vh;
 	border-radius: 20px;
 	display: flex;
 	justify-content: center;
@@ -707,4 +723,22 @@ h6 {
    left: 0;
    background: rgba(0, 0, 0, 0.55);
    z-index: 10;
+}
+
+.requestsCard{
+	background-color: var(--medTan);
+	height: 100vh;
+	width: 100vw;
+}
+
+.requestsCard h2 {
+	padding: 4vh 0 0 5vw;
+	font-weight: bolder;
+	font-family: 'Dosis', sans-serif;
+}
+
+.requestsCard .card {
+	margin: 8vh 0 0 10vw;
+	border-radius: 7px;
+	font-family: "Poppins", sans-serif;;
 }
