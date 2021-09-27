@@ -5,6 +5,7 @@ import ChefAvailability from "./ChefAvailability";
 import { Link, useParams } from "react-router-dom";
 import ChefCalendar from "./ChefCalendar";
 import imageChef from "../Images/bkgnd-lukas-blazek-unsplash.jpg";
+import Reviews from "./Reviews.js";
 
 
 const API = apiURL();
@@ -52,6 +53,9 @@ const ChefDetails = ({ chefs }) => {
 						amet consectetur adipisicing elit. Blanditiis sequi odio suscipit ea
 						similique nobis.
 					</p>
+					<>
+					<Reviews />
+					</>
 				</article>
 				<article className="info">
 					<h3>Chef's Availability Calendar</h3>

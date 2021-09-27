@@ -49,7 +49,7 @@ const RequestDetails = () => {
             </div>
       </div>
       <div>
-     <StarRating />
+     {/* <StarRating /> */}
       </div>
     </section>
   );

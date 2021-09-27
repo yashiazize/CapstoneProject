@@ -39,9 +39,9 @@ VALUES
 -- (4, '10am - 3pm', NULL, NULL, NULL, NULL, '10am - 3pm', NULL, NULL, true, 3),
 -- (5, '10am - 3pm', NULL, NULL, NULL, NULL, NULL,'10am - 3pm',  NULL, false, 3);
 
-INSERT INTO ratings (rating, chef_id, user_id)
+INSERT INTO ratings (chef_id, user_id, review, rating)
 VALUES
-(5, 1, 3),
-(1, 2, 3),
-(5, 4, 3),
-(1, 5, 3);
+('ahdjw82iks', 'chgwq72ijd', 'good', 3),
+('ahdjw82iks', 'chgwq72ijd', 'meh', 1),
+('bsujdyh822', 'chgwq72ijd', 'great', 4),
+('bsujdyh822', 'chgwq72ijd', 'excellent', 5);

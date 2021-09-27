@@ -3,7 +3,7 @@ const express = require("express");
 const usersController = require("./controllers/usersController");
 const bookingsController = require("./controllers/bookingsController");
 const availabilityController = require("./controllers/availabilityController");
-const ratings = require("./controllers/chefsRatings")
+const ratings = require("./controllers/ratingsController")
 
 const app = express();
 
