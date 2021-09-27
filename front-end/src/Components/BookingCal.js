@@ -11,8 +11,9 @@ const useStyles = makeStyles((theme) => ({
 	textField: {
 		marginLeft: theme.spacing(1),
 		marginRight: theme.spacing(1),
-		width: 250,
-		marginBottom: 15,
+		width: 350,
+		marginBottom: 10,
+		marginTop: 20,
 	},
 }));
 
@@ -35,7 +36,7 @@ const BookingCal = ({ setRequest, request }) => {
 	return (
 		<div>
 			<form className={classes.container} noValidate>
-				<h3>Select date and time for booking</h3>
+				<h6 className="booking-heading">Date and time</h6>
 				<TextField
 					id="startDate"
 					label="Event Start Date and Time"
