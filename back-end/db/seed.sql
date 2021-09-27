@@ -14,26 +14,30 @@ VALUES
 INSERT INTO bookings (
     		chef_id,
             user_id,
-		status,
+		-- status,
 		cuisine,
-		event_date,
-		start_time,
-		end_time) 
+        party_size,
+        address, 
+        address2, 
+        city, 
+        state, 
+        zip_code, 
+		start_event,
+        end_event) 
 VALUES
-        (1, 3, 'pending', 'Italian', 'Dec 31, 2021', '20:00:00', '03:00:00' ),
-        (2, 5, 'accepted', 'French', 'Sept 1, 2021', '19:00:00', '21:00:00'),
-        (4, 3, 'rejected', 'Asian', 'March 8 , 2021', '18:00:00', '22:00:00' ),
-        (4, 5, 'pending', 'Soul food', 'Nov 25, 2021', '11:00:00', '17:00:00');
+        (1, 3, 'Italian', '1-2', '511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00');
+        -- (2, 5, 'French', 'Sept 1, 2021', '19:00:00', '21:00:00'),
+        -- (4, 3, 'Asian', 'March 8 , 2021', '18:00:00', '22:00:00' ),
+        -- YYYY-MM-DD hh:mm:ss[.nnn]
 
-
-INSERT INTO availability (
-    chef_id, sunday, monday, tuesday, wednesday, thursday, friday, saturday, time, is_booked, booked_by
-)        
-VALUES 
-(1, NULL,'10am - 3pm','10am - 3pm', NULL, NULL, NULL, NULL, NULL, false, 2),
-(2, NULL, NULL,'10am - 3pm','10am - 3pm',NULL, NULL, NULL, NULL, false, 4),
-(4, '10am - 3pm', NULL, NULL, NULL, NULL, '10am - 3pm', NULL, NULL, true, 3),
-(5, '10am - 3pm', NULL, NULL, NULL, NULL, NULL,'10am - 3pm',  NULL, false, 3);
+-- INSERT INTO availability (
+--     chef_id, sunday, monday, tuesday, wednesday, thursday, friday, saturday, time, is_booked, booked_by
+-- )        
+-- VALUES 
+-- (1, NULL,'10am - 3pm','10am - 3pm', NULL, NULL, NULL, NULL, NULL, false, 2),
+-- (2, NULL, NULL,'10am - 3pm','10am - 3pm',NULL, NULL, NULL, NULL, false, 4),
+-- (4, '10am - 3pm', NULL, NULL, NULL, NULL, '10am - 3pm', NULL, NULL, true, 3),
+-- (5, '10am - 3pm', NULL, NULL, NULL, NULL, NULL,'10am - 3pm',  NULL, false, 3);
 
 INSERT INTO ratings (chef_id, booking_id, user_id, rating)
 VALUES

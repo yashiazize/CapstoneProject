@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import { apiURL } from "../util/apiURL";
+import StarRating from "./StarRating"
 
 const API = apiURL();
 
 const RequestDetails = () => {
+  
 
 
   return (
@@ -31,11 +33,14 @@ const RequestDetails = () => {
                 <Link >
                   <button className="loginBtn">Edit</button>
                 </Link>
-                <button className="btn-primary">Delete</button>
+                <button >Delete</button>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div>
+     <StarRating />
       </div>
     </section>
   );
