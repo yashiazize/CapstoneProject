@@ -51,7 +51,7 @@ const BookingForm = () => {
 			<form onSubmit={handleSubmit} className="booking-container">
 				<h1 className="booking-heading"> Book Chef</h1>
 				<div>
-					<label>Event Type:</label>
+					<label className="mb-1">Event Type:</label>
 					<select
 						onChange={handleChange("event_type")}
 						className="form-select"
@@ -72,7 +72,7 @@ const BookingForm = () => {
 					</select>
 				</div>
 				<div>
-					<label>Party Size:</label>
+					<label className="mb-1 mt-3">Party Size:</label>
 					<select
 						onChange={handleChange("party_size")}
 						defaultValue=""
@@ -97,26 +97,26 @@ const BookingForm = () => {
 					</select>
 				</div>
 				{/* <label>Dietary Restrictions:</label>
-        <div className="form-check col-auto">
-          <label for="dairy_free">Dairy Free</label>
-          <input
-            className="form-check-input"
-            type="checkbox"
-            name="dairy_free"
-          />
-        </div>
-        <div className="form-check col-auto">
-          <label for="gluten_free"> Gluten Free</label>
-          <input
-            className="form-check-input"
-            type="checkbox"
-            name="gluten_free"
-          />
-        </div>
-        <div className="form-check col-auto">
-          <label for="kosher">Kosher</label>
-          <input className="form-check-input" type="checkbox" name="kosher" />
-        </div> */}
+				<div className="form-check col-auto">
+				<label for="dairy_free">Dairy Free</label>
+				<input
+					className="form-check-input"
+					type="checkbox"
+					name="dairy_free"
+				/>
+				</div>
+				<div className="form-check col-auto">
+				<label for="gluten_free"> Gluten Free</label>
+				<input
+					className="form-check-input"
+					type="checkbox"
+					name="gluten_free"
+				/>
+				</div>
+				<div className="form-check col-auto">
+				<label for="kosher">Kosher</label>
+				<input className="form-check-input" type="checkbox" name="kosher" />
+				</div> */}
 				<h6 className="booking-heading">Event Location</h6>
 				<div className="form-floating mb-3">
 					<input

@@ -128,6 +128,8 @@ h6 {
 	list-style-type: none;
 	display: flex;
 	justify-content: space-between;
+	margin-right: 1rem;
+	padding-left: 1rem;
 }
 
 .nav-links a {
@@ -148,7 +150,7 @@ h6 {
 }
 
 .show-nav {
-	height: 100px;
+	height: 50px;
 }
 
 .lgnBtn {
@@ -419,6 +421,19 @@ h6 {
 /* End React Calendar */
 
 /* Booking Form */
+.new-booking {
+	margin-top: 1rem;
+	margin-left: 1rem;
+}
+
+.new-booking a {
+	text-transform: uppercase;
+}
+.stick {
+	position: sticky;
+	top: 7rem;
+}
+
 .booking {
 	display: flex;
 	margin: 0;
@@ -432,7 +447,7 @@ h6 {
 
 .booking-container {
 	background: #f7f0da;
-	width: 60vw;
+	width: 80vw;
 	/* height: 120vh; */
 	border-radius: 20px;
 	display: flex;
@@ -440,7 +455,9 @@ h6 {
 	flex-direction: column;
 	color: black;
 	padding: 2em;
-	margin-top: 3rem;
+	/* margin-top: 6rem; */
+	/* margin-left: 10rem; */
+	margin: 12rem 3rem 10rem 10rem;
 }
 
 .booking-heading {
