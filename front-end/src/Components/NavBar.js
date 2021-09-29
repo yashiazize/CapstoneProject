@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaAlignRight, FaHome } from "react-icons/fa";
 import { signOut } from "../Services/Firebase";
 import { useAuth } from "../Providers/AuthProvider";
@@ -18,27 +18,28 @@ const NavBar = () => {
 			<div className="nav-center">
 				<div className="nav-header">
 					{/* replace this home icon with the Logo Image  */}
-					<NavLink to={"/"}>
-						<FaHome className="nav-icon" />
-					</NavLink>
+					<Link to={"/"}>
+						<h1 className="nav-logo">Savor</h1>
+					</Link>
 					<button type="button" className="nav-btn" onClick={handleToggle}>
 						<FaAlignRight className="nav-icon" />
 					</button>
 				</div>
 				<ul className={toggleMenu ? "nav-links show-nav" : "nav-links"}>
 					<li>
-						<NavLink to={"/users/chefs"}>Chefs</NavLink>
+						{currentUser && currentUser.uid}					
+						<Link to={"/users/chefs"}>Chefs</Link>
 					</li>
 					<li>
 						<button className="lgnBtn" onClick={() => setModalOpen(!modalOpen)}>Login</button>
 					</li>
 					<li>
-						<NavLink to={"/"} onClick={signOut}>
+						<Link to={"/"} onClick={signOut}>
 							Logout
-						</NavLink>
+						</Link>
 					</li>
 					<li>
-						<NavLink to={"/bookings/:id"}>Requests</NavLink>
+						<Link to={"/bookings/:id"}>Requests</Link>
 					</li>
 				</ul>
 			</div>

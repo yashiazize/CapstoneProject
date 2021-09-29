@@ -116,14 +116,13 @@ const SignUpForm = () => {
           </div>
         </div>
         <div>
-          <p>Are you a Chef?</p>
-          <input
+          <h5> <input
             onClick={handleCheckBox}
             checked={checked}
             type="checkbox"
             value={"isChef"}
             name="is_chef"
-          />
+          />I am a Chef</h5>
           {checked ? <div> <ChefInfo handleChange={handleChange}/> </div> : null}
         </div>
         <button className="signLoginBtn" onClick={handleSubmit}>

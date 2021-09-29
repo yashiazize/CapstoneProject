@@ -1,5 +1,4 @@
 import { useState } from "react";
-// material-ui
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 
@@ -13,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
 		marginRight: theme.spacing(1),
 		width: 250,
 		marginBottom: 15,
+		color: 'white'
 	},
 }));
 
@@ -35,7 +35,6 @@ const BookingCal = ({ setRequest, request }) => {
 	return (
 		<div>
 			<form className={classes.container} noValidate>
-				<h3>Select date and time for booking</h3>
 				<TextField
 					id="startDate"
 					label="Event Start Date and Time"

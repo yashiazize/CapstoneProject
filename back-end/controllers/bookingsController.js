@@ -13,7 +13,11 @@ const {
 bookings.get("/", async (req, res) => {
 	const { userId } = req.params
 	const userBookings = await fetchUserBookings(userId);
-	res.json({ success: true, payload: userBookings });
+	if(userBookings.id) {
+		res.json({ success: true, payload: userBookings });
+	} else {
+		res.json({success: false, payload: "Error"})
+	}
 });
 
 bookings.get("/:id", async (req, res) => {
