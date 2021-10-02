@@ -1,4 +1,4 @@
-import { withRouter } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
 import { useState } from "react";
 import BookingCal from "./BookingCal";
 import axios from "axios";
@@ -20,7 +20,7 @@ const BookingForm = () => {
     state: "",
     zip_code: "",
     start_event: "",
-    end_event: "",
+    end_event: ""
   });
   let history = useHistory();
 
@@ -36,17 +36,16 @@ const BookingForm = () => {
         ...newRequest,
       };
       await axios.post(`${API}/bookings`, chefRequest);
-      debugger
-      history.push("/bookings/:id");
-    } catch (error) {}
-  };
+    } catch (error) {
+      return error
+    }
 
-  console.log(request)
+    console.log(request);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await addNewRequest(request);
-    history.push("/bookings/:id");
+    history.push("/bookings/");
   };
 
   return (

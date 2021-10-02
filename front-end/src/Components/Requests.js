@@ -10,21 +10,34 @@ const Requests = () => {
 
     const { currentUser } = useAuth()
     const [bookings, setBookings] = useState([]);
-    const currentUserId = currentUser.uid;
+
+    debugger
+    const currentUserId = currentUser && currentUser.uid;
 
     useEffect(() => {
         const fetchAllBookings = async () => {
+          if (currentUserId){
+          try {
           console.log("chicken", currentUserId)
           const res = await axios.get(`${API}/users/${currentUserId}/bookings/`);
           setBookings([res.data.payload]);
-          try {
+          console.log(res)
+          console.log("Bookings =>", bookings)
+          debugger
+
           } catch (error) {
             console.log(error);
           }
+        }
         };
         fetchAllBookings();
       }, [currentUserId]);
- console.log("pickles", bookings)
+      debugger
+    if (!currentUser || !bookings.length){
+      return null
+    }
+
+
     return (
         <div>
             {bookings.map((booking) => {

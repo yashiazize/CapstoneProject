@@ -12,7 +12,6 @@ CREATE TABLE users (
     is_chef BOOLEAN DEFAULT FALSE, 
     cuisine TEXT, 
     availability TEXT
-    -- availability_id INT REFERENCES availability (id) NOT NULL,  
 );
 
 DROP TABLE IF EXISTS bookings;
