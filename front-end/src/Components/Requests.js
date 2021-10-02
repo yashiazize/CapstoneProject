@@ -22,8 +22,8 @@ const Requests = () => {
 					const res = await axios.get(
 						`${API}/users/${currentUserId}/bookings/`
 					);
-					console.log("chicken", currentUserId);
-					setBookings([res.data.payload]);
+
+					setBookings(res.data.payload);
 					console.log("HERE", res.data);
 					console.log("Bookings =>", bookings);
 					debugger;
