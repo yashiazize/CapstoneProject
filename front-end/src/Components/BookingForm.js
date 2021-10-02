@@ -49,7 +49,6 @@ const BookingForm = () => {
 		e.preventDefault();
 		let res = await addNewRequest(request);
 		console.log("RES", res);
-		debugger;
 
 		if (res.data.payload.success === true) {
 			history.push(`/users/${currentUser.uid}/bookings`);

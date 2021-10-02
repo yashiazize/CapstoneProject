@@ -1,3 +1,4 @@
+const { use } = require("../controllers/bookingsController");
 const db = require("../db/dbConfig");
 
 const fetchAllBookings = async () => {
@@ -16,6 +17,7 @@ const fetchUserBookings = async (user_id) => {
 		return { success: false, payload: error };
 	}
 };
+
 const fetchBooking = async (id) => {
 	try {
 		return await db.oneOrNone("SELECT * FROM bookings WHERE id =$1", id);
