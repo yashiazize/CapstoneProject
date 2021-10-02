@@ -1,21 +1,20 @@
 const express = require("express");
 const bookings = express.Router({
-	mergeParams: true
+	mergeParams: true,
 });
 
 const {
 	fetchBooking,
 	createBooking,
 	updateBooking,
-	fetchUserBookings
+	fetchUserBookings,
 } = require("../queries/bookings");
 
 bookings.get("/", async (req, res) => {
-	const { userId } = req.params
+	const { userId } = req.params;
 	const userBookings = await fetchUserBookings(userId);
-	res.json({ success: true, payload: userBookings });
+	res.json(userBookings);
 });
-
 
 bookings.get("/:id", async (req, res) => {
 	const { id } = req.params;
@@ -28,7 +27,7 @@ bookings.post("/", async (req, res) => {
 	if (newBooking.id) {
 		res.json({ success: true, payload: newBooking });
 	} else {
-		res.json({success:false, payload: "Booking was not able to be created"})
+		res.json({ success: false, payload: "Booking was not able to be created" });
 	}
 });
 
@@ -47,6 +46,5 @@ bookings.put("/:id", async (req, res) => {
 		res.json({ success: true, payload: editedBooking });
 	}
 });
-
 
 module.exports = bookings;

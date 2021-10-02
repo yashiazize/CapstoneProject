@@ -13,7 +13,7 @@ const NavBar = () => {
 		setToggleMenu((isOpen) => !isOpen);
 	};
 
-	console.log(currentUser)
+	console.log(currentUser);
 	return (
 		<nav className="navBar">
 			<div className="nav-center">
@@ -28,10 +28,12 @@ const NavBar = () => {
 				</div>
 				<ul className={toggleMenu ? "nav-links show-nav" : "nav-links"}>
 					<li>
-						<Link to={"/users/chefs"}>Chefs</Link>
+						<Link to={"/chefs"}>Chefs</Link>
 					</li>
 					<li>
-						<button className="lgnBtn" onClick={() => setModalOpen(!modalOpen)}>Login</button>
+						<button className="lgnBtn" onClick={() => setModalOpen(!modalOpen)}>
+							Login
+						</button>
 					</li>
 					<li>
 						<Link to={"/"} onClick={signOut}>
@@ -42,9 +44,9 @@ const NavBar = () => {
 						<Link to={"/bookings/:id"}>Requests</Link>
 					</li>
 				</ul>
-					<p> Hi, {currentUser && currentUser.email} </p>					
+				<p> Hi, {currentUser && currentUser.email} </p>
 			</div>
-			{modalOpen ? <LoginForm setModalOpen={setModalOpen}/> : null}
+			{modalOpen ? <LoginForm setModalOpen={setModalOpen} /> : null}
 		</nav>
 	);
 };
