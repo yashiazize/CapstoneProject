@@ -94,11 +94,24 @@ h6 {
 /* End of Global Styles */
 
 /* N A V B A R */
+
+.nav-logo {
+	color: var(--primaryColor);
+	font-family: "Rock Salt", cursive;
+	font-size: 3vh;
+	font-weight: bold;
+}
+ a:link {
+	text-decoration: none;
+  }
+  
+
 .navBar {
 	position: sticky;
 	top: 0;
 	width: 100vw;
 	padding-top: 4vh;
+	padding-left: 3vw;
 	padding-bottom: 1vh;
 	background: var(--offWhite);
 	z-index: 1;
@@ -140,7 +153,6 @@ h6 {
 	font-family: "Ropa Sans", sans-serif;
 	text-align: center;
 	font-size: 16px;
-	font-weight: 600;
 	letter-spacing: var(--mainSpacing);
 }
 
@@ -159,6 +171,7 @@ h6 {
 	font-size: 16px;
 	font-weight: 500;
 	padding-top: 8px;
+	letter-spacing: var(--mainSpacing);
 }
 
 @media screen and (min-width: 768px) {
@@ -345,71 +358,37 @@ h6 {
 /* End List of Chefs */
 
 /*  SINGLE C H E F  */
+
 .single-chef {
-	padding: 5rem 0 0 0;
+	margin: 10vh 0 10vw 0;
+	
 }
 
-.single-chef:hover {
-	box-shadow: var(--darkShadow);
-}
-.single-chef-images {
-	width: 80vw;
-	margin: 0 auto;
+.single-chef-img-avail {
+	padding-left: 5vw;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-	grid-row-gap: 2rem;
-	grid-column-gap: 50px;
+	grid-template-columns:  30vw 50vw;
+	gap: 15vw;
 }
 
-.single-chef-images img {
-	width: 100%;
-	display: block;
+.single-chef-img-avail img {
+	width: 30vw;
 }
 
-.single-chef-info {
-	width: 80vw;
+.single-chef-img-avail article {
+	padding-top: 10vh;
+}
+
+.chef-info-form {
+	padding-top: 10vh;
+	padding-left: 5vw;
 	display: grid;
-	grid-template-columns: 1fr;
-	margin: 2rem auto;
-}
-.description,
-.info {
-	margin: 1rem 0;
+	grid-template-columns:  40vw 50vw;
+	gap: 15vw;
 }
 
-.description h3 {
-	text-transform: capitalize;
-	letter-spacing: var(--mainSpacing);
-}
-.description p {
-	line-height: 1.5;
-}
 
-.info h3,
-.info h6 {
-	text-transform: capitalize;
-	letter-spacing: var(--mainSpacing);
-}
 
-.info h6 {
-	font-weight: 300;
-}
-
-@media screen and (min-width: 992px) {
-	.single-chef-images,
-	.single-chef-info {
-		width: 95vw;
-		max-width: 1170px;
-	}
-	.single-chef-info {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-column-gap: 2rem;
-	}
-	.info {
-		padding-left: 3rem;
-	}
-}
 /* End Single Chef */
 
 /* Chef Availibility Calendar */
@@ -420,42 +399,107 @@ h6 {
 /* End React Calendar */
 
 /* Booking Form */
+
 .booking {
-	display: flex;
-	margin: 0;
+	/* margin-left: 20vw; */
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Poppins", sans-serif;
-	justify-content: center;
-	align-items: center;
-	height: 120vh;
-  }
-  
-  .booking-container {
-	background: #f7f0da;
-	width: 40vw;
-	height: 120vh;
-	border-radius: 20px;
+	height: 90vh;
+	width: 20vw;
+}
+
+.selects {
+	display: flex;
+	padding-bottom: 20px;
+	flex-direction: row;
+    justify-content: space-between;
+}
+
+.city-state {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.booking-container {
+	background: #004aa2;
+	width: 30vw;
+	height: 110vh;
+	border-radius: 40px;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	color: black;
+	color: white;
 	padding: 2em;
 }
 
 .booking-heading {
-	font-size: 2em;
+	font-size: 25px;
 	font-weight: bold;
-	color: var(--primaryColor);
-	margin-bottom: 0.5em;
+	color: rgb(0, 255, 238);
+	padding-bottom: 15px;
 }
 
+.booking-heading1 {
+	font-size: 18px;
+	font-weight: bold;
+	padding-top: 2px;
+	color: rgb(0, 255, 238);
+}
+
+.booking-box {
+	margin: 0.2em 0;
+}
+
+.booking-container .booking-box p {
+	color: white;
+	font-size: 14px;
+}
+
+.booking-container .booking-box div {
+	position: relative;
+	width: 100%;
+	height: 40px;
+	margin: 0.5em 0;
+}
+
+.booking-container .booking-box input {
+	position: absolute;
+	width: 100%;
+	height: 80%;
+	background: white;
+	color: black;
+	border: none;
+	outline: none;
+	padding-left: 0.8em;
+	border-radius: 10px;
+	transition: all 0.4s;
+}
+
+/* .booking-container .booking-box input:focus::placeholder {
+	color: white;
+}
+
+.booking-container .booking-box div::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 102%;
+	height: 105%;
+	border-radius: 10px;
+	background: linear-gradient(to right, rgb(255, 185, 33), var(--primaryColor));
+} */
+
+
 .loginBtn3 {
-	width: 50%;
+	width: 100%;
 	height: 40px;
 	border: none;
 	border-radius: 10px;
-	margin-top: 50px;
+	margin-top: 6vh;
 	transform: translate(-1%);
 	cursor: pointer;
 	color: white;
@@ -464,6 +508,12 @@ h6 {
 	transition: all 0.4s;
 }
 
+.bookingCal {
+	background-color: white;
+	margin-right: 8vw;
+	padding: 1rem 0 0 2rem;
+	border-radius: 10px
+}
 /* End Chef Availibility Calendar */
 
 /* LoginForm */
@@ -616,7 +666,7 @@ h6 {
 	margin-right: 20px;
 }
 
-/* Signup Form  */
+/* booking Form  */
 
 .sign-up {
 	display: flex;
@@ -631,7 +681,7 @@ h6 {
 
 .signup-container {
 	background: #004aa2;
-	width: 60vw;
+	width: 40vw;
 	height: 110vh;
 	border-radius: 20px;
 	display: flex;
@@ -711,6 +761,11 @@ h6 {
 	box-shadow: 0 0 10px rgba(0, 255, 238, 0.982);
 }
 
+.first_last {
+	display: grid;
+	grid-template-columns: 18vw 18vw;
+	gap: 1vw;
+}
 
 /* modal */
 

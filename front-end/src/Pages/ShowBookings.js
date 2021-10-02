@@ -1,4 +1,4 @@
-import Requests from "../Components/RequestDetails";
+import Requests from "../Components/Requests";
 const ShowBookings = () => {
 	return (
 		<Requests/>

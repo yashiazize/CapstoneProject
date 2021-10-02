@@ -16,6 +16,7 @@ bookings.get("/", async (req, res) => {
 	res.json({ success: true, payload: userBookings });
 });
 
+
 bookings.get("/:id", async (req, res) => {
 	const { id } = req.params;
 	const booking = await fetchBooking(id);

@@ -18,6 +18,8 @@ export function AuthProvider({ children }) {
     return auth.signInWithEmailAndPassword(email, password, uid);
   }
 
+
+
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       setCurrentUser(user);

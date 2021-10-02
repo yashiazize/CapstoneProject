@@ -7,8 +7,7 @@ const StarRating = ({ rating }) => {
     if (i <= rating) {
       stars.push(< FaStar color="ff7700"/>)
     } else if (i === Math.ceil(rating) && !Number.isInteger(rating)) {
-      stars.push(<FaStarHalf color="ff7700"
-        FaStar color="ff7700"/>)
+      stars.push(<FaStarHalf color="ff7700"/>)
     }
     else {
       stars.push(<FaStar color="ececec"/>)

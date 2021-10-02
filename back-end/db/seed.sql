@@ -1,13 +1,13 @@
 \c chef_app_dev;
 
 INSERT INTO users (
-    id, email, first_name, last_name, is_chef, cuisine, zip_code, availability)
+    id, email, first_name, last_name, is_chef, cuisine, availability)
 VALUES 
-    ('ahdjw82iks','chef_boyardee@gmail.com', 'Chef', 'Boyardee', true, 'Italian', 10001, 'Monday, Tuesday'),
-    ('bsujdyh822','juliaChild23@yahoo.com', 'Julia', 'Child', true, 'French', 23403, 'Wednesday, Thursday'),
-    ('chgwq72ijd','lesliemann@gmail.com', 'Leslie', 'Mann', false, NULL , NULL, NUll);
-    -- ('morimoto4545@gmail.com', 'sushi11', 'Masaharu Morimoto', true, 'Japanese', 13042, 'Friday, Sunday'),
-    -- ('butter@gmail.com', 'deepFried1', 'Paula Dean', true, 'Southern', 30144, 'Saturday, Sunday'),
+    ('ahdjw82iks','chef_boyardee@gmail.com', 'Chef', 'Boyardee', true, 'Italian', 'Monday, Tuesday'),
+    ('bsujdyh822','juliaChild23@yahoo.com', 'Julia', 'Child', true, 'French', 'Wednesday, Thursday'),
+    ('chgwq72ijd','lesliemann@gmail.com', 'Leslie', 'Mann', false, NULL, NUll),
+    ('morimoto4545@gmail.com', 'sushi11', 'Masaharu', 'Morimoto', true, 'Japanese', 'Friday, Sunday'),
+    ('butter@gmail.com', 'deepFried1', 'Paula', 'Dean', true, 'Southern', 'Saturday, Sunday');
     -- ('vicCruz89@yahoo.com', 'football88', 'Victor Cruz', false, NULL, NULL, NULL);
 
 
