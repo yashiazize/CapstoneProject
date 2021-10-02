@@ -36,9 +36,9 @@ const BookingForm = () => {
         ...newRequest,
       };
       await axios.post(`${API}/bookings`, chefRequest);
-      debugger
-      history.push("/bookings/:id");
-    } catch (error) {}
+    } catch (error) {
+
+    }
   };
 
   console.log(request)
@@ -46,7 +46,7 @@ const BookingForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await addNewRequest(request);
-    history.push("/bookings/:id");
+    history.push("/bookings/");
   };
 
   return (

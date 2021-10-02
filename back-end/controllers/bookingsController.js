@@ -25,7 +25,11 @@ bookings.get("/:id", async (req, res) => {
 
 bookings.post("/", async (req, res) => {
 	const newBooking = await createBooking(req.body);
-	res.json({ success: true, payload: newBooking });
+	if (newBooking.id) {
+		res.json({ success: true, payload: newBooking });
+	} else {
+		res.json({success:false, payload: "Booking was not able to be created"})
+	}
 });
 
 bookings.put("/:id", async (req, res) => {
