@@ -1,6 +1,6 @@
 const express = require("express");
 const users = express.Router();
-const bookingsController = require("./bookingsController")
+const bookingsController = require("./bookingsController");
 
 const {
 	fetchAllUsers,
@@ -10,7 +10,7 @@ const {
 	fetchAllChefs,
 } = require("../queries/users");
 
-users.use('/:userId/bookings', bookingsController)
+users.use("/:chefId/bookings", bookingsController);
 // CHEFS
 users.get("/chefs", async (_, res) => {
 	const allChefs = await fetchAllChefs();
@@ -32,8 +32,8 @@ users.post("/", async (req, res) => {
 	const newUser = await createUser(req.body);
 	if (newUser.id) {
 		res.json({ success: true, payload: newUser });
-	} else  {
-		res.json({success:false, payload: "Error"})
+	} else {
+		res.json({ success: false, payload: "Error" });
 	}
 });
 

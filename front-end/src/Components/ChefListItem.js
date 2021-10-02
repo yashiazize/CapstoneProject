@@ -14,19 +14,20 @@ const ChefListItem = ({ chef }) => {
 					/>
 				</div>
 				<div className="col-md-8">
-					<div className="card-body">
-						<h5 className="card-title">
-							<Link to={`/users/chefs/${chef.id}`}>
+					<Link to={`/users/chefs/${chef.id}`}>
+						<div className="card-body">
+							<h3 className="card-title">
 								{chef.first_name} {chef.last_name}
-							</Link>
-						</h5>
-						<p className="card-text">
-							This is a wider card with supporting text below as a natural
-							lead-in to additional content. This content is a little bit
-							longer.
-						</p>
-						<p className="card-text">Cuisine(s): {chef.cuisine}</p>
-					</div>
+							</h3>
+							<p className="card-text">
+								This is a wider card with supporting text below as a natural
+								lead-in to additional content. This content is a little bit
+								longer.
+							</p>
+							<hr />
+							<p className="card-text">Cuisine(s): {chef.cuisine}</p>
+						</div>
+					</Link>
 				</div>
 			</div>
 		</div>

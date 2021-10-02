@@ -40,4 +40,9 @@ VALUES
 ('gui09cytcj', '10am - 3pm', NULL, NULL, NULL, NULL, '10am - 3pm', NULL, true, 'chgwq72ijd'),
 ('byu45hfj92', '10am - 3pm', NULL, NULL, NULL, NULL, NULL,'10am - 3pm', false,'chgwq72ijd');
 
--- Populate the Interval table with every interval you're going to have in your calendar. 
+INSERT INTO ratings (chef_id, user_id, review, rating)
+VALUES
+('ahdjw82iks', 'chgwq72ijd', 'good', 3),
+('ahdjw82iks', 'chgwq72ijd', 'meh', 1),
+('bsujdyh822', 'chgwq72ijd', 'great', 4),
+('bsujdyh822', 'chgwq72ijd', 'excellent', 5);

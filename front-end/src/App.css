@@ -140,7 +140,7 @@ h6 {
 	transition: var(--mainTransition);
 	font-family: "Ropa Sans", sans-serif;
 	text-align: center;
-	font-size: 16px;
+	font-size: 1rem;
 	font-weight: 600;
 	letter-spacing: var(--mainSpacing);
 }
@@ -223,6 +223,10 @@ h6 {
 .banner p {
 	font-size: 1.2rem;
 	margin-bottom: 2rem;
+}
+
+.chefs-banner {
+	height: 100px;
 }
 @media screen and (min-width: 576px) {
 	.banner {
@@ -342,6 +346,15 @@ h6 {
 	opacity: 0.3;
 }
 
+.chefs-list-card a,
+.chefs-list-card a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+.chefs-list-card .card-body h3 {
+	color: #ee7c19;
+}
 /* End List of Chefs */
 
 /*  SINGLE C H E F  */
@@ -453,7 +466,7 @@ h6 {
 
 .booking-container {
 	background: #f7f0da;
-	width: 80vw;
+	width: 50vw;
 	border-radius: 20px;
 	display: flex;
 	justify-content: center;
@@ -484,14 +497,13 @@ h6 {
 	transition: all 0.4s;
 }
 
-@media screen and (max-width: 414px) {
+/* @media screen and (max-width: 414px) {
 	.booking {
 		margin-top: 0;
 		height: 110vh;
 	}
 	.new-booking {
 		width: 80vw;
-		/* margin: 0 1rem; */
 	}
 	.new-booking a {
 		width: 50px;
@@ -500,8 +512,8 @@ h6 {
 	.booking-container {
 		margin: 0 1rem 0 8rem;
 	}
-}
-@media screen and (min-width: 768px) {
+} */
+/* @media screen and (min-width: 768px) {
 	.booking-container {
 		margin: 0 2rem 0 10rem;
 	}
@@ -509,7 +521,7 @@ h6 {
 		margin-top: 0;
 		height: 75vh;
 	}
-}
+} */
 /* @media screen and (min-width: 1024px) {
 	.makeStyles-container-3 {
 		flex-direction: row;

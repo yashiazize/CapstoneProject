@@ -3,7 +3,7 @@ import { apiURL } from "../util/apiURL.js";
 import { useState, useEffect } from "react";
 import ChefAvailability from "./ChefAvailability";
 import { Link, useParams } from "react-router-dom";
-import ChefCalendar from "./ChefCalendar";
+import BookingForm from "./BookingForm";
 import imageChef from "../Images/bkgnd-lukas-blazek-unsplash.jpg";
 
 const API = apiURL();
@@ -48,6 +48,17 @@ const ChefDetails = ({ chefs }) => {
 				<h6>Cuisine(s): {chef.cuisine}</h6>
 				<p>Rating: ...star system</p>
 			</article>
+			<div>
+				<Link to={`/users/chefs`}>
+					<button className="btn-primary" type="button">
+						Back
+					</button>
+				</Link>
+
+				<Link to={`/chefs/${chef.id}/bookings/new`}>
+					<button className="btn-primary">Book</button>
+				</Link>
+			</div>
 			<div className="single-chef-info">
 				<article className="info">
 					<h3>bio:</h3>
@@ -60,24 +71,11 @@ const ChefDetails = ({ chefs }) => {
 					</p>
 				</article>
 				<article className="info">
-					<h3>Chef's Availability Calendar</h3>
 					<h6>Availability: {chef.availability}</h6>
 					<ChefAvailability chefAvail={chefAvail} />
-					<ChefCalendar className="chef-cal" />
 				</article>
 			</div>
-
-			<div>
-				<Link to={`/users/chefs`}>
-					<button className="btn-primary" type="button">
-						Back
-					</button>
-				</Link>
-
-				<Link to={`/chefs/${chef.id}/bookings/new`}>
-					<button className="btn-primary">Book</button>
-				</Link>
-			</div>
+			<BookingForm />
 		</section>
 	);
 };

@@ -1,4 +1,7 @@
 import { useState } from "react";
+import "date-fns";
+// import DateFnsUtils from "@date-io/date-fns";
+
 // material-ui
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
@@ -33,6 +36,10 @@ const BookingCal = ({ setRequest, request }) => {
 		});
 	};
 
+	const customDates = (date) => {
+		return date.getDay() === 0 || date.getDay() === 6;
+	};
+
 	return (
 		<div>
 			<h6 className="booking-heading">Date and time</h6>
@@ -45,10 +52,12 @@ const BookingCal = ({ setRequest, request }) => {
 					value={eventDate.startDate}
 					name="startDate"
 					// defaultValue="2017-05-24T10:30"
+					required="true"
 					className={classes.textField}
 					InputLabelProps={{
 						shrink: true,
 					}}
+					shouldDisableDate={customDates}
 				/>
 				<TextField
 					id="endDate"

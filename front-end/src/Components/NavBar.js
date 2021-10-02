@@ -9,6 +9,7 @@ const NavBar = () => {
 	const [toggleMenu, setToggleMenu] = useState(false);
 	const [modalOpen, setModalOpen] = useState(false);
 	const { currentUser } = useAuth();
+
 	const handleToggle = () => {
 		setToggleMenu((isOpen) => !isOpen);
 	};
@@ -29,20 +30,29 @@ const NavBar = () => {
 					<li>
 						<NavLink to={"/users/chefs"}>Chefs</NavLink>
 					</li>
-					<li>
-						<button className="lgnBtn" onClick={() => setModalOpen(!modalOpen)}>Login</button>
-					</li>
-					<li>
-						<NavLink to={"/"} onClick={signOut}>
-							Logout
-						</NavLink>
-					</li>
+
 					<li>
 						<NavLink to={"/bookings/:id"}>Requests</NavLink>
 					</li>
+					{/* <div className={toggleLogIn ? "nav-links show-nav" : "nav-links"}> */}
+					<button className="btn-primary" type="button">
+						<li onClick={() => setModalOpen(!modalOpen)}>Login</li>
+					</button>
+
+					{/* if currentUser.uid => show logout button and show hello user */}
+
+					<button className="lgnBtn" type="button">
+						<li>
+							{/* Hello user {currentUser && currentUser.uid} */}
+							<NavLink to={"/"} onClick={signOut}>
+								Logout
+							</NavLink>
+						</li>
+					</button>
 				</ul>
+				{currentUser && currentUser.uid}
 			</div>
-			{modalOpen ? <LoginForm setModalOpen={setModalOpen}/> : null}
+			{modalOpen ? <LoginForm setModalOpen={setModalOpen} /> : null}
 		</nav>
 	);
 };

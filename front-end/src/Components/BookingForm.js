@@ -35,9 +35,11 @@ const BookingForm = () => {
 				user_id: currentUser.uid,
 				...newRequest,
 			};
-			await axios.post(`${API}/bookings`, chefRequest);
+			await axios.post(`${API}/bookings`, newRequest);
 			history.push("/bookings/:id");
-		} catch (error) {}
+		} catch (err) {
+			return err;
+		}
 	};
 
 	const handleSubmit = async (e) => {
@@ -47,7 +49,7 @@ const BookingForm = () => {
 	};
 
 	return (
-		<section className="booking">
+		<div>
 			<form onSubmit={handleSubmit} className="booking-container">
 				<h1 className="booking-heading"> Book Chef</h1>
 				<div>
@@ -96,27 +98,7 @@ const BookingForm = () => {
 						</option>
 					</select>
 				</div>
-				{/* <label>Dietary Restrictions:</label>
-				<div className="form-check col-auto">
-				<label for="dairy_free">Dairy Free</label>
-				<input
-					className="form-check-input"
-					type="checkbox"
-					name="dairy_free"
-				/>
-				</div>
-				<div className="form-check col-auto">
-				<label for="gluten_free"> Gluten Free</label>
-				<input
-					className="form-check-input"
-					type="checkbox"
-					name="gluten_free"
-				/>
-				</div>
-				<div className="form-check col-auto">
-				<label for="kosher">Kosher</label>
-				<input className="form-check-input" type="checkbox" name="kosher" />
-				</div> */}
+
 				<h6 className="booking-heading">Event Location</h6>
 				<div className="form-floating mb-3">
 					<input
@@ -177,10 +159,10 @@ const BookingForm = () => {
 				</div>
 				<div>
 					<BookingCal setRequest={setRequest} request={request} />
-					<input className="loginBtn3" type="submit" />
+					<input className="loginBtn3" type="submit" value="BOOK" />
 				</div>
 			</form>
-		</section>
+		</div>
 	);
 };
 
