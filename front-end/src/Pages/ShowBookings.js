@@ -5,6 +5,7 @@ const ShowBookings = () => {
 			Show Bookings for a user
 			<Requests />
 		</div>
+
 	);
 };
 
