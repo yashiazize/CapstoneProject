@@ -36,9 +36,12 @@ const BookingForm = () => {
         ...newRequest,
       };
       await axios.post(`${API}/bookings`, chefRequest);
+      debugger
       history.push("/bookings/:id");
     } catch (error) {}
   };
+
+  console.log(request)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -164,7 +167,7 @@ const BookingForm = () => {
         <div>
         <p className="booking-heading1">Event Start & End Time</p>
           <BookingCal setRequest={setRequest} request={request} />
-          <input className="loginBtn3" type="submit" value="Book" />
+          <button onClick={handleSubmit} className="loginBtn3" type="submit"> Book </button>
         </div>
       </div>
     </section>

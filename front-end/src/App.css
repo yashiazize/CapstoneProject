@@ -153,7 +153,6 @@ h6 {
 	font-family: "Ropa Sans", sans-serif;
 	text-align: center;
 	font-size: 16px;
-	font-weight: 600;
 	letter-spacing: var(--mainSpacing);
 }
 
@@ -172,6 +171,7 @@ h6 {
 	font-size: 16px;
 	font-weight: 500;
 	padding-top: 8px;
+	letter-spacing: var(--mainSpacing);
 }
 
 @media screen and (min-width: 768px) {
@@ -495,11 +495,11 @@ h6 {
 
 
 .loginBtn3 {
-	width: 50%;
+	width: 100%;
 	height: 40px;
 	border: none;
 	border-radius: 10px;
-	margin-top: 10px;
+	margin-top: 6vh;
 	transform: translate(-1%);
 	cursor: pointer;
 	color: white;
@@ -508,6 +508,12 @@ h6 {
 	transition: all 0.4s;
 }
 
+.bookingCal {
+	background-color: white;
+	margin-right: 8vw;
+	padding: 1rem 0 0 2rem;
+	border-radius: 10px
+}
 /* End Chef Availibility Calendar */
 
 /* LoginForm */
@@ -675,7 +681,7 @@ h6 {
 
 .signup-container {
 	background: #004aa2;
-	width: 60vw;
+	width: 40vw;
 	height: 110vh;
 	border-radius: 20px;
 	display: flex;
@@ -755,6 +761,11 @@ h6 {
 	box-shadow: 0 0 10px rgba(0, 255, 238, 0.982);
 }
 
+.first_last {
+	display: grid;
+	grid-template-columns: 18vw 18vw;
+	gap: 1vw;
+}
 
 /* modal */
 

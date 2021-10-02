@@ -35,6 +35,7 @@ const BookingCal = ({ setRequest, request }) => {
 	return (
 		<div>
 			<form className={classes.container} noValidate>
+				<div className="bookingCal">
 				<TextField
 					id="startDate"
 					label="Event Start Date and Time"
@@ -61,6 +62,7 @@ const BookingCal = ({ setRequest, request }) => {
 						shrink: true,
 					}}
 				/>
+				</div>
 			</form>
 		</div>
 	);

@@ -11,7 +11,6 @@ CREATE TABLE users (
     last_name VARCHAR(100) NOT NULL, 
     is_chef BOOLEAN DEFAULT FALSE, 
     cuisine TEXT, 
-    zip_code VARCHAR(5),
     availability TEXT
     -- availability_id INT REFERENCES availability (id) NOT NULL,  
 );

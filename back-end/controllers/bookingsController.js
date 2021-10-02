@@ -13,12 +13,9 @@ const {
 bookings.get("/", async (req, res) => {
 	const { userId } = req.params
 	const userBookings = await fetchUserBookings(userId);
-	if(userBookings.id) {
-		res.json({ success: true, payload: userBookings });
-	} else {
-		res.json({success: false, payload: "Error"})
-	}
+	res.json({ success: true, payload: userBookings });
 });
+
 
 bookings.get("/:id", async (req, res) => {
 	const { id } = req.params;

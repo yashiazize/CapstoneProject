@@ -17,16 +17,14 @@ const fetchUser = async (id) => {
 };
 
 const createUser = async (user) => {
-	// if user is a chef {do this} else {do that -- regular user}
-	// chef? chef specs: user specs
-	const {id, email, first_name, last_name, is_chef, cuisine, zip_code, availability } = user;
+	const {id, email, first_name, last_name, is_chef, cuisine, availability } = user;
 	try {
 		const newUser = await db.one(
 			`INSERT INTO users
-            (id, email, first_name, last_name, is_chef, cuisine, zip_code, availability)
-            VALUES($1, $2, $3, $4, $5, $6, $7, $8)
+            (id, email, first_name, last_name, is_chef, cuisine, availability)
+            VALUES($1, $2, $3, $4, $5, $6, $7)
             RETURNING *`,
-			[id, email, first_name, last_name, is_chef, cuisine, zip_code, availability]
+			[id, email, first_name, last_name, is_chef, cuisine, availability]
 		);
 		return newUser;
 	} catch (err) {
@@ -35,16 +33,15 @@ const createUser = async (user) => {
 };
 
 const updateUser = async (id, user) => {
-	const { email, name, is_chef, cuisine, zip_code, image } = user;
+	const { email, name, is_chef, cuisine, image } = user;
 	try {
 		const query =
-			"UPDATE users SET email = $1, name = $2, is_chef = $3, cuisine = $4, zip_code = $5, image = $6 WHERE id = $7 RETURNING *";
+			"UPDATE users SET email = $1, name = $2, is_chef = $3, cuisine = $4, image = $5 WHERE id = $6 RETURNING *";
 		const updatedUser = await db.one(query, [
 			email,
 			name,
 			is_chef,
 			cuisine,
-			zip_code,
 			image,
 			id,
 		]);
