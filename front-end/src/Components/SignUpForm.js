@@ -3,8 +3,7 @@ import { withRouter, useHistory } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../Providers/AuthProvider";
 import { apiURL } from "../util/apiURL";
-import ChefInfo from "./ChefInfo"
-
+import ChefInfo from "./ChefInfo";
 
 let currentU;
 const API = apiURL();
@@ -12,7 +11,7 @@ const API = apiURL();
 const SignUpForm = () => {
   const [checked, setChecked] = useState(false);
   const { signup, currentUser } = useAuth();
- 
+
   currentU = currentUser;
   let history = useHistory();
   const [user, setUser] = useState({
@@ -25,12 +24,9 @@ const SignUpForm = () => {
     availability: "",
   });
 
- 
-
   const addNewUser = async (newUserId) => {
     try {
       await axios.post(`${API}/users`, { id: newUserId, ...user });
-      debugger;
     } catch (error) {
       return error;
     }
@@ -53,15 +49,15 @@ const SignUpForm = () => {
       user.last_name,
       user.zip_code
     );
-    debugger;
     await addNewUser(currentU.uid);
-    history.push("/")
+    history.push("/");
   }
 
   return (
     <section className="sign-up">
       <div className="signup-container">
         <p className="sign-heading"> Sign Up </p>
+        <div className="first_last">
         <div className="signup-box">
           <p>First Name</p>
           <div>
@@ -84,6 +80,7 @@ const SignUpForm = () => {
             />
           </div>
         </div>
+        </div>
         <div className="signup-box">
           <p>Email</p>
           <div>
@@ -92,17 +89,6 @@ const SignUpForm = () => {
               type="email"
               value={user.email}
               placeholder="Enter your E-mail"
-            />
-          </div>
-        </div>
-        <div className="signup-box">
-          <p>Zip Code</p>
-          <div>
-            <input
-              onChange={handleChange("zip_code")}
-              type="zipCode"
-              value={user.zip_code}
-              placeholder="Enter ZipCode"
             />
           </div>
         </div>
@@ -118,15 +104,23 @@ const SignUpForm = () => {
           </div>
         </div>
         <div>
-          <p>Are you a Chef?</p>
-          <input
-            onClick={handleCheckBox}
-            checked={checked}
-            type="checkbox"
-            value={"isChef"}
-            name="is_chef"
-          />
-          {checked ? <div> <ChefInfo handleChange={handleChange}/> </div> : null}
+          <h5>
+            {" "}
+            <input
+              onClick={handleCheckBox}
+              checked={checked}
+              type="checkbox"
+              value={"isChef"}
+              name="is_chef"
+            />
+            I am a Chef
+          </h5>
+          {checked ? (
+            <div>
+              {" "}
+              <ChefInfo handleChange={handleChange} />{" "}
+            </div>
+          ) : null}
         </div>
         <button className="signLoginBtn" onClick={handleSubmit}>
           Sign Up

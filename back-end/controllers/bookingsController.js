@@ -4,16 +4,18 @@ const bookings = express.Router({
 });
 
 const {
-	fetchAllBookings,
 	fetchBooking,
 	createBooking,
 	updateBooking,
+	fetchUserBookings
 } = require("../queries/bookings");
 
-bookings.get("/", async (_, res) => {
-	const allBookings = await fetchAllBookings();
-	res.json({ success: true, payload: allBookings });
+bookings.get("/", async (req, res) => {
+	const { userId } = req.params
+	const userBookings = await fetchUserBookings(userId);
+	res.json({ success: true, payload: userBookings });
 });
+
 
 bookings.get("/:id", async (req, res) => {
 	const { id } = req.params;
@@ -22,9 +24,7 @@ bookings.get("/:id", async (req, res) => {
 });
 
 bookings.post("/", async (req, res) => {
-	const {chefId, userId} = req.params;
-	console.log(chefId, userId)
-	const newBooking = await createBooking(chefId, userId, req.body);
+	const newBooking = await createBooking(req.body);
 	res.json({ success: true, payload: newBooking });
 });
 
@@ -43,5 +43,6 @@ bookings.put("/:id", async (req, res) => {
 		res.json({ success: true, payload: editedBooking });
 	}
 });
+
 
 module.exports = bookings;

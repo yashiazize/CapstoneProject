@@ -10,7 +10,7 @@ const {
 	fetchAllChefs,
 } = require("../queries/users");
 
-users.use('/:chefId/bookings', bookingsController)
+users.use('/:userId/bookings', bookingsController)
 // CHEFS
 users.get("/chefs", async (_, res) => {
 	const allChefs = await fetchAllChefs();

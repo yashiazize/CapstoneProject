@@ -1,6 +1,6 @@
 import ChefListItem from "./ChefListItem";
 
-const ChefsList = ({ chefs, id }) => {
+const ChefsList = ({ chefs }) => {
 	return (
 		<section>
 			<div className="chefs-list-container">

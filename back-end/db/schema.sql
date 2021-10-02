@@ -11,7 +11,6 @@ CREATE TABLE users (
     last_name VARCHAR(100) NOT NULL, 
     is_chef BOOLEAN DEFAULT FALSE, 
     cuisine TEXT, 
-    zip_code VARCHAR(5),
     availability TEXT
     -- availability_id INT REFERENCES availability (id) NOT NULL,  
 );
@@ -20,9 +19,9 @@ DROP TABLE IF EXISTS bookings;
 
 CREATE TABLE bookings (
     id SERIAL PRIMARY KEY, 
-    chef_id TEXT REFERENCES users (id), 
-    user_id TEXT REFERENCES users (id), 
-    cuisine TEXT NOT NULL, 
+    chef_id TEXT REFERENCES users (id) NOT NULL, 
+    user_id TEXT REFERENCES users (id) NOT NULL, 
+    event_type TEXT NOT NULL, 
     party_size TEXT NOT NULL, 
     address TEXT NOT NULL, 
     address2 TEXT, 
@@ -36,8 +35,12 @@ CREATE TABLE bookings (
 DROP TABLE IF EXISTS ratings;
 
 CREATE TABLE ratings (
-    rating NUMERIC NOT NULL CHECK (rating >=0 AND rating <= 5), 
-    booking_id INT REFERENCES bookings (id) NOT NULL
+    id BIGSERIAL NOT NULL PRIMARY KEY, 
+    chef_id TEXT NOT NULL REFERENCES users (id), 
+    user_id TEXT NOT NULL REFERENCES users (id),
+    review TEXT NOT NULL,
+    rating INT NOT NULL CHECK (rating >=0 AND rating <= 5) 
+    -- booking_id INT REFERENCES bookings(id)
 );
 
 -- DROP TABLE IF EXISTS availability;

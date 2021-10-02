@@ -44,7 +44,7 @@ const LoginForm = ({ setModalOpen }) => {
             <div>
               <input type="password" ref={passwordRef} required />
             </div>
-            <button className="loginBtn" onClick={handleSubmit}>
+            <button className="loginBtn" onClick={handleSubmit} >
               Log In
             </button>
           </div>

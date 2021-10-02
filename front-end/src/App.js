@@ -32,7 +32,9 @@ function App() {
         return err;
       }
     };
+
     fetchAllChefs();
+
   }, []);
 
   return (
@@ -61,7 +63,7 @@ function App() {
           <Route exact path="/bookings">
             <IndexBookings />
           </Route>
-          <Route exact path="/bookings/new">
+          <Route exact path="/chefs/:chef_id/bookings/new">
             <NewBooking />
           </Route>
           <Route exact path="/bookings/:id">
