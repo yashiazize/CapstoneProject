@@ -12,7 +12,6 @@ const IndexBookings = () => {
 			<AddReview />
 		</div>
 	);
-
 };
 
 export default IndexBookings;

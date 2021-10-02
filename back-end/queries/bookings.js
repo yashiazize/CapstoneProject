@@ -8,7 +8,7 @@ const fetchAllBookings = async () => {
 };
 const fetchUserBookings = async (user_id) => {
 	try {
-		const userBookings = await db.oneOrNone(
+		const userBookings = await db.any(
 			"SELECT * FROM bookings WHERE user_id = $1 OR chef_id = $1",
 			user_id
 		);
