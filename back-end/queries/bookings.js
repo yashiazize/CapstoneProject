@@ -1,16 +1,17 @@
+const { use } = require("../controllers/bookingsController");
 const db = require("../db/dbConfig");
 
-// const fetchAllBookings = async () => {
-//   try {
-//     return await db.any("SELECT * FROM bookings");
-//   } catch (err) {
-//     return err;
-//   }
-// };
-
+const fetchAllBookings = async () => {
+  try {
+    return await db.one('SELECT * FROM bookings')
+  } catch (error) {  
+  }
+}
 const fetchUserBookings = async (user_id) => {
   try {
-    return await db.oneOrNone('SELECT * FROM bookings WHERE user_id = $1 OR chef_id = $1', user_id)
+    const userBookings = await db.oneOrNone('SELECT * FROM bookings WHERE user_id = $1 OR chef_id = $1', user_id)
+    console.log(userBookings)
+    return userBookings;
   } catch (error) {
     return error;
   }
@@ -104,6 +105,7 @@ const updateBooking = async (id, booking) => {
 
 
 module.exports = {
+  fetchAllBookings,
   fetchBooking,
   createBooking,
   updateBooking,
