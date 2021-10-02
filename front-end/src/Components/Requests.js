@@ -10,6 +10,7 @@ const Requests = () => {
 
     const { currentUser } = useAuth()
     const [bookings, setBookings] = useState([]);
+
     debugger
     const currentUserId = currentUser && currentUser.uid;
 
@@ -35,6 +36,7 @@ const Requests = () => {
     if (!currentUser || !bookings.length){
       return null
     }
+
 
     return (
         <div>
