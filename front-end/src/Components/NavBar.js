@@ -41,7 +41,7 @@ const NavBar = () => {
 						</Link>
 					</li>
 					<li>
-						<Link to={"/bookings/:id"}>Requests</Link>
+						<Link to={`/users/:id/bookings`}>Requests</Link>
 					</li>
 				</ul>
 				<p> Hi, {currentUser && currentUser.email} </p>

@@ -8,7 +8,7 @@ import { useAuth } from "../Providers/AuthProvider";
 
 const API = apiURL();
 
-const BookingForm = () => {
+const BookingForm = ({ chef }) => {
 	const { id } = useParams();
 	const chef_id = id;
 	const { currentUser } = useAuth();
@@ -34,33 +34,34 @@ const BookingForm = () => {
 			const chefRequest = {
 				chef_id: chef_id,
 				user_id: currentUser.uid,
+				chef: `chef.first_name chef.last_name`,
 				...newRequest,
 			};
-			console.log("CHEFR", chefRequest);
 			let res = await axios.post(`${API}/bookings`, chefRequest);
+			console.log("CHEFR", res.data.payload);
 			return res;
 		} catch (err) {
 			return "error";
 		}
 	};
-	console.log(request);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		let res = await addNewRequest(request);
-		console.log("RES", res);
 
 		if (res.data.payload.success === true) {
 			history.push(`/users/${currentUser.uid}/bookings`);
 		} else {
-			console.log(res);
+			return res;
 		}
 	};
 
 	return (
 		<div>
 			<form onSubmit={handleSubmit} className="booking-container">
-				<h1 className="booking-heading"> Book Chef</h1>
+				<h1 className="booking-heading">
+					Book Chef: {chef.first_name} {chef.last_name}
+				</h1>
 				<div>
 					<label className="mb-1">Event Type:</label>
 					<select
@@ -68,14 +69,28 @@ const BookingForm = () => {
 						className="form-select"
 						aria-label="Default select example"
 					>
+						<option type="text" value={"---"} default>
+							---
+						</option>
+						<option type="text" value={"Other"}>
+							Special Occasion
+						</option>
+						<option type="text" value={"Corporate Function"}>
+							Corporate Event
+						</option>
 						<option type="text" value={"Birthday Party"}>
 							Birthday Party
 						</option>
-						<option type="text" value={"Corporate Function"}>
-							Corporate Function
-						</option>
+
 						<option type="text" value={"Dinner Party"}>
 							Dinner Party
+						</option>
+						<option type="text" value={"Other"}>
+							Meal Prep
+						</option>
+
+						<option type="text" value={"Other"}>
+							Brunch
 						</option>
 						<option type="text" value={"Other"}>
 							Other
@@ -85,28 +100,12 @@ const BookingForm = () => {
 
 				<div>
 					<label className="mb-1 mt-3">Party Size:</label>
-					<select
+					<input
 						onChange={handleChange("party_size")}
-						defaultValue=""
-						className="form-select"
-						aria-label="Default select example"
-					>
-						<option type="text" value={"1-2"}>
-							1-2
-						</option>
-						<option type="text" value={"3-4"}>
-							3-4
-						</option>
-						<option type="text" value={"4-10"}>
-							4-10
-						</option>
-						<option type="text" value={"10-20"}>
-							10-20
-						</option>
-						<option type="text" value={"20+"}>
-							20+
-						</option>
-					</select>
+						type="number"
+						name="party_size"
+						id="party_size"
+					/>
 				</div>
 
 				<h6 className="booking-heading">Event Location</h6>
@@ -152,8 +151,11 @@ const BookingForm = () => {
 							value={request.state}
 							type="text"
 							name="state"
+							maxlength="2"
+							pattern="[A-Za-z]{2}"
 							className="form-control"
 							onChange={handleChange("state")}
+							placeholder="NY"
 							required
 						/>
 						<label htmlFor="floatingInput">State</label>
@@ -164,6 +166,9 @@ const BookingForm = () => {
 							value={request.zip_code}
 							type="text"
 							name="zip_code"
+							maxlength="5"
+							pattern="[0-9]{5}"
+							placeholder="Zip code"
 							className="form-control"
 							onChange={handleChange("zip_code")}
 							required
