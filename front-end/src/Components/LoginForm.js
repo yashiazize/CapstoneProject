@@ -1,8 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../Providers/AuthProvider";
 import { Link, useHistory } from "react-router-dom";
-// import { signInWithGoogle } from "../Services/Firebase";
-// import googleIcon from "../Images/googleicon.png"
+
 
 const LoginForm = ({ setModalOpen }) => {
   const emailRef = useRef();
@@ -11,8 +10,7 @@ const LoginForm = ({ setModalOpen }) => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
-
-
+  
   async function handleSubmit(e) {
     e.preventDefault();
     try {
@@ -51,9 +49,6 @@ const LoginForm = ({ setModalOpen }) => {
           <div className="textOne">
             <Link to="/forgot-password">Forgot Password?</Link>
           </div>
-          {/* <button className="loginBtn2" onClick={signInWithGoogle}><img alt="googleImg"className="googleImg" src={googleIcon}/>
-          Sign in with Google
-        </button> */}
           <p className="textTwo">
             Dont have an account? <Link to="/users/new">Sign up</Link>
           </p>
