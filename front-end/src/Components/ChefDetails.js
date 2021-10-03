@@ -36,7 +36,7 @@ const ChefDetails = ({ chefs }) => {
 		<section className="single-chef">
 			<div className="single-chef-img-avail">
 				<img
-					src={imageChef}
+					src={chef.img_url}
 					className="img-fluid rounded-start"
 					alt={chef.first_name}
 				/>
@@ -56,11 +56,7 @@ const ChefDetails = ({ chefs }) => {
 					<article className="info">
 						<h3>About:</h3>
 						<p>
-							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt
-							explicabo asperiores sequi soluta quae sit tempore delectus
-							corrupti recusandae, animi ea ab! Sint, voluptas id? Lorem ipsum
-							dolor sit amet consectetur adipisicing elit. Blanditiis sequi odio
-							suscipit ea similique nobis.
+							{chef.bio}
 						</p>
 					</article>
 					<div>
