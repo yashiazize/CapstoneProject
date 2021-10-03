@@ -23,8 +23,8 @@ const RequestDetails = ({ booking }) => {
 					<p className="card-text">End Date: {endDate}</p>
 					<p className="card-text">End Time: {endTime}</p>
 					<p>
-						Address: {booking.address} {booking.address2}
-						{booking.city}, {booking.state} {booking.zip_code}
+						Address: {booking.address} {booking.address2} {booking.city},{" "}
+						{booking.state} {booking.zip_code}
 					</p>
 					<p className="card-text"></p>
 					{/* <div className="detailsButtons">

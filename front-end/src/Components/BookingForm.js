@@ -9,32 +9,31 @@ import { useAuth } from "../Providers/AuthProvider";
 const API = apiURL();
 
 const BookingForm = ({ chef }) => {
-	const { id } = useParams();
-	const chef_id = id;
-	const { currentUser } = useAuth();
-	const [request, setRequest] = useState({
-		event_type: "",
-		party_size: "",
-		address: "",
-		address2: "",
-		city: "",
-		state: "",
-		zip_code: "",
-		start_event: "",
-		end_event: "",
-	});
-	let history = useHistory();
+  const { id } = useParams();
+  const chef_id = id;
+  const { currentUser } = useAuth();
+  const [request, setRequest] = useState({
+    event_type: "",
+    party_size: "",
+    address: "",
+    address2: "",
+    city: "",
+    state: "",
+    zip_code: "",
+    start_event: "",
+    end_event: "",
+  });
+  let history = useHistory();
 
-	const handleChange = (type) => {
-		return (e) => setRequest({ ...request, [type]: e.target.value });
-	};
+  const handleChange = (type) => {
+    return (e) => setRequest({ ...request, [type]: e.target.value });
+  };
 
 	const addNewRequest = async (newRequest) => {
 		try {
 			const chefRequest = {
 				chef_id: chef_id,
 				user_id: currentUser.uid,
-				chef: `chef.first_name chef.last_name`,
 				...newRequest,
 			};
 			let res = await axios.post(`${API}/bookings`, chefRequest);
@@ -45,12 +44,12 @@ const BookingForm = ({ chef }) => {
 		}
 	};
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		const userID = currentUser.uid;
-		let res = await addNewRequest(request);
-		history.push(`/users/${userID}/bookings`);
-	};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const userID = currentUser.uid;
+    let res = await addNewRequest(request);
+    history.push(`/users/${userID}/bookings`);
+  };
 
 	return (
 		<div>
@@ -68,10 +67,10 @@ const BookingForm = ({ chef }) => {
 						<option type="text" value={"---"} default>
 							---
 						</option>
-						<option type="text" value={"Other"}>
+						<option type="text" value={"Special Occasion"}>
 							Special Occasion
 						</option>
-						<option type="text" value={"Corporate Function"}>
+						<option type="text" value={"Corporate Event"}>
 							Corporate Event
 						</option>
 						<option type="text" value={"Birthday Party"}>
@@ -79,12 +78,6 @@ const BookingForm = ({ chef }) => {
 						</option>
 						<option type="text" value={"Dinner Party"}>
 							Dinner Party
-						</option>
-						<option type="text" value={"Meal Prep"}>
-							Meal Prep
-						</option>
-						<option type="text" value={"Brunch"}>
-							Brunch
 						</option>
 						<option type="text" value={"Meal Prep"}>
 							Meal Prep
@@ -183,5 +176,6 @@ const BookingForm = ({ chef }) => {
 			</form>
 		</div>
 	);
+
 };
 export default withRouter(BookingForm);

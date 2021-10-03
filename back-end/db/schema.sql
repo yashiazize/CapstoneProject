@@ -1,12 +1,14 @@
--- DROP DATABASE IF EXISTS chef_app_dev;
--- CREATE DATABASE chef_app_dev;
--- \c chef_app_dev;
+DROP DATABASE IF EXISTS chef_app_dev;
+CREATE DATABASE chef_app_dev;
+\c chef_app_dev;
 
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
     id TEXT PRIMARY KEY UNIQUE,
     email VARCHAR(100) UNIQUE, 
+    img_url TEXT,
+    bio TEXT,
     first_name VARCHAR(100) NOT NULL, 
     last_name VARCHAR(100) NOT NULL, 
     is_chef BOOLEAN DEFAULT FALSE, 
@@ -27,8 +29,7 @@ CREATE TABLE bookings (
     state TEXT NOT NULL, 
     zip_code VARCHAR(5),
     start_event TIMESTAMP,
-    end_event TIMESTAMP,
-    chef TEXT
+    end_event TIMESTAMP
 );
 
 DROP TABLE IF EXISTS ratings;
