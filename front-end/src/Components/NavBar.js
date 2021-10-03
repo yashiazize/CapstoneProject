@@ -50,7 +50,7 @@ const NavBar = () => {
 					</li>
 				</ul>
 
-				{/* <p> Hi, {currentUser && currentUser.email} </p>					 */}
+				<p> Hi, {currentUser && currentUser.email} </p>					
 			</div>
 			{modalOpen ? <AuthModal setModalOpen={setModalOpen} /> : null}
 		</nav>

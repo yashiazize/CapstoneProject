@@ -54,10 +54,9 @@ const SignUpForm = () => {
 	}
 
 	return (
-		<>
-			<p className="sign-heading"> Sign Up </p>
+		<section className="signup-container">
 			<div className="first_last">
-				<div className="signup-box">
+				<div className="login-box">
 					<p>First Name</p>
 					<div>
 						<input
@@ -68,7 +67,7 @@ const SignUpForm = () => {
 						/>
 					</div>
 				</div>
-				<div className="signup-box">
+				<div className="login-box">
 					<p>Last Name</p>
 					<div>
 						<input
@@ -80,7 +79,7 @@ const SignUpForm = () => {
 					</div>
 				</div>
 			</div>
-			<div className="signup-box">
+			<div className="login-box">
 				<p>Email</p>
 				<div>
 					<input
@@ -91,7 +90,7 @@ const SignUpForm = () => {
 					/>
 				</div>
 			</div>
-			<div className="signup-box">
+			<div className="login-box">
 				<p> Create Password</p>
 				<div>
 					<input
@@ -124,7 +123,7 @@ const SignUpForm = () => {
 			<button className="signLoginBtn" onClick={handleSubmit}>
 				Sign Up
 			</button>
-		</>
+		</section>
 	);
 };
 
