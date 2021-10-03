@@ -184,5 +184,4 @@ const BookingForm = ({ chef }) => {
 		</div>
 	);
 };
-
 export default withRouter(BookingForm);

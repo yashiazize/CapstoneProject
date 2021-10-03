@@ -139,6 +139,7 @@ h6 {
 	height: 0;
 	overflow: hidden;
 	transition: var(--mainTransition);
+	padding-left: 20vw;
 	list-style-type: none;
 	display: flex;
 	justify-content: space-between;
@@ -147,12 +148,11 @@ h6 {
 .nav-links a {
 	display: block;
 	text-decoration: none;
-	padding: 1rem 0;
 	color: var(--mainBlack);
 	transition: var(--mainTransition);
 	font-family: "Ropa Sans", sans-serif;
 	text-align: center;
-	font-size: 16px;
+	font-size: 18px;
 	letter-spacing: var(--mainSpacing);
 }
 
@@ -168,10 +168,12 @@ h6 {
 	border: none;
 	background-color: #f7f7f7;
 	font-family: "Ropa Sans", sans-serif;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 500;
 	padding-top: 8px;
 	letter-spacing: var(--mainSpacing);
+	padding-left: 1vw;
+	padding-right: 1vw;
 }
 
 @media screen and (min-width: 768px) {
@@ -218,7 +220,7 @@ h6 {
 	display: inline-block;
 	background: rgba(1, 12, 29, 0.475);
 	color: var(--mainWhite);
-	padding: 2rem 1rem;
+	padding: 5rem 1rem;
 	text-align: center;
 	letter-spacing: var(--mainSpacing);
 }
@@ -538,7 +540,7 @@ h6 {
 .login-container {
 	background: #004aa2;
 	width: 35vw;
-	height: 70vh;
+	height: 60vh;
 	border-radius: 20px;
 	display: flex;
 	justify-content: center;
@@ -551,7 +553,7 @@ h6 {
 	font-size: 2em;
 	font-weight: bold;
 	color: rgba(0, 255, 238, 0.968);
-	margin-bottom: 0.5em;
+	margin-bottom: 5vh;
 }
 
 .login-box {
@@ -566,7 +568,7 @@ h6 {
 	position: relative;
 	width: 100%;
 	height: 40px;
-	margin: 0.8em 0;
+	margin: 3vh 0;
 }
 
 .login-container .login-box input {
@@ -623,7 +625,7 @@ h6 {
 
 .textTwo {
 	font-size: 0.9em;
-	margin-top: 0.5em;
+	margin-top: 5vh;
 	text-align: center;
 	color: rgb(0, 255, 238);
 }
@@ -682,7 +684,7 @@ h6 {
 .signup-container {
 	background: #004aa2;
 	width: 40vw;
-	height: 110vh;
+	height: 90vh;
 	border-radius: 20px;
 	display: flex;
 	justify-content: center;
@@ -694,7 +696,7 @@ h6 {
 .sign-heading {
 	font-size: 2em;
 	font-weight: bold;
-	margin-bottom: 0.5em;
+	margin-bottom: 22vh;
 	color: rgb(0, 255, 238);
 }
 
@@ -763,8 +765,8 @@ h6 {
 
 .first_last {
 	display: grid;
-	grid-template-columns: 18vw 18vw;
-	gap: 1vw;
+	grid-template-columns: 17vw 17vw;
+	gap: 2vw;
 }
 
 /* modal */
@@ -779,6 +781,8 @@ h6 {
    background: rgba(0, 0, 0, 0.55);
    z-index: 10;
 }
+
+/* RequestDetails */
 
 .requestsCard{
 	background-color: var(--medTan);
