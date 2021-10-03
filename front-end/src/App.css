@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap");
 
 * {
 	margin: 0;
@@ -60,8 +59,8 @@ h6 {
 	display: inline-block;
 	text-decoration: none;
 	letter-spacing: var(--mainSpacing);
-	font-family: 'Dosis', sans-serif;
-	font-weight:bold;
+	font-family: "Dosis", sans-serif;
+	font-weight: bold;
 	color: rgb(19, 18, 18);
 	background: var(--primaryColor);
 	padding: 0.4rem 0.9rem;
@@ -101,10 +100,9 @@ h6 {
 	font-size: 3vh;
 	font-weight: bold;
 }
- a:link {
+a:link {
 	text-decoration: none;
-  }
-  
+}
 
 .navBar {
 	position: sticky;
@@ -177,25 +175,24 @@ h6 {
 }
 
 @media screen and (min-width: 768px) {
+	.nav-btn {
+		display: none;
+	}
+	.nav-center {
+		margin: 0 auto;
+		display: flex;
+	}
 
-  .nav-btn {
-    display: none;
-  }
-  .nav-center {
-    margin: 0 auto;
-    display: flex;
-  }
+	.nav-links {
+		height: auto;
+		display: flex;
+		margin-left: 4rem;
+	}
 
-  .nav-links {
-    height: auto;
-    display: flex;
-    margin-left: 4rem;
-  }
-
-  .nav-links a {
-    margin: 0 1rem;
-    padding: 0.5rem 0;
-  }
+	.nav-links a {
+		margin: 0 1rem;
+		padding: 0.5rem 0;
+	}
 }
 /* End of NavBar */
 
@@ -357,19 +354,28 @@ h6 {
 	opacity: 0.3;
 }
 
+.chefs-list-card a,
+.chefs-list-card a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+.chefs-list-card .card-body h3 {
+	color: #ee7c19;
+}
+
 /* End List of Chefs */
 
 /*  SINGLE C H E F  */
 
 .single-chef {
 	margin: 10vh 0 10vw 0;
-	
 }
 
 .single-chef-img-avail {
 	padding-left: 5vw;
 	display: grid;
-	grid-template-columns:  30vw 50vw;
+	grid-template-columns: 30vw 50vw;
 	gap: 15vw;
 }
 
@@ -385,11 +391,9 @@ h6 {
 	padding-top: 10vh;
 	padding-left: 5vw;
 	display: grid;
-	grid-template-columns:  40vw 50vw;
+	grid-template-columns: 40vw 50vw;
 	gap: 15vw;
 }
-
-
 
 /* End Single Chef */
 
@@ -415,7 +419,7 @@ h6 {
 	display: flex;
 	padding-bottom: 20px;
 	flex-direction: row;
-    justify-content: space-between;
+	justify-content: space-between;
 }
 
 .city-state {
@@ -495,7 +499,6 @@ h6 {
 	background: linear-gradient(to right, rgb(255, 185, 33), var(--primaryColor));
 } */
 
-
 .loginBtn3 {
 	width: 100%;
 	height: 40px;
@@ -514,7 +517,7 @@ h6 {
 	background-color: white;
 	margin-right: 8vw;
 	padding: 1rem 0 0 2rem;
-	border-radius: 10px
+	border-radius: 10px;
 }
 /* End Chef Availibility Calendar */
 
@@ -523,10 +526,10 @@ h6 {
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 .login {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	display: flex;
 	margin: 0;
 	padding: 0;
@@ -772,19 +775,19 @@ h6 {
 /* modal */
 
 #login-modal {
-   display: block;
-   position: fixed;
-   top: 0;
-   bottom: 0;
-   right: 0;
-   left: 0;
-   background: rgba(0, 0, 0, 0.55);
-   z-index: 10;
+	display: block;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.55);
+	z-index: 10;
 }
 
 /* RequestDetails */
 
-.requestsCard{
+.requestsCard {
 	background-color: var(--medTan);
 	height: 100vh;
 	width: 100vw;
@@ -793,11 +796,11 @@ h6 {
 .requestsCard h2 {
 	padding: 4vh 0 0 5vw;
 	font-weight: bolder;
-	font-family: 'Dosis', sans-serif;
+	font-family: "Dosis", sans-serif;
 }
 
 .requestsCard .card {
 	margin: 8vh 0 0 10vw;
 	border-radius: 7px;
-	font-family: "Poppins", sans-serif;;
+	font-family: "Poppins", sans-serif;
 }
