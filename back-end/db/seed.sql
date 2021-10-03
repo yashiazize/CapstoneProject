@@ -1,4 +1,4 @@
--- \c chef_app_dev;
+\c chef_app_dev;
 
 INSERT INTO users (
     id, email, first_name, last_name, is_chef, cuisine)
@@ -7,8 +7,8 @@ VALUES
     ('bsujdyh822','juliaChild23@yahoo.com', 'Julia', 'Child', true, 'French' ),
     ('chgwq72ijd','lesliemann@gmail.com', 'Leslie', 'Mann', false, NULL),
     ('hytrkew345', 'morimoto4545@gmail.com', 'Masaharu', 'Morimoto', true, 'Japanese'),
-    ('nhyt54pgtn', 'butter@gmail.com', 'Paula', 'Dean', true, 'Southern'),
-    ('p0ot54fdh8', 'vicCruz89@yahoo.com', 'Victor', 'Cruz', false, NULL);
+    ('nhyt54pgtn', 'butter@gmail.com', 'Paula', 'Dean', true, 'Southern');
+    -- ('p0ot54fdh8', 'vicCruz89@yahoo.com', 'Victor', 'Cruz', false, NULL);
 
 INSERT INTO bookings (
     		chef_id,
@@ -22,7 +22,7 @@ INSERT INTO bookings (
         state, 
         zip_code, 
 		start_event,
-        end_event, chef) 
+        end_event) 
 VALUES
         ('ahdjw82iks','chgwq72ijd' , 'Birthday Party', '1-2', '511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00');
         -- ('bsujdyh822', 5, 'French', 'Sept 1, 2021', '19:00:00', '21:00:00'),
