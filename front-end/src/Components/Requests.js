@@ -10,7 +10,6 @@ const API = apiURL();
 const Requests = () => {
 	const { currentUser } = useAuth();
 	const [bookings, setBookings] = useState([]);
-
 	const { user_id } = useParams();
 	const currentUserId = user_id;
 
@@ -22,13 +21,13 @@ const Requests = () => {
 						`${API}/users/${currentUserId}/bookings/`
 					);
 					setBookings(res.data.payload);
+					console.log("BOOKINGS", bookings);
 				} catch (error) {
-					console.log(error);
+					return error;
 				}
 			}
 		};
 		fetchAllBookings();
-		console.log("fetch", currentUserId);
 	}, [currentUserId]);
 
 	if (!currentUser || !bookings.length) {
@@ -36,12 +35,14 @@ const Requests = () => {
 	}
 
 	return (
-		<div>
-			{bookings.map((booking) => {
-				return <RequestDetails key={booking.id} booking={booking} />;
-			})}
-			<p>bookings</p>
-		</div>
+		<section>
+			<h2>Bookings</h2>
+			<div>
+				{bookings.map((booking) => {
+					return <RequestDetails key={booking.id} booking={booking} />;
+				})}
+			</div>
+		</section>
 	);
 };
 

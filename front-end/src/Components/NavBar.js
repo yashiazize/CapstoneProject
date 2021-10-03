@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaAlignRight, FaHome } from "react-icons/fa";
+import { FaAlignRight } from "react-icons/fa";
 import { signOut } from "../Services/Firebase";
 import { useAuth } from "../Providers/AuthProvider";
 import LoginForm from "./LoginForm";
@@ -12,8 +12,13 @@ const NavBar = () => {
 	const handleToggle = () => {
 		setToggleMenu((isOpen) => !isOpen);
 	};
+	// let userID;
+	// if (currentUser.uid === undefined) {
+	// 	console.log("undefined");
+	// } else {
+	// 	return (userID = currentUser.uid);
+	// }
 
-	console.log(currentUser);
 	return (
 		<nav className="navBar">
 			<div className="nav-center">
@@ -41,10 +46,12 @@ const NavBar = () => {
 						</Link>
 					</li>
 					<li>
-						<Link to={"/bookings/:id"}>Requests</Link>
+						<Link to={`/users/:id/bookings`}>Requests</Link>
 					</li>
 				</ul>
-				<p> Hi, {currentUser && currentUser.email} </p>
+
+					{/* <p> Hi, {currentUser && currentUser.email} </p>					 */}
+
 			</div>
 			{modalOpen ? <LoginForm setModalOpen={setModalOpen} /> : null}
 		</nav>
