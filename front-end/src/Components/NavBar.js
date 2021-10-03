@@ -26,6 +26,19 @@ const NavBar = () => {
 		getUser();
 	}, [currentUser]);
 
+	useEffect(() => {
+		const getUser = async () => {
+			let res = await axios.get(`${API}/users/${currentUser?.uid}`);
+
+			setUser(res.data.payload);
+		};
+		getUser();
+	}, [currentUser]);
+
+	if (!user) {
+		return null;
+	}
+	debugger;
 	return (
 		<nav className="navBar">
 			<div className="nav-center">
