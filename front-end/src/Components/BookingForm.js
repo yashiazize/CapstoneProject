@@ -34,7 +34,6 @@ const BookingForm = ({ chef }) => {
 			const chefRequest = {
 				chef_id: chef_id,
 				user_id: currentUser.uid,
-				chef: `chef.first_name chef.last_name`,
 				...newRequest,
 			};
 			let res = await axios.post(`${API}/bookings`, chefRequest);
@@ -68,10 +67,10 @@ const BookingForm = ({ chef }) => {
 						<option type="text" value={"---"} default>
 							---
 						</option>
-						<option type="text" value={"Other"}>
+						<option type="text" value={"Special Occasion"}>
 							Special Occasion
 						</option>
-						<option type="text" value={"Corporate Function"}>
+						<option type="text" value={"Corporate Event"}>
 							Corporate Event
 						</option>
 						<option type="text" value={"Birthday Party"}>
@@ -79,12 +78,6 @@ const BookingForm = ({ chef }) => {
 						</option>
 						<option type="text" value={"Dinner Party"}>
 							Dinner Party
-						</option>
-						<option type="text" value={"Meal Prep"}>
-							Meal Prep
-						</option>
-						<option type="text" value={"Brunch"}>
-							Brunch
 						</option>
 						<option type="text" value={"Meal Prep"}>
 							Meal Prep

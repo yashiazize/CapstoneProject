@@ -12,12 +12,6 @@ const NavBar = () => {
 	const handleToggle = () => {
 		setToggleMenu((isOpen) => !isOpen);
 	};
-	// let userID;
-	// if (currentUser.uid === undefined) {
-	// 	console.log("undefined");
-	// } else {
-	// 	return (userID = currentUser.uid);
-	// }
 
 	return (
 		<nav className="navBar">
@@ -50,7 +44,7 @@ const NavBar = () => {
 					</li>
 				</ul>
 
-				{/* <p> Hi, {currentUser && currentUser.email} </p>					 */}
+				<p> Hi, {currentUser && currentUser.email} </p>
 			</div>
 			{modalOpen ? <AuthModal setModalOpen={setModalOpen} /> : null}
 		</nav>
