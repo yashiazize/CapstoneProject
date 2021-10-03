@@ -20,11 +20,11 @@ ratings.get("/", async (req, res) => {
 
 //get single rating
 ratings.get("/:id", async (req, res) => {
-        const { user_id } = req.params;
-        const singleStarRating = await aRating(user_id);
-        res.json({success1: true, payload: singleStarRating[0]})
+        const { id } = req.params;
+        const singleStarRating = await aRating(id);
+        res.json({success1: true, payload: singleStarRating})
 });
-
+//23
 //create rating
 ratings.post("/", async (req, res) => {
    const create = await newRatingForChef(req.body);

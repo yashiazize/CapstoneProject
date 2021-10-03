@@ -1,4 +1,4 @@
-const { use } = require("../controllers/bookingsController");
+// const { use } = require("../controllers/bookingsController");
 const db = require("../db/dbConfig");
 
 const fetchAllBookings = async () => {

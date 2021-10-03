@@ -19,15 +19,15 @@ const aRating = async (user_id) => {
 
 // creates new star rating
 const newRatingForChef = async ( starRating) => {
-    const { rating, chef_id, user_id} = starRating;
+    const {chef_id, user_id, review, rating} = starRating;
     try {
         const newRating = await db.one(
             `
-            INSERT INTO ratings (rating, chef_id, user_id)
-            VALUES ($1, $2, $3)
+            INSERT INTO ratings (chef_id, user_id, review, rating)
+            VALUES ($1, $2, $3, $4)
             RETURNING *
             `,
-[rating, chef_id, user_id]
+[chef_id, user_id, review, rating]
         );        
 return newRating;
     } catch (err) {
