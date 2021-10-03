@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import imageChef from "../Images/bkgnd-lukas-blazek-unsplash.jpg";
 
 const ChefListItem = ({ chef }) => {
 	return (
@@ -26,6 +25,7 @@ const ChefListItem = ({ chef }) => {
 							</p>
 							<p className="card-text">Cuisine(s): {chef.cuisine}</p>
 						</div>
+
 					</div>
 				</Link>
 			</div>

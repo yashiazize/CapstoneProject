@@ -60,7 +60,6 @@ const NavBar = () => {
 						<Link to={`/users/${currentUser?.uid}/bookings`}>Requests</Link>
 					</li>
 				</ul>
-
 				<p> Hi, {user.first_name}</p>
 			</div>
 			{modalOpen ? <AuthModal setModalOpen={setModalOpen} /> : null}

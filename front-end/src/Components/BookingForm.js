@@ -9,25 +9,25 @@ import { useAuth } from "../Providers/AuthProvider";
 const API = apiURL();
 
 const BookingForm = ({ chef }) => {
-	const { id } = useParams();
-	const chef_id = id;
-	const { currentUser } = useAuth();
-	const [request, setRequest] = useState({
-		event_type: "",
-		party_size: "",
-		address: "",
-		address2: "",
-		city: "",
-		state: "",
-		zip_code: "",
-		start_event: "",
-		end_event: "",
-	});
-	let history = useHistory();
+  const { id } = useParams();
+  const chef_id = id;
+  const { currentUser } = useAuth();
+  const [request, setRequest] = useState({
+    event_type: "",
+    party_size: "",
+    address: "",
+    address2: "",
+    city: "",
+    state: "",
+    zip_code: "",
+    start_event: "",
+    end_event: "",
+  });
+  let history = useHistory();
 
-	const handleChange = (type) => {
-		return (e) => setRequest({ ...request, [type]: e.target.value });
-	};
+  const handleChange = (type) => {
+    return (e) => setRequest({ ...request, [type]: e.target.value });
+  };
 
 	const addNewRequest = async (newRequest) => {
 		try {
@@ -44,12 +44,12 @@ const BookingForm = ({ chef }) => {
 		}
 	};
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		const userID = currentUser.uid;
-		let res = await addNewRequest(request);
-		history.push(`/users/${userID}/bookings`);
-	};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const userID = currentUser.uid;
+    let res = await addNewRequest(request);
+    history.push(`/users/${userID}/bookings`);
+  };
 
 	return (
 		<div>
@@ -176,5 +176,6 @@ const BookingForm = ({ chef }) => {
 			</form>
 		</div>
 	);
+
 };
 export default withRouter(BookingForm);
