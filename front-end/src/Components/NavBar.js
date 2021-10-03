@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaAlignRight, FaHome } from "react-icons/fa";
+import { FaAlignRight } from "react-icons/fa";
 import { signOut } from "../Services/Firebase";
 import { useAuth } from "../Providers/AuthProvider";
 import LoginForm from "./LoginForm";
@@ -12,7 +12,12 @@ const NavBar = () => {
 	const handleToggle = () => {
 		setToggleMenu((isOpen) => !isOpen);
 	};
-
+	// let userID;
+	// if (currentUser.uid === undefined) {
+	// 	console.log("undefined");
+	// } else {
+	// 	return (userID = currentUser.uid);
+	// }
 
 	return (
 		<nav className="navBar">

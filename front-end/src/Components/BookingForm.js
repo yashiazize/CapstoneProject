@@ -47,13 +47,9 @@ const BookingForm = ({ chef }) => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		const userID = currentUser.uid;
 		let res = await addNewRequest(request);
-
-		if (res.data.payload.success === true) {
-			history.push(`/users/${currentUser.uid}/bookings`);
-		} else {
-			return res;
-		}
+		history.push(`/users/${userID}/bookings`);
 	};
 
 	return (
@@ -81,15 +77,19 @@ const BookingForm = ({ chef }) => {
 						<option type="text" value={"Birthday Party"}>
 							Birthday Party
 						</option>
-
 						<option type="text" value={"Dinner Party"}>
 							Dinner Party
 						</option>
-						<option type="text" value={"Other"}>
+						<option type="text" value={"Meal Prep"}>
 							Meal Prep
 						</option>
-
-						<option type="text" value={"Other"}>
+						<option type="text" value={"Brunch"}>
+							Brunch
+						</option>
+						<option type="text" value={"Meal Prep"}>
+							Meal Prep
+						</option>
+						<option type="text" value={"Brunch"}>
 							Brunch
 						</option>
 						<option type="text" value={"Other"}>
