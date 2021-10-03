@@ -3,16 +3,12 @@
 // import StarRating from "./StarRating"
 
 const RequestDetails = ({ booking }) => {
-	let start = new Date(booking.start_event);
-	let endDate = new Date(booking.end_event).toDateString("en-US");
-	let endTime = new Date(booking.end_event).toLocaleTimeString("en-US");
+	const endDate = new Date(booking.end_event).toDateString("en-US");
+	const endTime = new Date(booking.end_event).toLocaleTimeString("en-US");
 
-	let startDate = new Date(booking.start_event).toDateString("en-US");
-	let startTime = new Date(booking.start_event).toLocaleTimeString("en-US");
-	let d = booking.start_event;
-	// let today = new Date();
-	// today.toISOString().split("T")[0];
-
+	const startDate = new Date(booking.start_event).toDateString("en-US");
+	const startTime = new Date(booking.start_event).toLocaleTimeString("en-US");
+	console.log(booking);
 	return (
 		<section className="requestsCard">
 			<div className="card" style={{ width: "25rem" }}>
@@ -21,13 +17,14 @@ const RequestDetails = ({ booking }) => {
 					<p className="card-text"> </p>
 
 					<p className="card-text">Chef:</p>
+					<p className="card-text">Party Size: {booking.party_size}</p>
 					<h5>Start Time: {startTime}</h5>
 					<h5>Start Date: {startDate}</h5>
 					<p className="card-text">End Date: {endDate}</p>
 					<p className="card-text">End Time: {endTime}</p>
 					<p>
-						Address: {booking.address} {booking.city}, {booking.state}
-						{booking.zip}
+						Address: {booking.address} {booking.address2}
+						{booking.city}, {booking.state} {booking.zip_code}
 					</p>
 					<p className="card-text"></p>
 					{/* <div className="detailsButtons">

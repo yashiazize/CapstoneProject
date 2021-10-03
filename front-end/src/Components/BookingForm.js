@@ -8,7 +8,7 @@ import { useAuth } from "../Providers/AuthProvider";
 
 const API = apiURL();
 
-const BookingForm = () => {
+const BookingForm = ({ chef }) => {
 	const { id } = useParams();
 	const chef_id = id;
 	const { currentUser } = useAuth();
@@ -36,19 +36,16 @@ const BookingForm = () => {
 				user_id: currentUser.uid,
 				...newRequest,
 			};
-			console.log("CHEFR", chefRequest);
 			let res = await axios.post(`${API}/bookings`, chefRequest);
 			return res;
 		} catch (err) {
 			return "error";
 		}
 	};
-	console.log(request);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		let res = await addNewRequest(request);
-		console.log("RES", res);
 
 		if (res.data.payload.success === true) {
 			history.push(`/users/${currentUser.uid}/bookings`);
@@ -60,7 +57,10 @@ const BookingForm = () => {
 	return (
 		<div>
 			<form onSubmit={handleSubmit} className="booking-container">
-				<h1 className="booking-heading"> Book Chef</h1>
+				<h1 className="booking-heading">
+					{" "}
+					Book Chef: {chef.first_name} {chef.last_name}
+				</h1>
 				<div>
 					<label className="mb-1">Event Type:</label>
 					<select
