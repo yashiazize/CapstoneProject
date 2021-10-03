@@ -34,9 +34,11 @@ const BookingForm = ({ chef }) => {
 			const chefRequest = {
 				chef_id: chef_id,
 				user_id: currentUser.uid,
+				chef: `chef.first_name chef.last_name`,
 				...newRequest,
 			};
 			let res = await axios.post(`${API}/bookings`, chefRequest);
+			console.log("CHEFR", res.data.payload);
 			return res;
 		} catch (err) {
 			return "error";
@@ -75,14 +77,18 @@ const BookingForm = ({ chef }) => {
 						<option type="text" value={"Birthday Party"}>
 							Birthday Party
 						</option>
-
 						<option type="text" value={"Dinner Party"}>
 							Dinner Party
 						</option>
 						<option type="text" value={"Meal Prep"}>
 							Meal Prep
 						</option>
-
+						<option type="text" value={"Brunch"}>
+							Brunch
+						</option>
+						<option type="text" value={"Meal Prep"}>
+							Meal Prep
+						</option>
 						<option type="text" value={"Brunch"}>
 							Brunch
 						</option>
@@ -178,5 +184,4 @@ const BookingForm = ({ chef }) => {
 		</div>
 	);
 };
-
 export default withRouter(BookingForm);

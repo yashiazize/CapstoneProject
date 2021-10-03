@@ -10,7 +10,6 @@ VALUES
     ('nhyt54pgtn', 'butter@gmail.com', 'Paula', 'Dean', true, 'Southern'),
     ('p0ot54fdh8', 'vicCruz89@yahoo.com', 'Victor', 'Cruz', false, NULL);
 
-
 INSERT INTO bookings (
     		chef_id,
             user_id,
@@ -23,12 +22,13 @@ INSERT INTO bookings (
         state, 
         zip_code, 
 		start_event,
-        end_event) 
+        end_event, chef) 
 VALUES
         ('ahdjw82iks','chgwq72ijd' , 'Birthday Party', '1-2', '511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00');
         -- ('bsujdyh822', 5, 'French', 'Sept 1, 2021', '19:00:00', '21:00:00'),
         -- (4, 'chgwq72ijd', 'Asian', 'March 8 , 2021', '18:00:00', '22:00:00' );
         -- YYYY-MM-DD hh:mm:ss[.nnn]
+
 
 INSERT INTO availability (
     chef_id, sunday, monday, tuesday, wednesday, thursday, friday, saturday, is_booked, booked_by
@@ -38,6 +38,7 @@ VALUES
 -- ('bsujdyh822', NULL, NULL,'10am - 3pm','10am - 3pm', NULL, NULL, NULL, false, 'hytrkew345'),
 -- ('hytrkew345', '10am - 3pm', NULL, NULL, NULL, NULL, '10am - 3pm', NULL,  true, 'chgwq72ijd'),
 -- ('nhyt54pgtn', '10am - 3pm', NULL, NULL,  NULL, NULL,'10am - 3pm',  NULL, false, 'chgwq72ijd');
+
 
 INSERT INTO ratings (chef_id, user_id, review, rating)
 VALUES

@@ -27,7 +27,8 @@ CREATE TABLE bookings (
     state TEXT NOT NULL, 
     zip_code VARCHAR(5),
     start_event TIMESTAMP,
-    end_event TIMESTAMP
+    end_event TIMESTAMP,
+    chef TEXT
 );
 
 DROP TABLE IF EXISTS ratings;

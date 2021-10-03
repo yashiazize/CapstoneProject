@@ -42,7 +42,6 @@ const ChefDetails = ({ chefs }) => {
 				/>
 				<article className="info">
 					<h3>Chef's Availability Calendar</h3>
-
 					<ChefAvailability chefAvail={chefAvail} />
 				</article>
 			</div>

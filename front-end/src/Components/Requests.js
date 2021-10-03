@@ -10,7 +10,6 @@ const API = apiURL();
 const Requests = () => {
 	const { currentUser } = useAuth();
 	const [bookings, setBookings] = useState([]);
-
 	const { user_id } = useParams();
 	const currentUserId = user_id;
 
