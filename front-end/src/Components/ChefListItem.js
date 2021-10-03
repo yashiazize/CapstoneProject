@@ -8,7 +8,7 @@ const ChefListItem = ({ chef }) => {
 					<div className="img-container">
 						{/* col-md-4 */}
 						<img
-							src={imageChef}
+							src={chef.img_url}
 							className="img-fluid rounded-start "
 							alt={chef.name}
 						/>
@@ -25,7 +25,6 @@ const ChefListItem = ({ chef }) => {
 							</p>
 							<p className="card-text">Cuisine(s): {chef.cuisine}</p>
 						</div>
-
 					</div>
 				</Link>
 			</div>

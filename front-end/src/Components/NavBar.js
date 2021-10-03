@@ -26,6 +26,15 @@ const NavBar = () => {
 		getUser();
 	}, [currentUser]);
 
+	useEffect(() => {
+		const getUser = async () => {
+			let res = await axios.get(`${API}/users/${currentUser?.uid}`);
+
+			setUser(res.data.payload);
+		};
+		getUser();
+	}, [currentUser]);
+
 	if (!user) {
 		return null;
 	}
@@ -60,7 +69,7 @@ const NavBar = () => {
 						<Link to={`/users/${currentUser?.uid}/bookings`}>Requests</Link>
 					</li>
 				</ul>
-				<p> Hi, {user.first_name}</p>
+				{user ? <p> Hi, {user?.first_name}</p> : null}
 			</div>
 			{modalOpen ? <AuthModal setModalOpen={setModalOpen} /> : null}
 		</nav>
