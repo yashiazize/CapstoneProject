@@ -7,7 +7,6 @@ const IndexBookings = () => {
 	// pass into Requests
 	return (
 		<div>
-			List of ALL the bookings in the database
 			<Requests />
 			<AddReview />
 		</div>
