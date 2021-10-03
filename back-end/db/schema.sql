@@ -10,8 +10,7 @@ CREATE TABLE users (
     first_name VARCHAR(100) NOT NULL, 
     last_name VARCHAR(100) NOT NULL, 
     is_chef BOOLEAN DEFAULT FALSE, 
-    cuisine TEXT, 
-    availability TEXT
+    cuisine TEXT
 );
 
 DROP TABLE IF EXISTS bookings;
@@ -28,8 +27,7 @@ CREATE TABLE bookings (
     state TEXT NOT NULL, 
     zip_code VARCHAR(5),
     start_event TIMESTAMP,
-    end_event TIMESTAMP,
-    chef TEXT
+    end_event TIMESTAMP
 );
 
 DROP TABLE IF EXISTS ratings;
@@ -43,23 +41,21 @@ CREATE TABLE ratings (
     -- booking_id INT REFERENCES bookings(id)
 );
 
--- DROP TABLE IF EXISTS availability;
+DROP TABLE IF EXISTS availability;
 
--- CREATE TABLE availability (
---     id SERIAL PRIMARY KEY,
---     chef_id INT REFERENCES users (id) NOT NULL,
---     sunday TEXT DEFAULT NULL,
---     monday TEXT DEFAULT NULL,
---     tuesday TEXT DEFAULT NULL,
---     wednesday TEXT DEFAULT NULL,
---     thursday TEXT DEFAULT NULL,
---     friday TEXT DEFAULT NULL,
---     saturday TEXT DEFAULT NULL,
---     -- might need to move is_booked and booked_by to the bookings table
---     -- time TIME DEFAULT NULL,
---     is_booked BOOLEAN DEFAULT NULL,
---     booked_by INT REFERENCES users (id)
--- );
+CREATE TABLE availability (
+    id SERIAL PRIMARY KEY,
+    chef_id TEXT REFERENCES users (id) NOT NULL,
+    sunday TEXT DEFAULT NULL,
+    monday TEXT DEFAULT NULL,
+    tuesday TEXT DEFAULT NULL,
+    wednesday TEXT DEFAULT NULL,
+    thursday TEXT DEFAULT NULL,
+    friday TEXT DEFAULT NULL,
+    saturday TEXT DEFAULT NULL,
+    is_booked BOOLEAN DEFAULT NULL,
+    booked_by TEXT REFERENCES users (id)
+);
 
 -- STACKOVERFLOW 
 -- https://stackoverflow.com/questions/4521020/calculate-open-timeslots-given-availability-and-existing-appointments-by-day
