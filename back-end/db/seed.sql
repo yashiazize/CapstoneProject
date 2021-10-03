@@ -1,4 +1,4 @@
-\c chef_app_dev;
+-- \c chef_app_dev;
 
 INSERT INTO users (
     id, email, first_name, last_name, is_chef, cuisine, availability)
@@ -6,9 +6,9 @@ VALUES
     ('ahdjw82iks','chef_boyardee@gmail.com', 'Chef', 'Boyardee', true, 'Italian', 'Monday, Tuesday'),
     ('bsujdyh822','juliaChild23@yahoo.com', 'Julia', 'Child', true, 'French', 'Wednesday, Thursday'),
     ('chgwq72ijd','lesliemann@gmail.com', 'Leslie', 'Mann', false, NULL, NUll),
-    ('morimoto4545@gmail.com', 'sushi11', 'Masaharu', 'Morimoto', true, 'Japanese', 'Friday, Sunday'),
-    ('butter@gmail.com', 'deepFried1', 'Paula', 'Dean', true, 'Southern', 'Saturday, Sunday');
-    -- ('vicCruz89@yahoo.com', 'football88', 'Victor Cruz', false, NULL, NULL, NULL);
+    ('hytrkew345', 'morimoto4545@gmail.com', 'sushi11', 'Masaharu', 'Morimoto', true, 'Japanese', 'Friday, Sunday'),
+    ('nhyt54pgtn', 'butter@gmail.com', 'deepFried1', 'Paula', 'Dean', true, 'Southern', 'Saturday, Sunday');
+    ('p0ot54fdh8', 'vicCruz89@yahoo.com', 'football88', 'Victor Cruz', false, NULL, NULL, NULL);
 
 
 INSERT INTO bookings (
@@ -23,11 +23,11 @@ INSERT INTO bookings (
         state, 
         zip_code, 
 		start_event,
-        end_event) 
+        end_event, chef) 
 VALUES
-        ('ahdjw82iks','chgwq72ijd' , 'Birthday Party', '1-2', '511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00');
-        -- (2, 5, 'French', 'Sept 1, 2021', '19:00:00', '21:00:00'),
-        -- (4, 3, 'Asian', 'March 8 , 2021', '18:00:00', '22:00:00' );
+        ('ahdjw82iks','chgwq72ijd' , 'Birthday Party', '1-2', '511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00', 'Chef Boyardee');
+        -- ('bsujdyh822', 5, 'French', 'Sept 1, 2021', '19:00:00', '21:00:00'),
+        -- (4, 'chgwq72ijd', 'Asian', 'March 8 , 2021', '18:00:00', '22:00:00' );
         -- YYYY-MM-DD hh:mm:ss[.nnn]
 
 -- INSERT INTO availability (
@@ -35,9 +35,9 @@ VALUES
 -- )        
 -- VALUES 
 -- ('ahdjw82iks', NULL,'10am - 3pm','10am - 3pm', NULL, NULL, NULL, NULL, NULL, false, 'bsujdyh822');
--- (2, NULL, NULL,'10am - 3pm','10am - 3pm',NULL, NULL, NULL, NULL, false, 4),
--- (4, '10am - 3pm', NULL, NULL, NULL, NULL, '10am - 3pm', NULL, NULL, true, 3),
--- (5, '10am - 3pm', NULL, NULL, NULL, NULL, NULL,'10am - 3pm',  NULL, false, 3);
+-- ('bsujdyh822', NULL, NULL,'10am - 3pm','10am - 3pm',NULL, NULL, NULL, NULL, false, 4),
+-- (4, '10am - 3pm', NULL, NULL, NULL, NULL, '10am - 3pm', NULL, NULL, true, 'chgwq72ijd'),
+-- (5, '10am - 3pm', NULL, NULL, NULL, NULL, NULL,'10am - 3pm',  NULL, false, 'chgwq72ijd');
 
 INSERT INTO ratings (chef_id, user_id, review, rating)
 VALUES

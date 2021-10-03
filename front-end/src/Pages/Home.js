@@ -11,7 +11,7 @@ const Home = () => {
 					title="Savor"
 					subtitle='"Cooking is the ultimate giving. - Jamie Oliver"'
 				>
-					<Link to={"/users/chefs"} className="btn-primary">
+					<Link to={"/chefs"} className="btn-primary">
 						Our Chefs
 					</Link>
 				</Banner>

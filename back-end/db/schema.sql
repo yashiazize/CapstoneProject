@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS chef_app_dev;
-CREATE DATABASE chef_app_dev;
-\c chef_app_dev;
+-- DROP DATABASE IF EXISTS chef_app_dev;
+-- CREATE DATABASE chef_app_dev;
+-- \c chef_app_dev;
 
 DROP TABLE IF EXISTS users;
 
@@ -28,7 +28,8 @@ CREATE TABLE bookings (
     state TEXT NOT NULL, 
     zip_code VARCHAR(5),
     start_event TIMESTAMP,
-    end_event TIMESTAMP
+    end_event TIMESTAMP,
+    chef TEXT
 );
 
 DROP TABLE IF EXISTS ratings;
