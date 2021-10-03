@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaAlignRight } from "react-icons/fa";
 import { signOut } from "../Services/Firebase";
 import { useAuth } from "../Providers/AuthProvider";
-import LoginForm from "./LoginForm";
+import AuthModal from "./AuthModal";
 
 const NavBar = () => {
 	const [toggleMenu, setToggleMenu] = useState(false);
@@ -50,10 +50,9 @@ const NavBar = () => {
 					</li>
 				</ul>
 
-					{/* <p> Hi, {currentUser && currentUser.email} </p>					 */}
-
+				{/* <p> Hi, {currentUser && currentUser.email} </p>					 */}
 			</div>
-			{modalOpen ? <LoginForm setModalOpen={setModalOpen} /> : null}
+			{modalOpen ? <AuthModal setModalOpen={setModalOpen} /> : null}
 		</nav>
 	);
 };
