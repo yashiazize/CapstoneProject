@@ -22,7 +22,7 @@ INSERT INTO bookings (
         state, 
         zip_code, 
 		start_event,
-        end_event, chef) 
+        end_event) 
 VALUES
         ('ahdjw82iks','chgwq72ijd' , 'Birthday Party', '1-2', '511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00');
         -- ('bsujdyh822', 5, 'French', 'Sept 1, 2021', '19:00:00', '21:00:00'),
