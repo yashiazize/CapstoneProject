@@ -54,7 +54,7 @@ const ChefDetails = ({ chefs }) => {
 						<h6>Cuisine(s): {chef.cuisine}</h6>
 					</article>
 					<article className="info">
-						<h3>bio:</h3>
+						<h3>About:</h3>
 						<p>
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt
 							explicabo asperiores sequi soluta quae sit tempore delectus

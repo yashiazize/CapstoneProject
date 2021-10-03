@@ -8,9 +8,9 @@ const ChefListItem = ({ chef, rating }) => {
 				<div className="img-container">
 					{/* col-md-4 */}
 					<img
-						src={imageChef}
+						src={chef.img_url}
 						className="img-fluid rounded-start "
-						alt={chef.name}
+						alt="img_url"
 					/>
 				</div>
 				<div className="col-md-8">
