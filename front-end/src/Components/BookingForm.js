@@ -46,7 +46,7 @@ const BookingForm = ({ chef }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const userID = currentUser.uid;
-		let res = await addNewRequest(request);
+		await addNewRequest(request);
 		history.push(`/users/${userID}/bookings`);
 	};
 
