@@ -112,14 +112,15 @@ a:link {
 	top: 0;
 	width: 100vw;
 	padding-top: 4vh;
-	padding-left: 3vw;
 	padding-bottom: 1vh;
 	background: var(--offWhite);
 	z-index: 1;
 }
-.nav-header {
+.nav-header,
+.nav-in-out {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	margin: 0 1rem;
 }
 
@@ -140,10 +141,11 @@ a:link {
 	height: 0;
 	overflow: hidden;
 	transition: var(--mainTransition);
-	padding-left: 20vw;
 	list-style-type: none;
 	display: flex;
 	justify-content: space-between;
+	align-items: baseline;
+	margin-right: 1rem;
 }
 
 .nav-links a {
@@ -159,6 +161,7 @@ a:link {
 
 .nav-links a:hover {
 	color: var(--primaryColor);
+	border-bottom: 2px solid var(--primaryColor);
 }
 
 .show-nav {
@@ -176,7 +179,15 @@ a:link {
 	padding-left: 1vw;
 	padding-right: 1vw;
 }
-
+.nav-center p {
+	border-left: 2px solid var(--primaryColor);
+	color: var(--primaryColor);
+	font-weight: 700;
+	width: 100vw;
+	align-self: center;
+	margin: 0 0 1rem 1rem;
+	padding: 0 0 0 1rem;
+}
 @media screen and (min-width: 768px) {
 	.nav-btn {
 		display: none;
@@ -185,11 +196,20 @@ a:link {
 		margin: 0 auto;
 		display: flex;
 	}
-
+	.nav-center p {
+		border-left: 2px solid var(--primaryColor);
+		color: var(--primaryColor);
+		font-weight: 700;
+		width: 20vw;
+		align-self: center;
+		padding: 1rem;
+	}
 	.nav-links {
 		height: auto;
 		display: flex;
+		align-items: baseline;
 		margin-left: 4rem;
+		width: 60vw;
 	}
 
 	.nav-links a {
@@ -258,7 +278,6 @@ a:link {
 /* End of Banner */
 
 /* S E R V I C E S */
-
 .services {
 	padding-bottom: 30vh;
 	background: var(--medTan);

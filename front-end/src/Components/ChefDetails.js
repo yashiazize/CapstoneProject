@@ -3,7 +3,6 @@ import { apiURL } from "../util/apiURL.js";
 import { useState, useEffect } from "react";
 import ChefAvailability from "./ChefAvailability";
 import { useParams } from "react-router-dom";
-import imageChef from "../Images/bkgnd-lukas-blazek-unsplash.jpg";
 import Reviews from "./Reviews.js";
 import BookingForm from "./BookingForm.js";
 
@@ -55,9 +54,7 @@ const ChefDetails = ({ chefs }) => {
 					</article>
 					<article className="info">
 						<h3>About:</h3>
-						<p>
-							{chef.bio}
-						</p>
+						<p>{chef.bio}</p>
 					</article>
 					<div>
 						<Reviews />
