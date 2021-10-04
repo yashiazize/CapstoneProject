@@ -104,6 +104,10 @@ a:link {
   text-decoration: none;
 }
 
+a:link {
+	text-decoration: none;
+}
+
 .navBar {
   position: sticky;
   top: 0;
@@ -175,24 +179,25 @@ a:link {
 }
 
 @media screen and (min-width: 768px) {
-  .nav-btn {
-    display: none;
-  }
-  .nav-center {
-    margin: 0 auto;
-    display: flex;
-  }
+	.nav-btn {
+		display: none;
+	}
+	.nav-center {
+		margin: 0 auto;
+		display: flex;
+	}
 
-  .nav-links {
-    height: auto;
-    display: flex;
-    margin-left: 4rem;
-  }
+	.nav-links {
+		height: auto;
+		display: flex;
+		margin-left: 4rem;
+	}
 
-  .nav-links a {
-    margin: 0 1rem;
-    padding: 0.5rem 0;
-  }
+	.nav-links a {
+		margin: 0 1rem;
+		padding: 0.5rem 0;
+	}
+
 }
 /* End of NavBar */
 
@@ -354,6 +359,16 @@ a:link {
   opacity: 0.3;
 }
 
+.chefs-list-card a,
+.chefs-list-card a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+.chefs-list-card .card-body h3 {
+	color: #ee7c19;
+}
+
 /* End List of Chefs */
 
 /*  SINGLE C H E F  */
@@ -471,18 +486,6 @@ a:link {
 /* .booking-container .booking-box input:focus::placeholder {
 	color: white;
 } */
-
-.booking-container .booking-box div::before {
-  content: "";
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 102%;
-  height: 95%;
-  border-radius: 10px;
-  background: linear-gradient(to right, rgb(255, 185, 33), var(--primaryColor));
-}
 
 .loginBtn3 {
   width: 100%;

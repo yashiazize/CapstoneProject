@@ -30,7 +30,7 @@ const ChefListItem = ({ chef, starRatings }) => {
                   </li>
                 );
               })}	
-			</div>
+						</div>
             {/* <RatingItem /> */}
           </div>
         </div>

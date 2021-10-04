@@ -1,4 +1,7 @@
+
 // const { use } = require("../controllers/bookingsController");
+
+
 const db = require("../db/dbConfig");
 
 const fetchAllBookings = async () => {
@@ -43,7 +46,7 @@ const createBooking = async (newBooking) => {
 	try {
 		const res = await db.one(
 			`INSERT INTO bookings
-            (chef_id, user_id, event_type, party_size, address, address2, city, state, zip_code, start_event, end_event )
+            (chef_id, user_id, event_type, party_size, address, address2, city, state, zip_code,  start_event, end_event)
             VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
             RETURNING *`,
 			[
