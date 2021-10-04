@@ -6,10 +6,11 @@ import { useParams } from "react-router-dom";
 import imageChef from "../Images/bkgnd-lukas-blazek-unsplash.jpg";
 import Reviews from "./Reviews.js";
 import BookingForm from "./BookingForm.js";
+import AddReviewForm from "./AddReviewForm.js";
 
 const API = apiURL();
 
-const ChefDetails = ({ chefs }) => {
+const ChefDetails = ({ chefs, starRatings }) => {
 	const [chef, setChef] = useState({});
 	const [chefAvail, setChefAvail] = useState({});
 	let { id } = useParams();
@@ -60,7 +61,8 @@ const ChefDetails = ({ chefs }) => {
 						</p>
 					</article>
 					<div>
-						<Reviews />
+						<Reviews starRatings={starRatings}/>
+						<AddReviewForm starRatings={starRatings}/> 
 					</div>
 				</div>
 				<div className="chef-booking-form">
