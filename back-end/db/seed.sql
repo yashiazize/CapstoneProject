@@ -24,7 +24,10 @@ INSERT INTO bookings (
 		start_event,
         end_event) 
 VALUES
-        ('ahdjw82iks','chgwq72ijd' , 'Birthday Party', '1-2', '511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00');
+        ('ahdjw82iks','chgwq72ijd' , 'Birthday Party', '1-2', '511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00'),
+        ('ahdjw82iks','nhyt54pgtn' , 'Birthday Party', '1-2', '511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00'),
+        ('bsujdyh822','p0ot54fdh8' , 'Birthday Party', '1-2', '511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00');
+
         -- ('bsujdyh822', 5, 'French', 'Sept 1, 2021', '19:00:00', '21:00:00'),
         -- (4, 'chgwq72ijd', 'Asian', 'March 8 , 2021', '18:00:00', '22:00:00' );
         -- YYYY-MM-DD hh:mm:ss[.nnn]
@@ -40,9 +43,11 @@ VALUES
 -- ('nhyt54pgtn', '10am - 3pm', NULL, NULL,  NULL, NULL,'10am - 3pm',  NULL, false, 'chgwq72ijd');
 
 
-INSERT INTO ratings (chef_id, user_id, review, rating)
+INSERT INTO ratings (chef_id, user_id, name, review, rating)
 VALUES
-('ahdjw82iks', 'chgwq72ijd', 'good', 3),
-('ahdjw82iks', 'chgwq72ijd', 'meh', 1),
-('bsujdyh822', 'chgwq72ijd', 'great', 4),
-('bsujdyh822', 'chgwq72ijd', 'excellent', 5);
+('ahdjw82iks', 'p0ot54fdh8', 'Victor Cruz', 'Chef Boiardi creates delicious food! Even my picky children ate all their veggies this time.', 5),
+('ahdjw82iks', 'chgwq72ijd', 'Leslie Mann', 'Discovered this app through a friend and I love it! Have not stopped booking Ched Boiardi. He is my personal chef and is helping me achieve my weight loss goals!', 4),
+('bsujdyh822', 'p0ot54fdh8', 'Victor Cruz', 'Chef Julia Child is a good chef', 3),
+('bsujdyh822', 'chgwq72ijd', 'Leslie Mann', 'Chef Julia Child had made a variety of foods.', 4),
+('hytrkew345', 'chgwq72ijd', 'Leslie Mann', 'This app and ChefMasaharu Morimoto have made my life easier!', 4),
+('nhyt54pgtn', 'p0ot54fdh8', 'Victor Cruz', 'Contrary to popular belief Chef Paula Dean does not use that much butter. Food is always delicious!', 4);
