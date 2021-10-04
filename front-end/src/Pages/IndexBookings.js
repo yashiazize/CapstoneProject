@@ -1,5 +1,5 @@
 import React from "react";
-import AddReview from "../Components/AddReview";
+import AddReviewForm from "../Components/AddReviewForm";
 import Requests from "../Components/Requests";
 
 const IndexBookings = () => {
@@ -8,7 +8,7 @@ const IndexBookings = () => {
 	return (
 		<div>
 			<Requests />
-			<AddReview />
+			<AddReviewForm />
 		</div>
 	);
 };

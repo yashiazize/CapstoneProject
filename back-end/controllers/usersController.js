@@ -1,6 +1,7 @@
 const express = require("express");
 const users = express.Router();
 const bookingsController = require("./bookingsController");
+const ratingsController = require("./ratingsController")
 
 const {
 	fetchAllUsers,
@@ -11,6 +12,7 @@ const {
 } = require("../queries/users");
 
 users.use("/:userId/bookings", bookingsController);
+users.use("/:chefId/ratings", ratingsController)
 // CHEFS
 users.get("/chefs", async (_, res) => {
 	const allChefs = await fetchAllChefs();

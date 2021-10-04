@@ -1,3 +1,7 @@
+
+// const { use } = require("../controllers/bookingsController");
+
+
 const db = require("../db/dbConfig");
 
 const fetchAllBookings = async () => {
@@ -37,7 +41,7 @@ const createBooking = async (newBooking) => {
 		state,
 		zip_code,
 		start_event,
-		end_event,
+		end_event
 	} = newBooking;
 	try {
 		const res = await db.one(
@@ -78,7 +82,7 @@ const updateBooking = async (id, booking) => {
 		state,
 		zip_code,
 		start_event,
-		end_event,
+		end_event
 	} = booking;
 	try {
 		const query =
