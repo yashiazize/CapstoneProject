@@ -22,7 +22,7 @@ users.get("/", async (_, res) => {
 		const allUsers = await fetchAllUsers();
 		res.json({ success: true, payload: allUsers });
 	} catch (error) {
-		console.log(error);
+		return error;
 	}
 });
 
