@@ -38,7 +38,7 @@ const NavBar = () => {
 	if (!user) {
 		return null;
 	}
-	debugger;
+
 	return (
 		<nav className="navBar">
 			<div className="nav-center">
