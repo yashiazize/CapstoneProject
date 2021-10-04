@@ -21,7 +21,6 @@ const Requests = () => {
 						`${API}/users/${currentUserId}/bookings/`
 					);
 					setBookings(res.data.payload);
-					console.log("BOOKINGS", bookings);
 				} catch (error) {
 					return error;
 				}

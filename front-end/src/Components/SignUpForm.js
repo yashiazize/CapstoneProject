@@ -103,7 +103,6 @@ const SignUpForm = () => {
 			</div>
 			<div>
 				<h5>
-					{" "}
 					<input
 						onClick={handleCheckBox}
 						checked={checked}

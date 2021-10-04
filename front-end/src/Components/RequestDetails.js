@@ -8,7 +8,7 @@ const RequestDetails = ({ booking }) => {
 
 	const startDate = new Date(booking.start_event).toDateString("en-US");
 	const startTime = new Date(booking.start_event).toLocaleTimeString("en-US");
-	console.log(booking);
+
 	return (
 		<section className="requestsCard">
 			<div className="card" style={{ width: "25rem" }}>

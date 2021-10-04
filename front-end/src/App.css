@@ -3,105 +3,104 @@
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 :root {
-  --primaryColor: #ee7c19;
-  --mainWhite: #fff;
-  --offWhite: #f7f7f7;
-  --mainBlack: rgb(0, 0, 0);
-  --mainGrey: #ececec;
-  --medTan: #e3ebf3;
-  --mainTransition: all 0.3s linear;
-  --mainSpacing: 3px;
-  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
-  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+	--primaryColor: #ee7c19;
+	--mainWhite: #fff;
+	--offWhite: #f7f7f7;
+	--mainBlack: rgb(0, 0, 0);
+	--mainGrey: #ececec;
+	--medTan: #e3ebf3;
+	--mainTransition: all 0.3s linear;
+	--mainSpacing: 3px;
+	--lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+	--darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 /* GLOBAL STYLES */
 body {
-  color: var(--mainBlack);
-  line-height: 1.4;
+	color: var(--mainBlack);
+	line-height: 1.4;
 }
 h1 {
-  font-size: 3em;
-  line-height: 1;
-  margin-bottom: 0.5em;
+	font-size: 3em;
+	line-height: 1;
+	margin-bottom: 0.5em;
 }
 h2 {
-  font-size: 2em;
-  margin-bottom: 0.75em;
+	font-size: 2em;
+	margin-bottom: 0.75em;
 }
 h3 {
-  font-size: 1.5em;
-  line-height: 1;
-  margin-bottom: 1em;
+	font-size: 1.5em;
+	line-height: 1;
+	margin-bottom: 1em;
 }
 h4 {
-  font-size: 1.2em;
-  line-height: 1.25;
-  margin-bottom: 1.25em;
+	font-size: 1.2em;
+	line-height: 1.25;
+	margin-bottom: 1.25em;
 }
 h5 {
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 1.5em;
+	font-size: 1em;
+	font-weight: bold;
+	margin-bottom: 1.5em;
 }
 h6 {
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 1.5em;
+	font-size: 1em;
+	font-weight: bold;
+	margin-bottom: 1.5em;
 }
 
 .btn-primary {
-  display: inline-block;
-  text-decoration: none;
-  letter-spacing: var(--mainSpacing);
-  font-family: "Dosis", sans-serif;
-  font-weight: bold;
-  color: rgb(19, 18, 18);
-  background: var(--primaryColor);
-  padding: 0.4rem 0.9rem;
-  border: 3px solid var(--primaryColor);
-  border-radius: 3px;
-  transition: var(--mainTransition);
-  cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	letter-spacing: var(--mainSpacing);
+	font-family: "Dosis", sans-serif;
+	font-weight: bold;
+	color: rgb(19, 18, 18);
+	background: var(--primaryColor);
+	padding: 0.4rem 0.9rem;
+	border: 3px solid var(--primaryColor);
+	border-radius: 3px;
+	transition: var(--mainTransition);
+	cursor: pointer;
 }
 .btn-primary:hover {
-  background: transparent;
-  color: var(--primaryColor);
+	background: transparent;
+	color: var(--primaryColor);
 }
 .loading {
-  text-transform: capitalize;
-  text-align: center;
-  margin-top: 3rem;
+	text-transform: capitalize;
+	text-align: center;
+	margin-top: 3rem;
 }
 .error {
-  text-align: center;
-  text-transform: uppercase;
-  margin: 2rem 0;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 2rem 0;
 }
 .empty-search {
-  text-align: center;
-  text-transform: capitalize;
-  margin: 2rem 0;
-  padding: 1rem;
-  letter-spacing: var(--mainSpacing);
+	text-align: center;
+	text-transform: capitalize;
+	margin: 2rem 0;
+	padding: 1rem;
+	letter-spacing: var(--mainSpacing);
 }
 /* End of Global Styles */
 
 /* N A V B A R */
-
 .nav-logo {
-  color: var(--primaryColor);
-  font-family: "Rock Salt", cursive;
-  font-size: 3vh;
-  font-weight: bold;
+	color: var(--primaryColor);
+	font-family: "Rock Salt", cursive;
+	font-size: 3vh;
+	font-weight: bold;
 }
 a:link {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 a:link {
@@ -109,75 +108,86 @@ a:link {
 }
 
 .navBar {
-  position: sticky;
-  top: 0;
-  width: 100vw;
-  padding-top: 4vh;
-  padding-left: 3vw;
-  padding-bottom: 1vh;
-  background: var(--offWhite);
-  z-index: 1;
+	position: sticky;
+	top: 0;
+	width: 100vw;
+	padding-top: 4vh;
+	padding-bottom: 1vh;
+	background: var(--offWhite);
+	z-index: 1;
 }
-.nav-header {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 1rem;
+.nav-header,
+.nav-in-out {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 1rem;
 }
 
 .nav-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
 }
 
 .nav-icon {
-  font-size: 1.5rem;
-  /* display: flex; */
-  color: var(--primaryColor);
+	font-size: 1.5rem;
+	/* display: flex; */
+	color: var(--primaryColor);
 }
 
 .nav-links {
-  height: 0;
-  overflow: hidden;
-  transition: var(--mainTransition);
-  padding-left: 20vw;
-  list-style-type: none;
-  display: flex;
-  justify-content: space-between;
+	height: 0;
+	overflow: hidden;
+	transition: var(--mainTransition);
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	margin-right: 1rem;
 }
 
 .nav-links a {
-  display: block;
-  text-decoration: none;
-  color: var(--mainBlack);
-  transition: var(--mainTransition);
-  font-family: "Ropa Sans", sans-serif;
-  text-align: center;
-  font-size: 18px;
-  letter-spacing: var(--mainSpacing);
+	display: block;
+	text-decoration: none;
+	color: var(--mainBlack);
+	transition: var(--mainTransition);
+	font-family: "Ropa Sans", sans-serif;
+	text-align: center;
+	font-size: 18px;
+	letter-spacing: var(--mainSpacing);
 }
 
 .nav-links a:hover {
-  color: var(--primaryColor);
+	color: var(--primaryColor);
+	border-bottom: 2px solid var(--primaryColor);
 }
 
 .show-nav {
-  height: 100px;
+	height: 100px;
 }
 
 .lgnBtn {
-  border: none;
-  background-color: #f7f7f7;
-  font-family: "Ropa Sans", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  padding-top: 8px;
-  letter-spacing: var(--mainSpacing);
-  padding-left: 1vw;
-  padding-right: 1vw;
+	border: none;
+	background-color: #f7f7f7;
+	font-family: "Ropa Sans", sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	padding-top: 8px;
+	letter-spacing: var(--mainSpacing);
+	padding-left: 1vw;
+	padding-right: 1vw;
 }
-
+.nav-center p {
+	border-left: 2px solid var(--primaryColor);
+	color: var(--primaryColor);
+	font-weight: 700;
+	width: 100vw;
+	align-self: center;
+	margin: 0 0 1rem 1rem;
+	padding: 0 0 0 1rem;
+}
 @media screen and (min-width: 768px) {
 	.nav-btn {
 		display: none;
@@ -186,177 +196,184 @@ a:link {
 		margin: 0 auto;
 		display: flex;
 	}
-
+	.nav-center p {
+		border-left: 2px solid var(--primaryColor);
+		color: var(--primaryColor);
+		font-weight: 700;
+		width: 20vw;
+		align-self: center;
+		padding: 1rem;
+	}
 	.nav-links {
 		height: auto;
 		display: flex;
+		align-items: baseline;
 		margin-left: 4rem;
+		width: 60vw;
 	}
 
 	.nav-links a {
 		margin: 0 1rem;
 		padding: 0.5rem 0;
 	}
-
 }
 /* End of NavBar */
 
 /* H E R O */
 .defaultHero,
 .chefsHero {
-  min-height: calc(85vh - 66px);
-  background: url("./Images/salmon-casey-lee-unsplash.jpg") center/cover
-    no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	min-height: calc(85vh - 66px);
+	background: url("./Images/salmon-casey-lee-unsplash.jpg") center/cover
+		no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .chefsHero {
-  background-image: url("./Images/chefListFood.png");
-  min-height: 25vh;
+	background-image: url("./Images/chefListFood.png");
+	min-height: 25vh;
 }
 /* End of Hero */
 
 /* B A N N E R */
 .banner {
-  display: inline-block;
-  background: rgba(1, 12, 29, 0.475);
-  color: var(--mainWhite);
-  padding: 5rem 1rem;
-  text-align: center;
-  letter-spacing: var(--mainSpacing);
+	display: inline-block;
+	background: rgba(1, 12, 29, 0.475);
+	color: var(--mainWhite);
+	padding: 5rem 1rem;
+	text-align: center;
+	letter-spacing: var(--mainSpacing);
 }
 .banner h1 {
-  font-size: 2.5rem;
-  font-family: "Rock Salt", cursive;
+	font-size: 2.5rem;
+	font-family: "Rock Salt", cursive;
 }
 
 .banner div {
-  width: 10rem;
-  height: 5px;
-  background: var(--primaryColor);
-  margin: 1.7rem auto;
+	width: 10rem;
+	height: 5px;
+	background: var(--primaryColor);
+	margin: 1.7rem auto;
 }
 .banner p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+	font-size: 1.2rem;
+	margin-bottom: 2rem;
 }
 @media screen and (min-width: 576px) {
-  .banner {
-    padding: 2rem 3rem;
-  }
-  .banner h1 {
-    font-size: 3rem;
-  }
+	.banner {
+		padding: 2rem 3rem;
+	}
+	.banner h1 {
+		font-size: 3rem;
+	}
 }
 @media screen and (min-width: 992px) {
-  .banner {
-    padding: 2rem 6rem;
-  }
-  .banner h1 {
-    font-size: 4rem;
-  }
+	.banner {
+		padding: 2rem 6rem;
+	}
+	.banner h1 {
+		font-size: 4rem;
+	}
 }
 /* End of Banner */
 
 /* S E R V I C E S */
-
 .services {
-  padding-bottom: 30vh;
-  background: var(--medTan);
-  text-align: center;
-  flex-direction: column;
+	padding-bottom: 30vh;
+	background: var(--medTan);
+	text-align: center;
+	flex-direction: column;
 }
 .services-center {
-  width: 90vw;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
-  grid-row-gap: 2rem;
-  grid-column-gap: 50px;
+	width: 90vw;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+	grid-row-gap: 2rem;
+	grid-column-gap: 50px;
 }
 .service span {
-  display: inline-block;
-  color: var(--primaryColor);
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+	display: inline-block;
+	color: var(--primaryColor);
+	font-size: 2.5rem;
+	margin-bottom: 1.5rem;
 }
 .services h6 {
-  letter-spacing: var(--mainSpacing);
-  text-transform: uppercase;
+	letter-spacing: var(--mainSpacing);
+	text-transform: uppercase;
 }
 .services p {
-  width: 80%;
-  margin: 0 auto;
+	width: 80%;
+	margin: 0 auto;
 }
 
 .services h4 {
-  padding-top: 3vh;
+	padding-top: 3vh;
 }
 
 @media screen and (min-width: 992px) {
-  .services-center {
-    width: 95vw;
-    max-width: 1170px;
-  }
+	.services-center {
+		width: 95vw;
+		max-width: 1170px;
+	}
 }
 
 @media screen and (min-width: 1200px) {
-  .services p {
-    width: 100%;
-  }
+	.services p {
+		width: 100%;
+	}
 }
 /* End of Services */
 
 /* T I T L E */
 .section-title {
-  text-align: center;
-  margin-bottom: 3rem;
+	text-align: center;
+	margin-bottom: 3rem;
 }
 .section-title h4 {
-  font-size: 2rem;
-  letter-spacing: var(--mainSpacing);
-  text-transform: capitalize;
-  margin-bottom: 1vh;
+	font-size: 2rem;
+	letter-spacing: var(--mainSpacing);
+	text-transform: capitalize;
+	margin-bottom: 1vh;
 }
 .section-title div {
-  width: 5rem;
-  height: 5px;
-  margin: 0 auto;
-  background: var(--primaryColor);
+	width: 5rem;
+	height: 5px;
+	margin: 0 auto;
+	background: var(--primaryColor);
 }
 /* End of Title */
 
 /*  LIST OF CHEFS */
 .chefs-list-container {
-  margin: 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-column-gap: 2rem;
-  grid-row-gap: 1rem;
+	margin: 1rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-column-gap: 2rem;
+	grid-row-gap: 1rem;
 }
 .chefs-list-card {
-  box-shadow: var(--lightShadow);
-  transition: var(--mainTransition);
+	box-shadow: var(--lightShadow);
+	transition: var(--mainTransition);
 }
 
 .chefs-list-card:hover {
-  box-shadow: var(--darkShadow);
+	box-shadow: var(--darkShadow);
 }
 .img-container {
-  position: relative;
+	position: relative;
 }
 .img-container img {
-  width: 100%;
-  display: block;
-  transition: var(--mainTransition);
+	width: 100%;
+	display: block;
+	transition: var(--mainTransition);
 }
 
 .img-container:hover {
-  background: rgba(0, 0, 0, 0.8);
+	background: rgba(0, 0, 0, 0.8);
 }
 .img-container:hover img {
-  opacity: 0.3;
+	opacity: 0.3;
 }
 
 .chefs-list-card a,
@@ -374,37 +391,37 @@ a:link {
 /*  SINGLE C H E F  */
 
 .single-chef {
-  margin: 10vh 0 10vw 0;
+	margin: 10vh 0 10vw 0;
 }
 
 .single-chef-img-avail {
-  padding-left: 5vw;
-  display: grid;
-  grid-template-columns: 30vw 50vw;
-  gap: 15vw;
+	padding-left: 5vw;
+	display: grid;
+	grid-template-columns: 30vw 50vw;
+	gap: 15vw;
 }
 
 .single-chef-img-avail img {
-  width: 30vw;
+	width: 30vw;
 }
 
 .single-chef-img-avail article {
-  padding-top: 10vh;
+	padding-top: 10vh;
 }
 
 .chef-info-form {
-  padding-top: 10vh;
-  padding-left: 5vw;
-  display: grid;
-  grid-template-columns: 40vw 50vw;
-  gap: 15vw;
+	padding-top: 10vh;
+	padding-left: 5vw;
+	display: grid;
+	grid-template-columns: 40vw 50vw;
+	gap: 15vw;
 }
 
 /* End Single Chef */
 
 /* Chef Availibility Calendar */
 .rdrDateRangePickerWrapper {
-  width: 100px;
+	width: 100px;
 }
 
 /* End React Calendar */
@@ -412,75 +429,75 @@ a:link {
 /* Booking Form */
 
 .booking {
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  height: 90vh;
-  width: 20vw;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	height: 90vh;
+	width: 20vw;
 }
 
 .selects {
-  display: flex;
-  padding-bottom: 20px;
-  flex-direction: row;
-  justify-content: space-between;
+	display: flex;
+	padding-bottom: 20px;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .city-state {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .booking-container {
-  background: #004aa2;
-  width: 30vw;
-  height: 110vh;
-  border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  color: white;
-  padding: 2em;
+	background: #004aa2;
+	width: 30vw;
+	height: 110vh;
+	border-radius: 40px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	color: white;
+	padding: 2em;
 }
 
 .booking-heading {
-  font-size: 25px;
-  font-weight: bold;
-  color: rgb(0, 255, 238);
-  padding-bottom: 15px;
+	font-size: 25px;
+	font-weight: bold;
+	color: rgb(0, 255, 238);
+	padding-bottom: 15px;
 }
 
 .booking-heading1 {
-  font-size: 18px;
-  font-weight: bold;
-  padding-top: 2px;
-  color: rgb(0, 255, 238);
+	font-size: 18px;
+	font-weight: bold;
+	padding-top: 2px;
+	color: rgb(0, 255, 238);
 }
 
 .booking-container .booking-box p {
-  color: white;
-  font-size: 14px;
+	color: white;
+	font-size: 14px;
 }
 
 .booking-container .booking-box div {
-  position: relative;
-  width: 100%;
-  height: 40px;
-  margin: 0.5em 0;
+	position: relative;
+	width: 100%;
+	height: 40px;
+	margin: 0.5em 0;
 }
 
 .booking-container .booking-box input {
-  position: absolute;
-  width: 100%;
-  height: 80%;
-  background: white;
-  color: black;
-  border: none;
-  outline: none;
-  padding-left: 0.8em;
-  border-radius: 10px;
-  transition: all 0.4s;
+	position: absolute;
+	width: 100%;
+	height: 80%;
+	background: white;
+	color: black;
+	border: none;
+	outline: none;
+	padding-left: 0.8em;
+	border-radius: 10px;
+	transition: all 0.4s;
 }
 
 /* .booking-container .booking-box input:focus::placeholder {
@@ -488,24 +505,24 @@ a:link {
 } */
 
 .loginBtn3 {
-  width: 100%;
-  height: 40px;
-  border: none;
-  border-radius: 10px;
-  margin-top: 6vh;
-  transform: translate(-1%);
-  cursor: pointer;
-  color: white;
-  font-weight: bold;
-  background: linear-gradient(to right, rgb(255, 185, 33), var(--primaryColor));
-  transition: all 0.4s;
+	width: 100%;
+	height: 40px;
+	border: none;
+	border-radius: 10px;
+	margin-top: 6vh;
+	transform: translate(-1%);
+	cursor: pointer;
+	color: white;
+	font-weight: bold;
+	background: linear-gradient(to right, rgb(255, 185, 33), var(--primaryColor));
+	transition: all 0.4s;
 }
 
 .bookingCal {
-  background-color: white;
-  margin-right: 8vw;
-  padding: 1rem 0 0 1rem;
-  border-radius: 10px;
+	background-color: white;
+	margin-right: 8vw;
+	padding: 1rem 0 0 1rem;
+	border-radius: 10px;
 }
 /* End Chef Availibility Calendar */
 
@@ -514,116 +531,115 @@ a:link {
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 .login {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
 }
 
 .login-container {
-  background: #004aa2;
-  width: 50vw;
-  height: 90vh;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  color: white;
-  padding: 2em;
+	background: #004aa2;
+	width: 50vw;
+	height: 90vh;
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	color: white;
+	padding: 2em;
 }
 
 .login-heading {
-  font-size: 2em;
-  font-weight: bold;
-  color: rgba(0, 255, 238, 0.968);
-  padding-top: 1vh;
-  
+	font-size: 2em;
+	font-weight: bold;
+	color: rgba(0, 255, 238, 0.968);
+	padding-top: 1vh;
 }
 
 .login-container .login-box p {
-  color: white;
+	color: white;
 }
 
 .login-container .login-box div {
-  position: relative;
-  width: 100%;
-  height: 35px;
-  margin: 3vh 0;
+	position: relative;
+	width: 100%;
+	height: 35px;
+	margin: 3vh 0;
 }
 
 .login-container .login-box input {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: white;
-  color: black;
-  border: none;
-  outline: none;
-  padding-left: 0.5em;
-  border-radius: 5px;
-  transition: all 0.4s;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: white;
+	color: black;
+	border: none;
+	outline: none;
+	padding-left: 0.5em;
+	border-radius: 5px;
+	transition: all 0.4s;
 }
 
 .login-container .login-box input:focus::placeholder {
-  color: white;
+	color: white;
 }
 
 .login-container .login-box div::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 102%;
-  height: 105%;
-  border-radius: 10px;
-  background: linear-gradient(to right, rgb(255, 185, 33), var(--primaryColor));
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 102%;
+	height: 105%;
+	border-radius: 10px;
+	background: linear-gradient(to right, rgb(255, 185, 33), var(--primaryColor));
 }
 
 .loginBtn {
-  width: 102%;
-  height: 40px;
-  border: none;
-  border-radius: 10px;
-  margin: 0.5em 0;
-  transform: translate(-1%);
-  cursor: pointer;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(to right, rgb(255, 185, 33), var(--primaryColor));
-  transition: all 0.4s;
+	width: 102%;
+	height: 40px;
+	border: none;
+	border-radius: 10px;
+	margin: 0.5em 0;
+	transform: translate(-1%);
+	cursor: pointer;
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(to right, rgb(255, 185, 33), var(--primaryColor));
+	transition: all 0.4s;
 }
 
 .loginBtn:hover {
-  transform: translate(-1%, 5%);
-  box-shadow: 0 0 10px rgba(0, 255, 238, 0.646);
+	transform: translate(-1%, 5%);
+	box-shadow: 0 0 10px rgba(0, 255, 238, 0.646);
 }
 
 .textOne a {
-  color: rgb(0, 255, 238);
+	color: rgb(0, 255, 238);
 }
 
 .loginQuestion {
-  margin-top: 2vh;
-  font-size: 0.9em;
-  color: rgb(0, 255, 238);
+	margin-top: 2vh;
+	font-size: 0.9em;
+	color: rgb(0, 255, 238);
 }
 .cuisine-select {
 	height: 3vh;
 }
 .signupOrLogin {
-  text-align: center;
-  color: rgb(0, 255, 238);
-  cursor: pointer;
-  padding-top: 2vh;
+	text-align: center;
+	color: rgb(0, 255, 238);
+	cursor: pointer;
+	padding-top: 2vh;
 }
 
 .formModalToggle {
@@ -632,107 +648,105 @@ a:link {
 }
 
 .textTwo a {
-  color: white;
+	color: white;
 }
 
 .loginBtn2 {
-  width: 102%;
-  height: 40px;
-  border: none;
-  border-radius: 10px;
-  margin-top: 50px;
-  transform: translate(-1%);
-  cursor: pointer;
-  color: white;
-  background: linear-gradient(to right, rgb(255, 185, 33), var(--primaryColor));
-  transition: all 0.4s;
+	width: 102%;
+	height: 40px;
+	border: none;
+	border-radius: 10px;
+	margin-top: 50px;
+	transform: translate(-1%);
+	cursor: pointer;
+	color: white;
+	background: linear-gradient(to right, rgb(255, 185, 33), var(--primaryColor));
+	transition: all 0.4s;
 }
 
 .loginBtn2:hover {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
 }
 
 .loginBtn2:hover {
-  transform: translate(-1%, 5%);
-  box-shadow: 0 0 10px rgba(0, 255, 238, 0.954);
+	transform: translate(-1%, 5%);
+	box-shadow: 0 0 10px rgba(0, 255, 238, 0.954);
 }
 
 .googleImg {
-  height: 25px;
-  margin-right: 20px;
+	height: 25px;
+	margin-right: 20px;
 }
-
 
 /* signup button */
 
 .signLoginBtn {
-  width: 102%;
-  height: 40px;
-  border: none;
-  border-radius: 10px;
-  margin: 0.5em 0;
-  transform: translate(-1%);
-  cursor: pointer;
-  color: white;
-  font-weight: bold;
-  background: linear-gradient(to right, rgb(255, 185, 33), var(--primaryColor));
-  transition: all 0.4s;
+	width: 102%;
+	height: 40px;
+	border: none;
+	border-radius: 10px;
+	margin: 0.5em 0;
+	transform: translate(-1%);
+	cursor: pointer;
+	color: white;
+	font-weight: bold;
+	background: linear-gradient(to right, rgb(255, 185, 33), var(--primaryColor));
+	transition: all 0.4s;
 }
 
 .signLoginBtn:hover {
-  transform: translate(-1%, 5%);
-  box-shadow: 0 0 10px rgba(0, 255, 238, 0.982);
+	transform: translate(-1%, 5%);
+	box-shadow: 0 0 10px rgba(0, 255, 238, 0.982);
 }
 
 .first_last {
-  display: grid;
-  grid-template-columns: 20vw 20vw;
-  gap: 4vw;
+	display: grid;
+	grid-template-columns: 20vw 20vw;
+	gap: 4vw;
 }
 
 .daysOf {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	
 }
 
 /* modal */
 
 #login-modal {
-  display: block;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 10;
+	display: block;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.55);
+	z-index: 10;
 }
 
 /* RequestDetails */
 
 .requestsCard {
-  background-color: var(--medTan);
-  height: 100vh;
-  width: 100vw;
+	background-color: var(--medTan);
+	height: 100vh;
+	width: 100vw;
 }
 
 .requestsCard h2 {
-  padding: 4vh 0 0 5vw;
-  font-weight: bolder;
-  font-family: "Dosis", sans-serif;
+	padding: 4vh 0 0 5vw;
+	font-weight: bolder;
+	font-family: "Dosis", sans-serif;
 }
 
 .requestsCard .card {
-  margin: 8vh 0 0 10vw;
-  border-radius: 7px;
-  font-family: "Poppins", sans-serif;
+	margin: 8vh 0 0 10vw;
+	border-radius: 7px;
+	font-family: "Poppins", sans-serif;
 }
