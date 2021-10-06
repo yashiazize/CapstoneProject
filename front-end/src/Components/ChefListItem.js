@@ -7,7 +7,6 @@ const ChefListItem = ({ chef }) => {
 			<div className="row g-0">
 				<Link to={`/chefs/${chef.id}`}>
 					<div className="img-container">
-						{/* col-md-4 */}
 						<img
 							src={imageChef}
 							className="img-fluid rounded-start "

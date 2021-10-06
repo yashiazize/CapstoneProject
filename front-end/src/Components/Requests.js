@@ -12,8 +12,6 @@ const Requests = () => {
 	const [bookings, setBookings] = useState([]);
 	const { user_id } = useParams();
 	const currentUserId = user_id;
-	// const currentUserId = currentUser && currentUser.uid;
-	console.log("Request.js", currentUserId);
 
 	useEffect(() => {
 		const fetchAllBookings = async () => {
@@ -23,7 +21,6 @@ const Requests = () => {
 						`${API}/users/${currentUserId}/bookings/`
 					);
 					setBookings(res.data.payload);
-					console.log("BOOKINGS", bookings);
 				} catch (error) {
 					return error;
 				}
@@ -38,8 +35,7 @@ const Requests = () => {
 
 	return (
 		<section>
-			<h2>Bookings</h2>
-			<div>
+			<div className="bookings-list-container">
 				{bookings.map((booking) => {
 					return <RequestDetails key={booking.id} booking={booking} />;
 				})}

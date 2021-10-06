@@ -43,6 +43,9 @@ const NavBar = () => {
 						<Link to={"/chefs"}>Chefs</Link>
 					</li>
 					<li>
+						<Link to={`/users/${currentUser?.uid}/bookings`}>Requests</Link>
+					</li>
+					<li>
 						<button className="lgnBtn" onClick={() => setModalOpen(!modalOpen)}>
 							Login
 						</button>
@@ -52,18 +55,9 @@ const NavBar = () => {
 							Logout
 						</Link>
 					</li>
-					<li>
-						<Link to={`/users/${currentUser?.uid}/bookings`}>Requests</Link>
-					</li>
 				</ul>
 			</div>
-			{user ? (
-				<p>
-					{" "}
-					Hi,
-					{user.first_name}
-				</p>
-			) : null}
+			{user ? <p>Hi, {user.first_name}</p> : null}
 			{modalOpen ? <AuthModal setModalOpen={setModalOpen} /> : null}
 		</nav>
 	);

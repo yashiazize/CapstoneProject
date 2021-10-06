@@ -63,14 +63,12 @@ function App() {
 
 						{/* /bookings */}
 						<Route exact path="/users/:user_id/bookings">
-							{/* list of ALL the bookings in the database */}
 							<IndexBookings />
 						</Route>
 						<Route exact path="/chefs/:chef_id/bookings/new">
 							<NewBooking />
 						</Route>
 						<Route exact path={`/users/${currentUser?.uid}/bookings/:id`}>
-							{/* list of ALL bookings for a SPECIFIC USER -- single booking details */}
 							<ShowBookings />
 						</Route>
 
