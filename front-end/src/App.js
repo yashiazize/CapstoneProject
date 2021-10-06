@@ -59,14 +59,14 @@ function App() {
 						</Route>
 
 						{/* /bookings */}
+						{/* list of ALL the bookings in the database */}
 						<Route exact path="/users/:user_id/bookings">
-							{/* list of ALL the bookings in the database */}
 							<IndexBookings />
 						</Route>
 						<Route exact path="/chefs/:chef_id/bookings/new">
 							<NewBooking />
 						</Route>
-						<Route exact path="/users/:user_id/bookings/:id">
+						<Route exact path="/users/:user_id/bookings">
 							{/* list of ALL bookings for a SPECIFIC USER -- single booking details */}
 							<ShowBookings />
 						</Route>

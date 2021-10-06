@@ -35,10 +35,10 @@ const NavBar = () => {
 		getUser();
 	}, [currentUser]);
 
-	if (!user) {
-		return null;
-	}
-	debugger;
+	// if (!user) {
+	// 	return null;
+	// }
+
 	return (
 		<nav className="navBar">
 			<div className="nav-center">
@@ -69,7 +69,8 @@ const NavBar = () => {
 						<Link to={`/users/${currentUser?.uid}/bookings`}>Requests</Link>
 					</li>
 				</ul>
-				{user ? <p> Hi, {user?.first_name}</p> : null}
+				{user ? <p>{user?.first_name}</p> : null}
+				Hi, {currentUser && currentUser.email}
 			</div>
 			{modalOpen ? <AuthModal setModalOpen={setModalOpen} /> : null}
 		</nav>

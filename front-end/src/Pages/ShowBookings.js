@@ -1,10 +1,10 @@
-import Requests from "../Components/Requests";
+// import Requests from "../Components/Requests";
 
 const ShowBookings = () => {
 	return (
 		<div>
 			Show Bookings for a user
-			<Requests />
+			{/* <Requests /> */}
 		</div>
 	);
 };
