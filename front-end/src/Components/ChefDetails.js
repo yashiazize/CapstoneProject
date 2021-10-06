@@ -9,7 +9,7 @@ import AddReviewForm from "./AddReviewForm.js";
 
 const API = apiURL();
 
-const ChefDetails = ({ chefs, startRatings }) => {
+const ChefDetails = ({ chefs, starRatings }) => {
 	const [chef, setChef] = useState({});
 	const [chefAvail, setChefAvail] = useState({});
 	let { id } = useParams();
