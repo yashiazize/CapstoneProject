@@ -1,7 +1,7 @@
 \c chef_app_dev;
 
 INSERT INTO users (
-    id, email, first_name, last_name, is_chef, cuisine)
+    id, email, first_name, img_url, bio, last_name, is_chef, cuisine)
 VALUES 
     ('ahdjw82iks','chef_boyardee@gmail.com', 'https://images.unsplash.com/photo-1576064535185-9f6e3f24b63e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80', 'I am an Italian-American chef who set up my own packaged food business named Chef Boyardee. Began my career as a kitchen helper, worked hard to eventually become the head chef of the Plaza Hotel in New York City.', 'Chef', 'Boyardee', true, 'Italian'),
     ('bsujdyh822','juliaChild23@yahoo.com', 'https://images.unsplash.com/photo-1576064535185-9f6e3f24b63e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80', 'I am a cultural phenomenon who is the face of French cooking in America. I introduced Americans to culinary excellence but to fine dining as well. I made the drudgery and labour within the kitchen seem effortless and easy.', 'Julia', 'Child', true, 'French' ),

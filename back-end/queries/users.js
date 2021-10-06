@@ -17,15 +17,15 @@ const fetchUser = async (id) => {
 };
 
 const createUser = async (user) => {
-	const { id, email, first_name, last_name, is_chef, cuisine } = user;
-	console.log(user);
+	const { id, email, img_url, bio, first_name, last_name, is_chef, cuisine } =
+		user;
 	try {
 		const newUser = await db.one(
 			`INSERT INTO users
-            (id, email, first_name, last_name, is_chef, cuisine)
-            VALUES($1, $2, $3, $4, $5, $6)
+            (id, email, img_url, bio, first_name, last_name, is_chef, cuisine)
+            VALUES($1, $2, $3, $4, $5, $6, $7, $8)
             RETURNING *`,
-			[id, email, first_name, last_name, is_chef, cuisine]
+			[id, email, img_url, bio, first_name, last_name, is_chef, cuisine]
 		);
 		return newUser;
 	} catch (err) {
@@ -34,13 +34,16 @@ const createUser = async (user) => {
 };
 
 const updateUser = async (id, user) => {
-	const { email, name, is_chef, cuisine, image } = user;
+	const { email, img_url, bio, first_name, last_name, is_chef, cuisine } = user;
 	try {
 		const query =
-			"UPDATE users SET email = $1, name = $2, is_chef = $3, cuisine = $4, image = $5 WHERE id = $6 RETURNING *";
+			"UPDATE users SET email = $1, img_url = $2, bio = $3, first_name = $4,  last_name= $5  is_chef = $5 cuisine = $7 WHERE id = $8 RETURNING *";
 		const updatedUser = await db.one(query, [
 			email,
-			name,
+			img_url,
+			bio,
+			first_name,
+			last_name,
 			is_chef,
 			cuisine,
 			image,
