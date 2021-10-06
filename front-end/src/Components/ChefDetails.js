@@ -3,13 +3,13 @@ import { apiURL } from "../util/apiURL.js";
 import { useState, useEffect } from "react";
 import ChefAvailability from "./ChefAvailability";
 import { useParams } from "react-router-dom";
-import imageChef from "../Images/bkgnd-lukas-blazek-unsplash.jpg";
 import Reviews from "./Reviews.js";
 import BookingForm from "./BookingForm.js";
+import AddReviewForm from "./AddReviewForm.js";
 
 const API = apiURL();
 
-const ChefDetails = ({ chefs }) => {
+const ChefDetails = ({ chefs, startRatings }) => {
 	const [chef, setChef] = useState({});
 	const [chefAvail, setChefAvail] = useState({});
 	let { id } = useParams();
@@ -36,12 +36,12 @@ const ChefDetails = ({ chefs }) => {
 		<section className="single-chef">
 			<div className="single-chef-img-avail">
 				<img
-					src={imageChef}
+					src={chef.img_url}
 					className="img-fluid rounded-start"
 					alt={chef.first_name}
 				/>
 				<article className="info">
-					<h3>Chef's Availability Calendar</h3>
+					<h3>Chef's Availability:</h3>
 					<ChefAvailability chefAvail={chefAvail} />
 				</article>
 			</div>
@@ -55,16 +55,11 @@ const ChefDetails = ({ chefs }) => {
 					</article>
 					<article className="info">
 						<h3>bio:</h3>
-						<p>
-							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt
-							explicabo asperiores sequi soluta quae sit tempore delectus
-							corrupti recusandae, animi ea ab! Sint, voluptas id? Lorem ipsum
-							dolor sit amet consectetur adipisicing elit. Blanditiis sequi odio
-							suscipit ea similique nobis.
-						</p>
+						<p>{chef.bio}</p>
 					</article>
 					<div>
-						<Reviews />
+						<Reviews starRatings={starRatings} />
+						<AddReviewForm starRatings={starRatings} />
 					</div>
 				</div>
 				<div className="chef-booking-form">
