@@ -1,10 +1,13 @@
 const db = require("../db/dbConfig");
 
-const fetchAllBookings = async () => {
-	try {
-		return await db.one("SELECT * FROM bookings");
-	} catch (error) {}
-};
+// const fetchAllBookings = async () => {
+// 	try {
+// 		return await db.one("SELECT * FROM bookings");
+// 	} catch (error) {
+// 		return error;
+// 	}
+// };
+
 const fetchUserBookings = async (user_id) => {
 	try {
 		const userBookings = await db.any(
@@ -13,7 +16,7 @@ const fetchUserBookings = async (user_id) => {
 		);
 		return { success: true, payload: userBookings };
 	} catch (error) {
-		return { success: false, payload: error };
+		return { success: false, payload: "Error" };
 	}
 };
 
@@ -61,7 +64,6 @@ const createBooking = async (newBooking) => {
 		);
 		return res;
 	} catch (err) {
-		console.log(err);
 		return err;
 	}
 };
@@ -104,7 +106,7 @@ const updateBooking = async (id, booking) => {
 };
 
 module.exports = {
-	fetchAllBookings,
+	// fetchAllBookings,
 	fetchBooking,
 	createBooking,
 	updateBooking,

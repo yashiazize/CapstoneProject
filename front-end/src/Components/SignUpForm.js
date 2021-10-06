@@ -42,13 +42,7 @@ const SignUpForm = () => {
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-		await signup(
-			user.email,
-			user.password,
-			user.first_name,
-			user.last_name,
-			user.zip_code
-		);
+		await signup(user.email, user.password, user.first_name, user.last_name);
 		await addNewUser(currentU.uid);
 		history.push("/");
 	}
@@ -104,7 +98,6 @@ const SignUpForm = () => {
 			</div>
 			<div>
 				<h5>
-					{" "}
 					<input
 						onClick={handleCheckBox}
 						checked={checked}
@@ -116,8 +109,7 @@ const SignUpForm = () => {
 				</h5>
 				{checked ? (
 					<div>
-						{" "}
-						<ChefInfo handleChange={handleChange} />{" "}
+						<ChefInfo handleChange={handleChange} />
 					</div>
 				) : null}
 			</div>

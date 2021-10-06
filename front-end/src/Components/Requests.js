@@ -12,6 +12,8 @@ const Requests = () => {
 	const [bookings, setBookings] = useState([]);
 	const { user_id } = useParams();
 	const currentUserId = user_id;
+	// const currentUserId = currentUser && currentUser.uid;
+	console.log("Request.js", currentUserId);
 
 	useEffect(() => {
 		const fetchAllBookings = async () => {

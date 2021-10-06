@@ -13,7 +13,6 @@ VALUES
 INSERT INTO bookings (
     		chef_id,
             user_id,
-		-- status,
 		event_type,
         party_size,
         address, 

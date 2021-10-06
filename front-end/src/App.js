@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { apiURL } from "./util/apiURL.js";
 import "./App.css";
 
+import { useAuth } from "./Providers/AuthProvider.js";
+
 // COMPONENTS
 import NavBar from "./Components/NavBar";
 
@@ -21,6 +23,7 @@ import AuthProvider from "./Providers/AuthProvider.js";
 const API = apiURL();
 
 function App() {
+	const currentUser = useAuth();
 	const [chefs, setChefs] = useState([]);
 
 	useEffect(() => {
@@ -66,7 +69,7 @@ function App() {
 						<Route exact path="/chefs/:chef_id/bookings/new">
 							<NewBooking />
 						</Route>
-						<Route exact path="/users/:user_id/bookings/:id">
+						<Route exact path={`/users/${currentUser?.uid}/bookings/:id`}>
 							{/* list of ALL bookings for a SPECIFIC USER -- single booking details */}
 							<ShowBookings />
 						</Route>

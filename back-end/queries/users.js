@@ -17,14 +17,15 @@ const fetchUser = async (id) => {
 };
 
 const createUser = async (user) => {
-	const {id, email, first_name, last_name, is_chef, cuisine, availability } = user;
+	const { id, email, first_name, last_name, is_chef, cuisine } = user;
+	console.log(user);
 	try {
 		const newUser = await db.one(
 			`INSERT INTO users
-            (id, email, first_name, last_name, is_chef, cuisine, availability)
-            VALUES($1, $2, $3, $4, $5, $6, $7)
+            (id, email, first_name, last_name, is_chef, cuisine)
+            VALUES($1, $2, $3, $4, $5, $6)
             RETURNING *`,
-			[id, email, first_name, last_name, is_chef, cuisine, availability]
+			[id, email, first_name, last_name, is_chef, cuisine]
 		);
 		return newUser;
 	} catch (err) {

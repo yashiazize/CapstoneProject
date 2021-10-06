@@ -37,7 +37,7 @@ users.post("/", async (req, res) => {
 	if (newUser.id) {
 		res.json({ success: true, payload: newUser });
 	} else {
-		res.json({ success: false, payload: "Error" });
+		res.json({ success: false, payload: newUser });
 	}
 });
 
