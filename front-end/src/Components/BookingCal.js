@@ -53,7 +53,6 @@ const BookingCal = ({ setRequest, request }) => {
 						}}
 						// defaultValue="2017-05-24"
 						min={newDate}
-						defaultValue="color"
 						required
 					/>
 					<TextField
