@@ -51,19 +51,19 @@ const NavBar = () => {
 
 					</li>
 					<div className="nav-in-out">
-						<Link>
+						{/* <Link>
 							<button
 								className="lgnBtn"
 								onClick={() => setModalOpen(!modalOpen)}
 							>
 								Login/Sign Up
 							</button>
-						</Link>
+						</Link> */}
 
 						<Link to={"/"} onClick={signOut}>
 							<button className="lgnBtn"> Logout</button>
 						</Link>
-					</li>
+					</div>
 				</ul>
 			</div>
 			{user ? <p>Hi, {user.first_name}</p> : null}

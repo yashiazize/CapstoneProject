@@ -41,7 +41,7 @@ const ChefDetails = ({ chefs, starRatings }) => {
 					alt={chef.first_name}
 				/>
 				<article className="info">
-					<h3>Chef's Availability:</h3>
+					<h3>Chef's Availability</h3>
 					<ChefAvailability chefAvail={chefAvail} />
 				</article>
 			</div>
@@ -54,7 +54,7 @@ const ChefDetails = ({ chefs, starRatings }) => {
 						<h6>Cuisine(s): {chef.cuisine}</h6>
 					</article>
 					<article className="info">
-						<h3>bio:</h3>
+						<h3>Bio:</h3>
 						<p>{chef.bio}</p>
 					</article>
 					<div>

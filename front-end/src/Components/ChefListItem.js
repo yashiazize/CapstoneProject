@@ -9,7 +9,7 @@ const ChefListItem = ({ chef, starRatings }) => {
           {/* col-md-4 */}
           <img
             src={chef.img_url}
-            className="img-fluid rounded-start "
+            className="chef-img-list"
             alt="img_url"
           />
         </div>
