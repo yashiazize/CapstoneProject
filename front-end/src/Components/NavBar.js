@@ -21,6 +21,7 @@ const NavBar = () => {
 	useEffect(() => {
 		const getUser = async () => {
 			let res = await axios.get(`${API}/users/${currentUser?.uid}`);
+
 			setUser(res.data.payload);
 		};
 		getUser();
@@ -50,14 +51,14 @@ const NavBar = () => {
 						</button>
 					</li>
 					<div className="nav-in-out">
-						<Link>
+						{/* <Link>
 							<button
 								className="lgnBtn"
 								onClick={() => setModalOpen(!modalOpen)}
 							>
 								Login/Sign Up
 							</button>
-						</Link>
+						</Link> */}
 
 						<Link to={"/"} onClick={signOut}>
 							<button className="lgnBtn"> Logout</button>
@@ -65,8 +66,10 @@ const NavBar = () => {
 					</div>
 				</ul>
 			</div>
-			{user ? <p>Hi, {user.first_name}</p> : null}
-			{modalOpen ? <AuthModal setModalOpen={setModalOpen} /> : null}
+			<div className="login-name">
+				{user ? <p>Hi, {user.first_name}</p> : null}
+				{modalOpen ? <AuthModal setModalOpen={setModalOpen} /> : null}
+			</div>
 		</nav>
 	);
 };

@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
-// import RatingItem from "./RatingItem";
 
-const ChefListItem = ({ chef, starRatings }) => {
+const ChefListItem = ({ chef, ratingAverage }) => {
+  const averageScore = [];
+  for (let prop in ratingAverage) {
+    if (chef.id === ratingAverage[prop].id) {
+      averageScore.push(ratingAverage[prop].average_rating);
+    }
+  }
+
   return (
     <div className="card mb-3 chefs-list-card">
       <div className="row g-0">
@@ -9,7 +15,7 @@ const ChefListItem = ({ chef, starRatings }) => {
           {/* col-md-4 */}
           <img
             src={chef.img_url}
-            className="img-fluid rounded-start "
+            className="chef-img-list"
             alt="img_url"
           />
         </div>
@@ -22,16 +28,7 @@ const ChefListItem = ({ chef, starRatings }) => {
             </h5>
             <p className="card-text"></p>
             <p className="card-text">Cuisine(s): {chef.cuisine}</p>
-			<div>
-			{starRatings.map((starRating) => {
-                return (
-                  <li key={starRating.id}>
-                    <h6>Rating: {starRating.rating}</h6>)
-                  </li>
-                );
-              })}	
-						</div>
-            {/* <RatingItem /> */}
+            <p className="card-text">Rating: {averageScore}/5</p>
           </div>
         </div>
       </div>
