@@ -9,49 +9,48 @@ import { apiURL } from "../util/apiURL";
 
 const API = apiURL();
 const NavBar = () => {
-	const [toggleMenu, setToggleMenu] = useState(false);
-	const [modalOpen, setModalOpen] = useState(false);
-	const { currentUser } = useAuth();
-	const handleToggle = () => {
-		setToggleMenu((isOpen) => !isOpen);
-	};
-	const [user, setUser] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const { currentUser } = useAuth();
+  const handleToggle = () => {
+    setToggleMenu((isOpen) => !isOpen);
+  };
+  const [user, setUser] = useState(false);
 
-	useEffect(() => {
-		const getUser = async () => {
-			let res = await axios.get(`${API}/users/${currentUser?.uid}`);
+  useEffect(() => {
+    const getUser = async () => {
+      let res = await axios.get(`${API}/users/${currentUser?.uid}`);
 
-			setUser(res.data.payload);
-		};
-		getUser();
-	}, [currentUser]);
+      setUser(res.data.payload);
+    };
+    getUser();
+  }, [currentUser]);
 
-	return (
-		<nav className="navBar">
-			<div className="nav-center">
-				<div className="nav-header">
-					<Link to={"/"}>
-						<h1 className="nav-logo">Savor</h1>
-					</Link>
-					<button type="button" className="nav-btn" onClick={handleToggle}>
-						<FaAlignRight className="nav-icon" />
-					</button>
-				</div>
-				<ul className={toggleMenu ? "nav-links show-nav" : "nav-links"}>
-					<li>
-						<Link to={"/chefs"}>Chefs</Link>
-					</li>
-					<li>
-						<Link to={`/users/${currentUser?.uid}/bookings`}>Requests</Link>
-					</li>
-					<li>
-						<button className="lgnBtn" onClick={() => setModalOpen(!modalOpen)}>
-							Login
-						</button>
-
-					</li>
-					<div className="nav-in-out">
-						{/* <Link>
+  return (
+    <nav className="navBar">
+      <div className="nav-center">
+        <div className="nav-header">
+          <Link to={"/"}>
+            <h1 className="nav-logo">Savor</h1>
+          </Link>
+          <button type="button" className="nav-btn" onClick={handleToggle}>
+            <FaAlignRight className="nav-icon" />
+          </button>
+        </div>
+        <ul className={toggleMenu ? "nav-links show-nav" : "nav-links"}>
+          <li>
+            <Link to={"/chefs"}>Chefs</Link>
+          </li>
+          <li>
+            <Link to={`/users/${currentUser?.uid}/bookings`}>Requests</Link>
+          </li>
+          <li>
+            <button className="lgnBtn" onClick={() => setModalOpen(!modalOpen)}>
+              Login
+            </button>
+          </li>
+          <div className="nav-in-out">
+            {/* <Link>
 							<button
 								className="lgnBtn"
 								onClick={() => setModalOpen(!modalOpen)}
@@ -60,16 +59,18 @@ const NavBar = () => {
 							</button>
 						</Link> */}
 
-						<Link to={"/"} onClick={signOut}>
-							<button className="lgnBtn"> Logout</button>
-						</Link>
-					</div>
-				</ul>
-			</div>
-			{user ? <p>Hi, {user.first_name}</p> : null}
-			{modalOpen ? <AuthModal setModalOpen={setModalOpen} /> : null}
-		</nav>
-	);
+            <Link to={"/"} onClick={signOut}>
+              <button className="lgnBtn"> Logout</button>
+            </Link>
+          </div>
+        </ul>
+      </div>
+      <div className="login-name">
+        {user ? <p>Hi, {user.first_name}</p> : null}
+        {modalOpen ? <AuthModal setModalOpen={setModalOpen} /> : null}
+      </div>
+    </nav>
+  );
 };
 
 export default NavBar;
