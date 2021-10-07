@@ -58,7 +58,6 @@ const NavBar = () => {
 								Login/Sign Up
 							</button>
 						</Link> */}
-
             <Link to={"/"} onClick={signOut}>
               <button className="lgnBtn"> Logout</button>
             </Link>
