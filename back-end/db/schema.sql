@@ -1,5 +1,5 @@
--- DROP DATABASE IF EXISTS chef_app_dev;
--- CREATE DATABASE chef_app_dev;
+DROP DATABASE IF EXISTS chef_app_dev;
+CREATE DATABASE chef_app_dev;
 \c chef_app_dev;
 
 DROP TABLE IF EXISTS users;
