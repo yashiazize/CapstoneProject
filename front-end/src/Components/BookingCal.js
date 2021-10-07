@@ -51,9 +51,7 @@ const BookingCal = ({ setRequest, request }) => {
 						InputLabelProps={{
 							shrink: true,
 						}}
-						// defaultValue="2017-05-24"
 						min={newDate}
-						defaultValue="color"
 						required
 					/>
 					<TextField

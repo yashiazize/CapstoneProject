@@ -30,7 +30,6 @@ const NavBar = () => {
 		<nav className="navBar">
 			<div className="nav-center">
 				<div className="nav-header">
-					{/* replace this home icon with the Logo Image  */}
 					<Link to={"/"}>
 						<h1 className="nav-logo">Savor</h1>
 					</Link>
@@ -43,21 +42,31 @@ const NavBar = () => {
 						<Link to={"/chefs"}>Chefs</Link>
 					</li>
 					<li>
+						<Link to={`/users/${currentUser?.uid}/bookings`}>Requests</Link>
+					</li>
+					<li>
 						<button className="lgnBtn" onClick={() => setModalOpen(!modalOpen)}>
 							Login
 						</button>
+
 					</li>
-					<li>
+					<div className="nav-in-out">
+						<Link>
+							<button
+								className="lgnBtn"
+								onClick={() => setModalOpen(!modalOpen)}
+							>
+								Login/Sign Up
+							</button>
+						</Link>
+
 						<Link to={"/"} onClick={signOut}>
-							Logout
+							<button className="lgnBtn"> Logout</button>
 						</Link>
 					</li>
-					<li>
-						<Link to={`/users/${currentUser?.uid}/bookings`}>Requests</Link>
-					</li>
 				</ul>
-				{user ? <p> Hi, {user?.first_name}</p> : null}
 			</div>
+			{user ? <p>Hi, {user.first_name}</p> : null}
 			{modalOpen ? <AuthModal setModalOpen={setModalOpen} /> : null}
 		</nav>
 	);

@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS chef_app_dev;
-CREATE DATABASE chef_app_dev;
+-- DROP DATABASE IF EXISTS chef_app_dev;
+-- CREATE DATABASE chef_app_dev;
 \c chef_app_dev;
 
 DROP TABLE IF EXISTS users;
@@ -40,7 +40,6 @@ CREATE TABLE ratings (
     name VARCHAR(100) NOT NULL, 
     review TEXT NOT NULL,
     rating INT NOT NULL CHECK (rating >=0 AND rating <= 5) 
-    -- booking_id INT REFERENCES bookings(id)
 );
 
 DROP TABLE IF EXISTS availability;
@@ -58,16 +57,3 @@ CREATE TABLE availability (
     is_booked BOOLEAN DEFAULT NULL,
     booked_by TEXT REFERENCES users (id)
 );
-
--- STACKOVERFLOW 
--- https://stackoverflow.com/questions/4521020/calculate-open-timeslots-given-availability-and-existing-appointments-by-day
--- Create table Availability (person_id int, interval_id int);
--- Create table Appointment (person_id int, interval_id int, appointment_desc text);
-
--- Create table Interval(interval_id int primary key, interval_start datetime, interval_end datetime)
-
--- QUERY FOR AN OPENING
--- Select person_id, interval_id from Availability av
--- left join Appointment ap
--- on av.person_id = ap.person_id and av.interval_id = ap.interval_id
--- where ap.interval_id is null
