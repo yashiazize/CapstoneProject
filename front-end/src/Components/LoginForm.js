@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../Providers/AuthProvider";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const LoginForm = ({ setModalOpen }) => {
 	const emailRef = useRef();

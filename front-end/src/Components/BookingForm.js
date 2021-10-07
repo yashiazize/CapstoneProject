@@ -9,25 +9,25 @@ import { useAuth } from "../Providers/AuthProvider";
 const API = apiURL();
 
 const BookingForm = ({ chef }) => {
-  const { id } = useParams();
-  const chef_id = id;
-  const { currentUser } = useAuth();
-  const [request, setRequest] = useState({
-    event_type: "",
-    party_size: "",
-    address: "",
-    address2: "",
-    city: "",
-    state: "",
-    zip_code: "",
-    start_event: "",
-    end_event: "",
-  });
-  let history = useHistory();
+	const { id } = useParams();
+	const chef_id = id;
+	const { currentUser } = useAuth();
+	const [request, setRequest] = useState({
+		event_type: "",
+		party_size: "",
+		address: "",
+		address2: "",
+		city: "",
+		state: "",
+		zip_code: "",
+		start_event: "",
+		end_event: "",
+	});
+	let history = useHistory();
 
-  const handleChange = (type) => {
-    return (e) => setRequest({ ...request, [type]: e.target.value });
-  };
+	const handleChange = (type) => {
+		return (e) => setRequest({ ...request, [type]: e.target.value });
+	};
 
 	const addNewRequest = async (newRequest) => {
 		try {
@@ -36,26 +36,34 @@ const BookingForm = ({ chef }) => {
 				user_id: currentUser.uid,
 				...newRequest,
 			};
-			let res = await axios.post(`${API}/bookings`, chefRequest);
-			console.log("CHEFR", res.data.payload);
+			
+			let res = await axios.post(
+				`${API}/users/${currentUser?.uid}/bookings`,
+				chefRequest
+			);
 			return res;
 		} catch (err) {
+			console.log(err);
 			return "error";
 		}
 	};
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const userID = currentUser.uid;
-    let res = await addNewRequest(request);
-    history.push(`/users/${userID}/bookings`);
-  };
+	console.log("REQUEST", request);
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		let res = await addNewRequest(request);
+		if (res.data.payload.success === true) {
+			history.push(`/users/${currentUser.uid}/bookings`);
+		} else {
+			console.log(res);
+		}
+	};
 
 	return (
 		<div>
 			<form onSubmit={handleSubmit} className="booking-container">
 				<h1 className="booking-heading">
-					Book Chef: {chef.first_name} {chef.last_name}
+					Book Chef:
+					{chef.first_name} {chef.last_name}
 				</h1>
 				<div>
 					<label className="mb-1">Event Type:</label>
@@ -176,6 +184,5 @@ const BookingForm = ({ chef }) => {
 			</form>
 		</div>
 	);
-
 };
 export default withRouter(BookingForm);

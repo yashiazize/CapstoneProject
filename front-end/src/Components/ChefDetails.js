@@ -3,13 +3,13 @@ import { apiURL } from "../util/apiURL.js";
 import { useState, useEffect } from "react";
 import ChefAvailability from "./ChefAvailability";
 import { useParams } from "react-router-dom";
-import imageChef from "../Images/bkgnd-lukas-blazek-unsplash.jpg";
 import Reviews from "./Reviews.js";
 import BookingForm from "./BookingForm.js";
+import AddReviewForm from "./AddReviewForm.js";
 
 const API = apiURL();
 
-const ChefDetails = ({ chefs }) => {
+const ChefDetails = ({ chefs, starRatings }) => {
 	const [chef, setChef] = useState({});
 	const [chefAvail, setChefAvail] = useState({});
 	let { id } = useParams();
@@ -41,7 +41,7 @@ const ChefDetails = ({ chefs }) => {
 					alt={chef.first_name}
 				/>
 				<article className="info">
-					<h3>Chef's Availability Calendar</h3>
+					<h3>Chef's Availability:</h3>
 					<ChefAvailability chefAvail={chefAvail} />
 				</article>
 			</div>
@@ -54,13 +54,12 @@ const ChefDetails = ({ chefs }) => {
 						<h6>Cuisine(s): {chef.cuisine}</h6>
 					</article>
 					<article className="info">
-						<h3>About:</h3>
-						<p>
-							{chef.bio}
-						</p>
+						<h3>bio:</h3>
+						<p>{chef.bio}</p>
 					</article>
 					<div>
-						<Reviews />
+						<Reviews starRatings={starRatings} />
+						<AddReviewForm starRatings={starRatings} />
 					</div>
 				</div>
 				<div className="chef-booking-form">

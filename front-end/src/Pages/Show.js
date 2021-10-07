@@ -1,9 +1,9 @@
 import ChefDetails from "../Components/ChefDetails";
 
-const Show = ({ chefs }) => {
+const Show = ({ chefs, starRatings }) => {
   return (
     <section>
-      <ChefDetails chefs={chefs} />
+      <ChefDetails chefs={chefs} starRatings={starRatings}/>
     </section>
   );
 };
