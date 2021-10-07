@@ -1,14 +1,12 @@
 const express = require("express");
-const ratings = express.Router(
-    {
-    mergeParams: true
-  }
-  );
+const ratings = express.Router({
+	mergeParams: true,
+});
 
 const {
-    allChefRatings,
-    aRating,
-    newRatingForChef,
+	allChefRatings,
+	aRating,
+	newRatingForChef,
 } = require("../queries/ratings");
 
 ratings.get("/", async (req, res) => {
@@ -22,7 +20,6 @@ ratings.get("/:id", async (req, res) => {
         const singleStarRating = await aRating(id);
         res.json({success2: true, payload: singleStarRating})
 });
-
 
 ratings.post("/", async (req, res) => {
    const create = await newRatingForChef(req.body);

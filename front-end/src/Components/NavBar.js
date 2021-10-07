@@ -26,19 +26,6 @@ const NavBar = () => {
 		getUser();
 	}, [currentUser]);
 
-	useEffect(() => {
-		const getUser = async () => {
-			let res = await axios.get(`${API}/users/${currentUser?.uid}`);
-
-			setUser(res.data.payload);
-		};
-		getUser();
-	}, [currentUser]);
-
-	if (!user) {
-		return null;
-	}
-
 	return (
 		<nav className="navBar">
 			<div className="nav-center">
@@ -57,6 +44,12 @@ const NavBar = () => {
 					<li>
 						<Link to={`/users/${currentUser?.uid}/bookings`}>Requests</Link>
 					</li>
+					<li>
+						<button className="lgnBtn" onClick={() => setModalOpen(!modalOpen)}>
+							Login
+						</button>
+
+					</li>
 					<div className="nav-in-out">
 						<Link>
 							<button
@@ -70,10 +63,10 @@ const NavBar = () => {
 						<Link to={"/"} onClick={signOut}>
 							<button className="lgnBtn"> Logout</button>
 						</Link>
-					</div>
+					</li>
 				</ul>
-				<div>{user ? <p> Hi, {user?.first_name}</p> : null}</div>
 			</div>
+			{user ? <p>Hi, {user.first_name}</p> : null}
 			{modalOpen ? <AuthModal setModalOpen={setModalOpen} /> : null}
 		</nav>
 	);

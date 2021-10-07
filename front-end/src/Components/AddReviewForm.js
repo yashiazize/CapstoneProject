@@ -7,13 +7,11 @@ const API = apiURL();
 
 const AddReviewForm = ({ starRatings }) => {
   const { id } = useParams;
-
   let history = useHistory();
 
   const [name, setName] = useState("");
   const [reviewComment, setReviewComment] = useState("");
   const [rating, setRating] = useState("Rating");
-
   const [review, setReview] = useState("")//object??????????
 
   const addChefReview = async (newChefReview) => {

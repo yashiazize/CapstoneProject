@@ -103,10 +103,6 @@ a:link {
 	text-decoration: none;
 }
 
-a:link {
-	text-decoration: none;
-}
-
 .navBar {
 	position: sticky;
 	top: 0;
@@ -196,6 +192,7 @@ a:link {
 		margin: 0 auto;
 		display: flex;
 	}
+
 	.nav-center p {
 		border-left: 2px solid var(--primaryColor);
 		color: var(--primaryColor);
@@ -232,6 +229,13 @@ a:link {
 .chefsHero {
 	background-image: url("./Images/chefListFood.png");
 	min-height: 25vh;
+}
+
+.bookingsHero {
+	background: url("./Images/beach-albert-unsplash.jpg") center/cover no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 /* End of Hero */
 
@@ -352,14 +356,17 @@ a:link {
 	grid-column-gap: 2rem;
 	grid-row-gap: 1rem;
 }
-.chefs-list-card {
+.chefs-list-card,
+.bookings-list-card {
 	box-shadow: var(--lightShadow);
 	transition: var(--mainTransition);
 }
 
-.chefs-list-card:hover {
+.chefs-list-card:hover,
+.bookings-list-card {
 	box-shadow: var(--darkShadow);
 }
+
 .img-container {
 	position: relative;
 }
@@ -427,7 +434,6 @@ a:link {
 /* End React Calendar */
 
 /* Booking Form */
-
 .booking {
 	padding: 0;
 	box-sizing: border-box;
@@ -521,7 +527,7 @@ a:link {
 .bookingCal {
 	background-color: white;
 	margin-right: 8vw;
-	padding: 1rem 0 0 1rem;
+	padding: 1rem 0 0 2rem;
 	border-radius: 10px;
 }
 /* End Chef Availibility Calendar */
@@ -735,7 +741,7 @@ a:link {
 
 .requestsCard {
 	background-color: var(--medTan);
-	height: 100vh;
+	/* height: 100vh; */
 	width: 100vw;
 }
 
@@ -750,3 +756,53 @@ a:link {
 	border-radius: 7px;
 	font-family: "Poppins", sans-serif;
 }
+
+.bookings-list-container {
+	margin: 1rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-column-gap: 2rem;
+	grid-row-gap: 1rem;
+	font-family: "Poppins", sans-serif;
+}
+
+.booking-header {
+	background-color: var(--offWhite);
+	transition: all 0.3s linear;
+	border-bottom: 2px solid var(--primaryColor);
+}
+
+.booking-header h3 {
+	color: var(--primaryColor);
+	padding: 1rem;
+	line-height: 1.4;
+	margin-bottom: 0rem;
+}
+
+.booking-header h3:hover {
+	background-color: var(--primaryColor);
+	color: var(--offWhite);
+}
+
+.booking-address {
+	border-top: 2px solid var(--primaryColor);
+	padding-top: 1rem;
+}
+
+.booking-address h5 {
+	margin-bottom: 0.5rem;
+}
+.booking-address p {
+	margin: 0.1rem;
+}
+
+.booking-times p {
+	display: flex;
+	align-items: baseline;
+}
+
+.booking-times h5 {
+	margin: 0.2rem;
+	padding-right: 0.3rem;
+}
+

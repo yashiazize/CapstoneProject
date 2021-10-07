@@ -1,14 +1,13 @@
-
-// const { use } = require("../controllers/bookingsController");
-
-
 const db = require("../db/dbConfig");
 
-const fetchAllBookings = async () => {
-	try {
-		return await db.one("SELECT * FROM bookings");
-	} catch (error) {}
-};
+// const fetchAllBookings = async () => {
+// 	try {
+// 		return await db.one("SELECT * FROM bookings");
+// 	} catch (error) {
+// 		return error;
+// 	}
+// };
+
 const fetchUserBookings = async (user_id) => {
 	try {
 		const userBookings = await db.any(
@@ -17,7 +16,7 @@ const fetchUserBookings = async (user_id) => {
 		);
 		return { success: true, payload: userBookings };
 	} catch (error) {
-		return { success: false, payload: error };
+		return { success: false, payload: "Error" };
 	}
 };
 
@@ -41,12 +40,12 @@ const createBooking = async (newBooking) => {
 		state,
 		zip_code,
 		start_event,
-		end_event
+		end_event,
 	} = newBooking;
 	try {
 		const res = await db.one(
 			`INSERT INTO bookings
-            (chef_id, user_id, event_type, party_size, address, address2, city, state, zip_code,  start_event, end_event)
+            (chef_id, user_id, event_type, party_size, address, address2, city, state, zip_code, start_event, end_event)
             VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
             RETURNING *`,
 			[
@@ -65,7 +64,6 @@ const createBooking = async (newBooking) => {
 		);
 		return res;
 	} catch (err) {
-		return err;
 		return err;
 	}
 };
@@ -108,7 +106,7 @@ const updateBooking = async (id, booking) => {
 };
 
 module.exports = {
-	fetchAllBookings,
+	// fetchAllBookings,
 	fetchBooking,
 	createBooking,
 	updateBooking,

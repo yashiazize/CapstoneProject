@@ -36,25 +36,34 @@ const BookingForm = ({ chef }) => {
 				user_id: currentUser.uid,
 				...newRequest,
 			};
-			let res = await axios.post(`${API}/bookings`, chefRequest);
+			
+			let res = await axios.post(
+				`${API}/users/${currentUser?.uid}/bookings`,
+				chefRequest
+			);
 			return res;
 		} catch (err) {
+			console.log(err);
 			return "error";
 		}
 	};
-
+	console.log("REQUEST", request);
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		const userID = currentUser.uid;
-		await addNewRequest(request);
-		history.push(`/users/${userID}/bookings`);
+		let res = await addNewRequest(request);
+		if (res.data.payload.success === true) {
+			history.push(`/users/${currentUser.uid}/bookings`);
+		} else {
+			console.log(res);
+		}
 	};
 
 	return (
 		<div>
 			<form onSubmit={handleSubmit} className="booking-container">
 				<h1 className="booking-heading">
-					Book Chef: {chef.first_name} {chef.last_name}
+					Book Chef:
+					{chef.first_name} {chef.last_name}
 				</h1>
 				<div>
 					<label className="mb-1">Event Type:</label>

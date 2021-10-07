@@ -35,8 +35,7 @@ const Requests = () => {
 
 	return (
 		<section>
-			<h2>Bookings</h2>
-			<div>
+			<div className="bookings-list-container">
 				{bookings.map((booking) => {
 					return <RequestDetails key={booking.id} booking={booking} />;
 				})}
