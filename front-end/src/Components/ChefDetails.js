@@ -58,7 +58,7 @@ const ChefDetails = ({ chefs, starRatings }) => {
 						<p>{chef.bio}</p>
 					</article>
 					<div>
-						<Reviews starRatings={starRatings} />
+						<Reviews starRatings={starRatings} chef={chef}/>
 						<AddReviewForm starRatings={starRatings} />
 					</div>
 				</div>

@@ -2,7 +2,7 @@ import ChefsList from "../Components/ChefsList";
 import Hero from "../Components/Hero";
 import Banner from "../Components/Banner";
 
-const Index = ({ chefs, starRatings }) => {
+const Index = ({ chefs, starRatings, ratingAverage }) => {
 	return (
 		<>
 			<Hero hero="chefsHero">
@@ -13,7 +13,7 @@ const Index = ({ chefs, starRatings }) => {
 			</Hero>
 			<div>
 				<ul>
-					<ChefsList chefs={chefs} starRatings={starRatings}/>
+					<ChefsList chefs={chefs} starRatings={starRatings} ratingAverage={ratingAverage}/>
 				</ul>
 			</div>
 		</>
