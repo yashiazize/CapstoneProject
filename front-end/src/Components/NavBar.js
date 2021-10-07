@@ -8,6 +8,7 @@ import AuthModal from "./AuthModal";
 import { apiURL } from "../util/apiURL";
 
 const API = apiURL();
+
 const NavBar = () => {
 	const [toggleMenu, setToggleMenu] = useState(false);
 	const [modalOpen, setModalOpen] = useState(false);
@@ -20,7 +21,6 @@ const NavBar = () => {
 	useEffect(() => {
 		const getUser = async () => {
 			let res = await axios.get(`${API}/users/${currentUser?.uid}`);
-
 			setUser(res.data.payload);
 		};
 		getUser();
@@ -48,7 +48,6 @@ const NavBar = () => {
 						<button className="lgnBtn" onClick={() => setModalOpen(!modalOpen)}>
 							Login
 						</button>
-
 					</li>
 					<div className="nav-in-out">
 						<Link>
@@ -63,7 +62,7 @@ const NavBar = () => {
 						<Link to={"/"} onClick={signOut}>
 							<button className="lgnBtn"> Logout</button>
 						</Link>
-					</li>
+					</div>
 				</ul>
 			</div>
 			{user ? <p>Hi, {user.first_name}</p> : null}

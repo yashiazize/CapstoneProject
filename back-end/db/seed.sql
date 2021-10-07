@@ -1,4 +1,4 @@
-\c chef_app_dev;
+-- \c chef_app_dev;
 
 INSERT INTO users (
     id, email, img_url, bio, first_name, last_name, is_chef, cuisine)

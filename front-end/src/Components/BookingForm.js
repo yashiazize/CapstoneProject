@@ -36,14 +36,13 @@ const BookingForm = ({ chef }) => {
 				user_id: currentUser.uid,
 				...newRequest,
 			};
-			
+
 			let res = await axios.post(
 				`${API}/users/${currentUser?.uid}/bookings`,
 				chefRequest
 			);
 			return res;
 		} catch (err) {
-			console.log(err);
 			return "error";
 		}
 	};
