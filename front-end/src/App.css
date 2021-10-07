@@ -814,3 +814,68 @@ a:link {
 	padding-right: 0.3rem;
 }
 
+/* Reviews */
+.review-testamonial{
+	padding-top: 3vh;
+	/* font-family: "Poppins", sans-serif; */
+}
+.reviews-container{
+	width: 50vw;
+	padding: 1vh 3vh 3vh 3vh;
+}
+
+.review-border{
+	padding-bottom: 1vh;
+	padding-top: 3vh;
+	border-bottom: 4px solid var(--medTan);
+}
+.review-text-name{
+	font-family: "Poppins", sans-serif;
+
+	padding: 3vh 3vh ;
+}
+
+.review-text-comment{
+	padding-top: 1vh;
+}
+
+/* Add Review Form */
+.review-form-enclose{
+	border: 2px solid var(--primaryColor);
+	width: 275px;
+    height: 300px;
+    position: relative;
+    background-color: var(--offWhite);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Poppins", sans-serif;
+	font-weight: bold;
+	border-radius: 19px 19px 19px 19px;
+	box-shadow: var(--lightShadow);
+}
+
+.review-form-container input, textarea, select{
+	background-color: var(--offWhite);
+	border: 2px solid var(--primaryColor);	
+	padding-bottom: 1vh;
+}
+
+.review-form-name{
+	padding-bottom: 2vh;
+}
+
+.review-form-select{
+	padding-bottom: 2vh;
+}
+
+.review-form-text-area{
+	padding-bottom: 15vh;
+}
+
+.review-form-button{
+	border: none;
+    border-radius: 2px;
+    color: white;
+    background: var(--primaryColor);
+}

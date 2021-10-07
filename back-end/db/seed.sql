@@ -41,9 +41,9 @@ VALUES
 
 INSERT INTO ratings (chef_id, user_id, name, review, rating)
 VALUES
-('ahdjw82iks', 'p0ot54fdh8', 'Victor Cruz', 'Chef Boiardi creates delicious food! Even my picky children ate all their veggies this time.', 5),
-('ahdjw82iks', 'chgwq72ijd', 'Leslie Mann', 'Discovered this app through a friend and I love it! Have not stopped booking Ched Boiardi. He is my personal chef and is helping me achieve my weight loss goals!', 4),
-('bsujdyh822', 'p0ot54fdh8', 'Victor Cruz', 'Chef Julia Child is a good chef', 3),
-('bsujdyh822', 'chgwq72ijd', 'Leslie Mann', 'Chef Julia Child had made a variety of foods.', 4),
-('hytrkew345', 'chgwq72ijd', 'Leslie Mann', 'This app and ChefMasaharu Morimoto have made my life easier!', 4),
-('nhyt54pgtn', 'p0ot54fdh8', 'Victor Cruz', 'Contrary to popular belief Chef Paula Dean does not use that much butter. Food is always delicious!', 4);
+('ahdjw82iks', 'p0ot54fdh8', 'Victor Cruz', 'Always delicious food! Even my picky children ate all their veggies this time.', 5),
+('ahdjw82iks', 'chgwq72ijd', 'Leslie Mann', 'Discovered this app through a friend and I love it! Have not stopped using it. I lost so much pandemic weight through the meal plans!', 4),
+('bsujdyh822', 'p0ot54fdh8', 'Victor Cruz', 'An OK chef', 3),
+('bsujdyh822', 'chgwq72ijd', 'Leslie Mann', 'Wow! Wow! Wow! The variety of cuisines is amazing!', 4),
+('hytrkew345', 'chgwq72ijd', 'Leslie Mann', 'Since becoming a Savor client my life has been to much easier!', 4),
+('nhyt54pgtn', 'p0ot54fdh8', 'Victor Cruz', 'Food is always delicious! Service is impeccable', 4);
