@@ -3,7 +3,6 @@
 \c chef_app_dev;
 
 DROP TABLE IF EXISTS users;
-
 CREATE TABLE users (
     id TEXT PRIMARY KEY UNIQUE,
     email VARCHAR(100) UNIQUE, 
@@ -38,6 +37,7 @@ CREATE TABLE ratings (
     id BIGSERIAL NOT NULL PRIMARY KEY, 
     chef_id TEXT NOT NULL REFERENCES users (id), 
     user_id TEXT NOT NULL REFERENCES users (id),
+    name VARCHAR(100) NOT NULL, 
     review TEXT NOT NULL,
     rating INT NOT NULL CHECK (rating >=0 AND rating <= 5) 
 );

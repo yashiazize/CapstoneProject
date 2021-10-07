@@ -36,8 +36,7 @@ const newRatingForChef = async (starRating) => {
 	const { chef_id, user_id, name, review, rating } = starRating;
 	try {
 		const newRating = await db.one(
-			`
-            INSERT INTO ratings (chef_id, user_id, name, review, rating)
+			`     INSERT INTO ratings (chef_id, user_id, name, review, rating)
             VALUES ($1, $2, $3, $4, $5)
             RETURNING *
             `,

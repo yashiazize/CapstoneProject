@@ -7,8 +7,6 @@ import { useHistory, useParams } from "react-router";
 import { useAuth } from "../Providers/AuthProvider";
 
 const API = apiURL();
-// const BookingForm = () => {
-// const { chef_id } = useParams();
 
 const BookingForm = ({ chef }) => {
 	const { id } = useParams();
@@ -38,13 +36,11 @@ const BookingForm = ({ chef }) => {
 				user_id: currentUser.uid,
 				...newRequest,
 			};
-			console.log("X", chefRequest);
-			console.log(`${API}/bookings`, chefRequest);
+			
 			let res = await axios.post(
 				`${API}/users/${currentUser?.uid}/bookings`,
 				chefRequest
 			);
-			console.log("CHEFR", res.data.payload);
 			return res;
 		} catch (err) {
 			console.log(err);

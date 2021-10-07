@@ -5,12 +5,12 @@ const StarRating = ({ rating }) => {
   const stars = [];
   for (let i = 1; i <= 5; i++) {
     if (i <= rating) {
-      stars.push(< FaStar color="ff7700"/>)
+      stars.push(< FaStar color="ff7700" key={i}/>)
     } else if (i === Math.ceil(rating) && !Number.isInteger(rating)) {
-      stars.push(<FaStarHalf color="ff7700"/>)
+      stars.push(<FaStarHalf color="ff7700" key={i}/>)
     }
     else {
-      stars.push(<FaStar color="ececec"/>)
+      stars.push(<FaStar color="ececec" key={i}/>)
     }
   }
 return<>

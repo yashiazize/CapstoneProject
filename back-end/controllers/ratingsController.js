@@ -9,24 +9,21 @@ const {
 	newRatingForChef,
 } = require("../queries/ratings");
 
-//get all ratings
 ratings.get("/", async (req, res) => {
-	const { chef_id } = req.params;
-	const AllChefWithRatings = await allChefRatings(chef_id);
-	res.json({ success: true, payload: AllChefWithRatings });
+    const { chef_id } = req.params
+    const allChefWithRatings = await allChefRatings(chef_id);
+    res.json({success1: true, payload: allChefWithRatings})
 });
 
-//get single rating
 ratings.get("/:id", async (req, res) => {
-	const { user_id } = req.params;
-	const singleStarRating = await aRating(user_id);
-	res.json({ success: true, payload: singleStarRating });
+        const { id } = req.params;
+        const singleStarRating = await aRating(id);
+        res.json({success2: true, payload: singleStarRating})
 });
 
-//create rating
 ratings.post("/", async (req, res) => {
-	const create = await newRatingForChef(req.body);
-	res.json({ success: true, payload: create });
-});
+   const create = await newRatingForChef(req.body);
+   res.json({success3: true, payload: create})
+    });
 
 module.exports = ratings;

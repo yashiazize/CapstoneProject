@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../Providers/AuthProvider";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const LoginForm = ({ setModalOpen }) => {
 	const emailRef = useRef();
@@ -26,7 +26,7 @@ const LoginForm = ({ setModalOpen }) => {
 	}
 
 	return (
-		<>
+		<section>
 			<div className="login-box">
 				<p>Email</p>
 				<div>
@@ -42,10 +42,7 @@ const LoginForm = ({ setModalOpen }) => {
 					Log In
 				</button>
 			</div>
-			<div className="textOne">
-				<Link to="/forgot-password">Forgot Password?</Link>
-			</div>
-		</>
+		</section>
 	);
 };
 

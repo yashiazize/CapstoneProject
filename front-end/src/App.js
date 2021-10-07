@@ -25,6 +25,7 @@ const API = apiURL();
 function App() {
 	const currentUser = useAuth();
 	const [chefs, setChefs] = useState([]);
+	const [starRatings, setStarRatings] = useState([])
 
 	useEffect(() => {
 		const fetchAllChefs = async () => {
@@ -35,8 +36,14 @@ function App() {
 				return err;
 			}
 		};
-
+const fetchAllRatings = async () => {
+	try {
+		const getRatings = await axios.get(`${API}/ratings`);
+		setStarRatings(getRatings.data.payload)
+	} catch (err){}
+}
 		fetchAllChefs();
+		fetchAllRatings();
 	}, []);
 
 	return (
@@ -55,10 +62,10 @@ function App() {
 
 						{/* /users/chefs */}
 						<Route exact path="/chefs">
-							<Index chefs={chefs} />
+							<Index chefs={chefs} starRatings={starRatings}/>
 						</Route>
 						<Route exact path="/chefs/:id">
-							<Show chefs={chefs} />
+							<Show chefs={chefs} starRatings={starRatings}/>
 						</Route>
 
 						{/* /bookings */}

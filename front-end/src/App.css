@@ -93,7 +93,6 @@ h6 {
 /* End of Global Styles */
 
 /* N A V B A R */
-
 .nav-logo {
 	color: var(--primaryColor);
 	font-family: "Rock Salt", cursive;
@@ -109,14 +108,15 @@ a:link {
 	top: 0;
 	width: 100vw;
 	padding-top: 4vh;
-	padding-left: 3vw;
 	padding-bottom: 1vh;
 	background: var(--offWhite);
 	z-index: 1;
 }
-.nav-header {
+.nav-header,
+.nav-in-out {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	margin: 0 1rem;
 }
 
@@ -137,10 +137,11 @@ a:link {
 	height: 0;
 	overflow: hidden;
 	transition: var(--mainTransition);
-	padding-left: 20vw;
 	list-style-type: none;
 	display: flex;
 	justify-content: space-between;
+	align-items: baseline;
+	margin-right: 1rem;
 }
 
 .nav-links a {
@@ -156,6 +157,7 @@ a:link {
 
 .nav-links a:hover {
 	color: var(--primaryColor);
+	border-bottom: 2px solid var(--primaryColor);
 }
 
 .show-nav {
@@ -173,7 +175,15 @@ a:link {
 	padding-left: 1vw;
 	padding-right: 1vw;
 }
-
+.nav-center p {
+	border-left: 2px solid var(--primaryColor);
+	color: var(--primaryColor);
+	font-weight: 700;
+	width: 100vw;
+	align-self: center;
+	margin: 0 0 1rem 1rem;
+	padding: 0 0 0 1rem;
+}
 @media screen and (min-width: 768px) {
 	.nav-btn {
 		display: none;
@@ -183,10 +193,20 @@ a:link {
 		display: flex;
 	}
 
+	.nav-center p {
+		border-left: 2px solid var(--primaryColor);
+		color: var(--primaryColor);
+		font-weight: 700;
+		width: 20vw;
+		align-self: center;
+		padding: 1rem;
+	}
 	.nav-links {
 		height: auto;
 		display: flex;
+		align-items: baseline;
 		margin-left: 4rem;
+		width: 60vw;
 	}
 
 	.nav-links a {
@@ -207,7 +227,7 @@ a:link {
 	justify-content: center;
 }
 .chefsHero {
-	background-image: url("./Images/table-centerFlowers.jpg");
+	background-image: url("./Images/chefListFood.png");
 	min-height: 25vh;
 }
 
@@ -262,7 +282,6 @@ a:link {
 /* End of Banner */
 
 /* S E R V I C E S */
-
 .services {
 	padding-bottom: 30vh;
 	background: var(--medTan);
@@ -416,7 +435,6 @@ a:link {
 
 /* Booking Form */
 .booking {
-	/* margin-left: 20vw; */
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Poppins", sans-serif;
@@ -463,10 +481,6 @@ a:link {
 	color: rgb(0, 255, 238);
 }
 
-.booking-box {
-	margin: 0.2em 0;
-}
-
 .booking-container .booking-box p {
 	color: white;
 	font-size: 14px;
@@ -494,18 +508,6 @@ a:link {
 
 /* .booking-container .booking-box input:focus::placeholder {
 	color: white;
-}
-
-.booking-container .booking-box div::before {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 102%;
-	height: 105%;
-	border-radius: 10px;
-	background: linear-gradient(to right, rgb(255, 185, 33), var(--primaryColor));
 } */
 
 .loginBtn3 {
@@ -551,8 +553,8 @@ a:link {
 
 .login-container {
 	background: #004aa2;
-	width: 35vw;
-	height: 60vh;
+	width: 50vw;
+	height: 90vh;
 	border-radius: 20px;
 	display: flex;
 	justify-content: center;
@@ -565,11 +567,7 @@ a:link {
 	font-size: 2em;
 	font-weight: bold;
 	color: rgba(0, 255, 238, 0.968);
-	margin-bottom: 5vh;
-}
-
-.login-box {
-	margin: 0.2sem 0;
+	padding-top: 1vh;
 }
 
 .login-container .login-box p {
@@ -579,7 +577,7 @@ a:link {
 .login-container .login-box div {
 	position: relative;
 	width: 100%;
-	height: 40px;
+	height: 35px;
 	margin: 3vh 0;
 }
 
@@ -635,11 +633,24 @@ a:link {
 	color: rgb(0, 255, 238);
 }
 
-.textTwo {
+.loginQuestion {
+	margin-top: 2vh;
 	font-size: 0.9em;
-	margin-top: 5vh;
+	color: rgb(0, 255, 238);
+}
+.cuisine-select {
+	height: 3vh;
+}
+.signupOrLogin {
 	text-align: center;
 	color: rgb(0, 255, 238);
+	cursor: pointer;
+	padding-top: 2vh;
+}
+
+.formModalToggle {
+	display: grid;
+	grid-template-columns: 17vw 7vw;
 }
 
 .textTwo a {
@@ -680,81 +691,7 @@ a:link {
 	margin-right: 20px;
 }
 
-/* booking Form  */
-
-.sign-up {
-	display: flex;
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: "Poppins", sans-serif;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-}
-
-.signup-container {
-	background: #004aa2;
-	width: 40vw;
-	height: 90vh;
-	border-radius: 20px;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	color: white;
-	padding: 2em;
-}
-
-.sign-heading {
-	font-size: 2em;
-	font-weight: bold;
-	margin-bottom: 22vh;
-	color: rgb(0, 255, 238);
-}
-
-.signup-box {
-	margin: 0.2em 0;
-}
-
-.signup-container .signup-box p {
-	color: white;
-}
-
-.signup-container .signup-box div {
-	position: relative;
-	width: 100%;
-	height: 40px;
-	margin: 0.5em 0;
-}
-
-.signup-container .signup-box input {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: white;
-	color: black;
-	border: none;
-	outline: none;
-	padding-left: 0.8em;
-	border-radius: 10px;
-	transition: all 0.4s;
-}
-
-.signup-container .signup-box input:focus::placeholder {
-	color: white;
-}
-
-.signup-container .signup-box div::before {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 102%;
-	height: 105%;
-	border-radius: 10px;
-	background: linear-gradient(to right, rgb(255, 185, 33), var(--primaryColor));
-}
+/* signup button */
 
 .signLoginBtn {
 	width: 102%;
@@ -777,8 +714,14 @@ a:link {
 
 .first_last {
 	display: grid;
-	grid-template-columns: 17vw 17vw;
-	gap: 2vw;
+	grid-template-columns: 20vw 20vw;
+	gap: 4vw;
+}
+
+.daysOf {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
 }
 
 /* modal */
@@ -862,3 +805,4 @@ a:link {
 	margin: 0.2rem;
 	padding-right: 0.3rem;
 }
+

@@ -80,7 +80,7 @@ const updateBooking = async (id, booking) => {
 		state,
 		zip_code,
 		start_event,
-		end_event,
+		end_event
 	} = booking;
 	try {
 		const query =
