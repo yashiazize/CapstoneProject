@@ -192,6 +192,14 @@ a:link {
 	margin: 0 0 1rem 1rem;
 	padding: 0 0 0 1rem;
 }
+
+.login-name {
+	padding-left: 2vw;
+	font-family: "Poppins", sans-serif;
+	font-weight: bold;
+	text-decoration: underline;
+	text-decoration-color: var(--primaryColor);
+}
 @media screen and (min-width: 768px) {
 	.nav-btn {
 		display: none;
