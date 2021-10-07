@@ -176,6 +176,13 @@ a:link {
 	padding-left: 1vw;
 	padding-right: 1vw;
 }
+
+.login-name {
+	padding-left: 2vw;
+	text-decoration: underline;
+	text-decoration-color: var(--primaryColor);
+	font-weight: bold;
+}
 .nav-center p {
 	border-left: 2px solid var(--primaryColor);
 	color: var(--primaryColor);
