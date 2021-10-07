@@ -66,8 +66,10 @@ const NavBar = () => {
 					</div>
 				</ul>
 			</div>
+			<div className="login-name">
 			{user ? <p>Hi, {user.first_name}</p> : null}
 			{modalOpen ? <AuthModal setModalOpen={setModalOpen} /> : null}
+			</div>
 		</nav>
 	);
 };
