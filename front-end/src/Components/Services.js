@@ -25,6 +25,24 @@ const Services = () => {
 		},
 	];
 
+	const prices = [
+		{
+			title: "Comfort",
+			price: "$15",
+			info: "Includes: ..."
+		},
+		{
+			title: "Casual",
+			price: "$30",
+			info: "Includes: ..."
+		},
+		{
+			title: "Fine",
+			price: "$70",
+			info: "Certified Chef, 5 Star meal experiences, Menu Creation"
+		}
+	]
+
 	return (
 		<section className="services">
 			<Title title="services" />
@@ -35,6 +53,18 @@ const Services = () => {
 							<span>{service.icon}</span>
 							<h6>{service.title}</h6>
 							<p>{service.info}</p>
+						</article>
+					);
+				})}
+			</div>
+			<Title title="Pricing" />
+			<div className="services-center">
+			{prices.map((price, index) => {
+					return (
+						<article key={index} className="service">
+							<h6>{price.title}</h6>
+							<p>{price.price} per person</p>
+							<p>{price.info}</p>
 						</article>
 					);
 				})}
