@@ -3,7 +3,7 @@
 // import StarRating from "./StarRating"
 
 const RequestDetails = ({ booking }) => {
-	const endDate = new Date(booking.end_event).toDateString("en-US");
+	// const endDate = new Date(booking.end_event).toDateString("en-US");
 	const endTime = new Date(booking.end_event).toLocaleTimeString(
 		navigator.language,
 		{ hour: "2-digit", minute: "2-digit" }
