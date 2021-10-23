@@ -26,39 +26,38 @@ const BookingForm = ({ chef }) => {
   });
   let history = useHistory();
 
-  const handleChange = (type) => {
-    return (e) => setRequest({ ...request, [type]: e.target.value });
-  };
+	const handleChange = (type) => {
+		return (e) => setRequest({ ...request, [type]: e.target.value });
+	};
 
-  const addNewRequest = async (newRequest) => {
-    try {
-      const chefRequest = {
-        chef_id: chef_id,
-        user_id: currentUser.uid,
-        ...newRequest,
-      };
+	const addNewRequest = async (newRequest) => {
+		try {
+			const chefRequest = {
+				chef_id: chef_id,
+				user_id: currentUser.uid,
+				...newRequest,
+			};
 
-      let res = await axios.post(
-        `${API}/users/${currentUser?.uid}/bookings`,
-        chefRequest
-      );
-      return res;
-    } catch (err) {
-      console.log(err);
-      return "error";
-    }
-  };
-  console.log("REQUEST", request);
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    let res = await addNewRequest(request);
-    if (res.data.payload.success === true) {
-      history.push(`/users/${currentUser.uid}/bookings`);
-    } else {
-      console.log(res);
-    }
-  };
-
+			let res = await axios.post(
+				`${API}/users/${currentUser?.uid}/bookings`,
+				chefRequest
+			);
+			return res;
+		} catch (err) {
+			return "error";
+		}
+	};
+	
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		let res = await addNewRequest(request);
+		if (res.data.payload.success === true) {
+			history.push(`/users/${currentUser.uid}/bookings`);
+		} else {
+			console.log(res);
+		}
+	};
+	
   return (
     <section className="booking">
       <div className="booking-container">
