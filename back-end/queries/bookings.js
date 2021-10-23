@@ -33,6 +33,7 @@ const createBooking = async (newBooking) => {
 		chef_id,
 		user_id,
 		event_type,
+		pricing_option,
 		party_size,
 		address,
 		address2,
@@ -45,13 +46,14 @@ const createBooking = async (newBooking) => {
 	try {
 		const res = await db.one(
 			`INSERT INTO bookings
-            (chef_id, user_id, event_type, party_size, address, address2, city, state, zip_code, start_event, end_event)
-            VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+            (chef_id, user_id, event_type, pricing_option, party_size, address, address2, city, state, zip_code, start_event, end_event)
+            VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
             RETURNING *`,
 			[
 				chef_id,
 				user_id,
 				event_type,
+				pricing_option,
 				party_size,
 				address,
 				address2,
@@ -73,6 +75,7 @@ const updateBooking = async (id, booking) => {
 		chef_id,
 		user_id,
 		event_type,
+		pricing_option,
 		party_size,
 		address,
 		address2,
@@ -84,11 +87,12 @@ const updateBooking = async (id, booking) => {
 	} = booking;
 	try {
 		const query =
-			"UPDATE bookings SET chef_id =$1, user_id =$2, event_type = $3,  party_size = $4, address = $5, address2 = $6, city = $7, state = $8, zip_code = $9, start_event = $10, end_event = $11 WHERE id = $12 RETURNING *";
+			"UPDATE bookings SET chef_id =$1, user_id =$2, event_type = $3, pricing_option = $4,  party_size = $5, address = $6, address2 = $7, city = $8, state = $9, zip_code = $10, start_event = $11, end_event = $12 WHERE id = $13 RETURNING *";
 		const updatedBooking = await db.one(query, [
 			chef_id,
 			user_id,
 			event_type,
+			pricing_option,
 			party_size,
 			address,
 			address2,
