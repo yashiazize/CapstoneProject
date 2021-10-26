@@ -6,37 +6,36 @@ import { apiURL } from "../util/apiURL";
 const API = apiURL();
 
 const AddReviewForm = ({ starRatings }) => {
-  const { id } = useParams;
+  const { id } = useParams();
   let history = useHistory();
 
   const [name, setName] = useState("");
   const [reviewComment, setReviewComment] = useState("");
   const [rating, setRating] = useState("Rating");
-  const [review, setReview] = useState("")//object??????????
+
+  const [review, setReview] = useState({})//object??????????
+
 
   const addChefReview = async (newChefReview) => {
   try {
-      await axios.post(`${API}/ratings`, newChefReview);
-      history.push(`/ratings`)
+      await axios.post(`${API}/users/${id}/ratings`, newChefReview);
+     history.push(`users/ratings`)
   } catch (error) {
       return error
   }
   };
 
-  // const handleTextInput = (e) => {
-  // setName({ ...name, [e.target.id]: e.target.value})
-  // };
-
   const handleSubmitReview = async (e) => {
     e.preventDefault();
-    await addChefReview(review);
-    history.push("/:id/ratings"); //or chefs
+     await addChefReview(review);
+    history.push(`/chefs/${id}`);
   };
 
   useEffect(() => {
     const fetchChefToReview = async () => {
       try {
-        let res = await axios.get(`${API}/users/chefs`); //${API}/ratings
+        let res;
+        res = await axios.get(`${API}/users/${id}`);
         setReview(res.data.payload);
       } catch (error) {
         return error;
@@ -44,23 +43,23 @@ const AddReviewForm = ({ starRatings }) => {
     };
     fetchChefToReview();
   }, [id]);
-
   return (
     <div>
-      <form>
-        <div>
-          <label htmlFor="name">Name</label>
+      <div className="review-form-enclose">
+      <form onSubmit={handleSubmitReview}  className="review-form-container">
+        <h5 className="review-form-heading">Rate Your Chef</h5>
+        <div className="review-form-name">
+          <label htmlFor="name"></label>
           <input
-            id="name"
+            id="ame"
             value={name.toUpperCase()}
-            // id= "name"
             onChange={(e) => setName(e.target.value)}
             placeholder="Name"
             type="text"
           />
         </div>
-        <div>
-          <label htmlFor="rating">Rating</label>
+        <div className="review-form-select">  
+          <label htmlFor="rating"></label>
           <select
             id="rating"
             value={rating}
@@ -74,15 +73,19 @@ const AddReviewForm = ({ starRatings }) => {
             <option value="5">5</option>
           </select>
         </div>
+        <div className="review-form-divider"></div>
         <div>
-          <label htmlFor="Review"> Review</label>
+          <label htmlFor="Review"></label>
           <textarea
             value={reviewComment}
             onChange={(e) => setReviewComment(e.target.value)}
+            placeholder="Write your review..."
+            className="review-form-text-area"
           ></textarea>
         </div>
-        <button onClick={handleSubmitReview}>Submit</button>
+        <button className="review-form-button">Submit</button>
       </form>
+      </div>
     </div>
   );
 };

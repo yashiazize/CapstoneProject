@@ -3,7 +3,7 @@
 // import StarRating from "./StarRating"
 
 const RequestDetails = ({ booking }) => {
-	const endDate = new Date(booking.end_event).toDateString("en-US");
+	// const endDate = new Date(booking.end_event).toDateString("en-US");
 	const endTime = new Date(booking.end_event).toLocaleTimeString(
 		navigator.language,
 		{ hour: "2-digit", minute: "2-digit" }
@@ -28,19 +28,12 @@ const RequestDetails = ({ booking }) => {
 							{booking.party_size}
 						</p>
 						<p>
-							<h5>Start Time: </h5>
-							{startTime}
+							<h5>Service Type:</h5>
+							{booking.pricing_option}
 						</p>
 						<p>
-							<h5>Start Date: </h5>
-							{startDate}
-						</p>
-						<p>
-							<h5>Start Time:</h5> {endTime}
-						</p>
-						<p>
-							<h5>Start Date: </h5>
-							{endDate}
+							<h5>Event Date & Time: </h5>
+							{startDate} from {startTime} to {endTime}
 						</p>
 					</div>
 					<div className="booking-address">
