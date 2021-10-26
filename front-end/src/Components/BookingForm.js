@@ -14,7 +14,6 @@ const BookingForm = ({ chef }) => {
   const { currentUser } = useAuth();
   const [request, setRequest] = useState({
     event_type: "",
-    pricing_option: "",
     party_size: "",
     address: "",
     address2: "",
@@ -44,11 +43,11 @@ const BookingForm = ({ chef }) => {
       );
       return res;
     } catch (err) {
-      console.log(err);
       return "error";
     }
   };
-  console.log("REQUEST", request);
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     let res = await addNewRequest(request);
@@ -102,24 +101,6 @@ const BookingForm = ({ chef }) => {
               />
             </div>
           </div>
-        </div>
-        <div>
-        <p>Service Type:</p>
-          <select
-            onChange={handleChange("pricing_option")}
-            className="form-select form-select-sm"
-            aria-label="Default select example"
-          >
-            <option type="text" value={"Comfort"}>
-              Comfort - $15
-            </option>
-            <option type="text" value={"Casual"}>
-              Casual - $30
-            </option>
-            <option type="text" value={"Fine"}>
-              Fine - $70
-            </option>
-          </select>
         </div>
         <p className="booking-heading1">Event Location</p>
         <div className="booking-box">

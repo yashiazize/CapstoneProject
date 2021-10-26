@@ -17,7 +17,6 @@ INSERT INTO bookings (
     	chef_id,
         user_id,
 		event_type,
-        pricing_option,
         party_size,
         address, 
         address2, 
@@ -27,9 +26,9 @@ INSERT INTO bookings (
 		start_event,
         end_event) 
 VALUES
-        ('ahdjw82iks','chgwq72ijd' , 'Birthday Party', 'Comfort - $15', '1-2', '511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00'),
-        ('ahdjw82iks','nhyt54pgtn' , 'Birthday Party', 'Fine - $70', '1-2', '511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00'),
-        ('bsujdyh822','p0ot54fdh8' , 'Birthday Party', 'Casual - $30','1-2', '511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00');
+        ('ahdjw82iks','chgwq72ijd' , 'Birthday Party', '3-6','511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00'),
+        ('ahdjw82iks','nhyt54pgtn' , 'Birthday Party','1-2', '511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00'),
+        ('bsujdyh822','p0ot54fdh8' , 'Birthday Party', '4-8','511 Bakers St', NULL, 'Yonkers', 'NY', 10031, '2021-09-25 5:00:00', '2021-09-25 9:00:00');
 
 INSERT INTO availability (
     chef_id, sunday, monday, tuesday, wednesday, thursday, friday, saturday, is_booked, booked_by
