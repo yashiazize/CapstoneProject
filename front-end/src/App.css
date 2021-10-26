@@ -331,6 +331,8 @@ a:link {
 	padding-top: 3vh;
 }
 
+
+
 @media screen and (min-width: 992px) {
 	.services-center {
 		width: 95vw;
@@ -485,7 +487,7 @@ a:link {
 .booking-container {
 	background: #004aa2;
 	width: 30vw;
-	height: 110vh;
+	height: 125vh;
 	border-radius: 40px;
 	display: flex;
 	justify-content: center;
@@ -538,7 +540,7 @@ a:link {
 	height: 40px;
 	border: none;
 	border-radius: 10px;
-	margin-top: 6vh;
+	margin-top: 4vh;
 	transform: translate(-1%);
 	cursor: pointer;
 	color: white;

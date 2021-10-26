@@ -21,7 +21,6 @@ CREATE TABLE bookings (
     chef_id TEXT REFERENCES users (id) NOT NULL, 
     user_id TEXT REFERENCES users (id) NOT NULL, 
     event_type TEXT NOT NULL, 
-    pricing_option TEXT NOT NULL,
     party_size TEXT NOT NULL, 
     address TEXT NOT NULL, 
     address2 TEXT, 
