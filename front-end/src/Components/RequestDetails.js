@@ -1,7 +1,3 @@
-// import axios from "axios";
-// import { apiURL } from "../util/apiURL";
-// import StarRating from "./StarRating"
-
 const RequestDetails = ({ booking }) => {
 	// const endDate = new Date(booking.end_event).toDateString("en-US");
 	const endTime = new Date(booking.end_event).toLocaleTimeString(
