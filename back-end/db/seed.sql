@@ -46,4 +46,7 @@ VALUES
 ('bsujdyh822', 'p0ot54fdh8', 'Victor Cruz', 'An OK chef', 3),
 ('bsujdyh822', 'chgwq72ijd', 'Leslie Mann', 'Wow! Wow! Wow! The variety of cuisines is amazing!', 4),
 ('hytrkew345', 'chgwq72ijd', 'Leslie Mann', 'Since becoming a Savor client my life has been to much easier!', 4),
-('nhyt54pgtn', 'p0ot54fdh8', 'Victor Cruz', 'Food is always delicious! Service is impeccable', 4);
+('nhyt54pgtn', 'p0ot54fdh8', 'Victor Cruz', 'Food is always delicious! Service is impeccable', 4),
+('285cfccb-2064-4794-a51d-6ca38e6580c6', 'p0ot54fdh8', 'Victor Cruz', 'Excellent chef! Food is always tasty', 5),
+('11389417-4ab2-44d5-90f0-e717ccd887f0', 'chgwq72ijd', 'Leslie Mann', 'Have been using the Savor app for many occasions and have had great experience with each chef!', 5),
+('9e517784-98d3-43a5-bd2b-1e24772671f0', 'chgwq72ijd', 'Leslie Mann', 'Excellent service each time!', 5);
