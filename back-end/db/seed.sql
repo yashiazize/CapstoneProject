@@ -50,4 +50,3 @@ VALUES
 ('285cfccb-2064-4794-a51d-6ca38e6580c6', 'p0ot54fdh8', 'Victor Cruz', 'Excellent chef! My dinner party guests were all impressed by the food and quality service!', 5),
 ('11389417-4ab2-44d5-90f0-e717ccd887f0', 'p0ot54fdh8', 'Victor Cruz', 'Wow!', 5),
 ('9e517784-98d3-43a5-bd2b-1e24772671f0', 'chgwq72ijd', 'Leslie Mann', 'So surprised and happy with each booking!', 5);
-
