@@ -43,7 +43,11 @@ INSERT INTO ratings (chef_id, user_id, name, review, rating)
 VALUES
 ('ahdjw82iks', 'p0ot54fdh8', 'Victor Cruz', 'Always delicious food! Even my picky children ate all their veggies this time.', 5),
 ('ahdjw82iks', 'chgwq72ijd', 'Leslie Mann', 'Discovered this app through a friend and I love it! Have not stopped using it. I lost so much pandemic weight through the meal plans!', 4),
-('bsujdyh822', 'p0ot54fdh8', 'Victor Cruz', 'An OK chef', 3),
+('bsujdyh822', 'p0ot54fdh8', 'Victor Cruz', 'My first time experience booking this chef. It was good.', 3),
 ('bsujdyh822', 'chgwq72ijd', 'Leslie Mann', 'Wow! Wow! Wow! The variety of cuisines is amazing!', 4),
 ('hytrkew345', 'chgwq72ijd', 'Leslie Mann', 'Since becoming a Savor client my life has been to much easier!', 4),
-('nhyt54pgtn', 'p0ot54fdh8', 'Victor Cruz', 'Food is always delicious! Service is impeccable', 4);
+('nhyt54pgtn', 'p0ot54fdh8', 'Victor Cruz', 'Food is always delicious! Service is impeccable', 4),
+('285cfccb-2064-4794-a51d-6ca38e6580c6', 'p0ot54fdh8', 'Victor Cruz', 'Excellent chef! My dinner party guests were all impressed by the food and quality service!', 5),
+('11389417-4ab2-44d5-90f0-e717ccd887f0', 'p0ot54fdh8', 'Victor Cruz', 'Wow!', 5),
+('9e517784-98d3-43a5-bd2b-1e24772671f0', 'chgwq72ijd', 'Leslie Mann', 'So surprised and happy with each booking!', 5);
+
